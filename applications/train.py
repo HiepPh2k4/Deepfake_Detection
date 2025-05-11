@@ -10,9 +10,9 @@ GlobalAveragePooling2D = layers.GlobalAveragePooling2D
 from resize import data_generator  # Nhập data_generator từ resize.py
 
 # 1. Đọc dữ liệu đã chia
-train_df = pd.read_csv("D:/project/train_labels.csv")
-val_df = pd.read_csv("D:/project/val_labels.csv")
-test_df = pd.read_csv("D:/project/test_labels.csv")
+train_df = pd.read_csv("D:/Deepfake_Detection_project/train_labels2.csv")
+val_df = pd.read_csv("D:/Deepfake_Detection_project/val_labels2.csv")
+test_df = pd.read_csv("D:/Deepfake_Detection_project/test_labels2.csv")
 
 print(f"Số ảnh train: {len(train_df)}")
 print(f"Số ảnh validation: {len(val_df)}")
@@ -47,7 +47,7 @@ model.fit(
 )
 
 # 4. Lưu mô hình
-model.save("D:/project/deepfake_model.h5")
+model.save("D:/Deepfake_Detection_project/deepfake_model2.h5")
 print("Đã huấn luyện và lưu mô hình!")
 
 # 5. Đánh giá trên tập test

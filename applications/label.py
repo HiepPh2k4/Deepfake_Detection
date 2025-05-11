@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 
-output_dir = "D:/project/frames/"
+output_dir = "D:/Deepfake_Detection_project/frames2/"
 images = os.listdir(output_dir)
 data = []
 
@@ -15,5 +15,5 @@ for img in images:
     data.append([os.path.join(output_dir, img), label])
 
 df = pd.DataFrame(data, columns=["image_path", "label"])
-df.to_csv("D:/project/labels.csv", index=False)
+df.to_csv("D:/Deepfake_Detection_project/labels2.csv", index=False)
 print("Đã tạo file labels.csv!")

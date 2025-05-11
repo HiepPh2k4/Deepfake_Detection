@@ -4,7 +4,7 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import img_to_array
 import os
 
-model = load_model('D:/project/deepfake_model.h5')
+model = load_model('D:/Deepfake_Detection_project/deepfake_model.h5')
 
 # Hàm tiền xử lý frame
 def preprocess_frame(frame, target_size=(299, 299)):
@@ -42,7 +42,7 @@ def predict_video(video_path, model, frame_interval=10):
     else:
         return "Fake", 0
 
-video_path = 'D:/project/data/FaceForensics/original_sequences/actors/c40/videos/09__outside_talking_still_laughing.mp4'
+video_path = 'D:/Deepfake_Detection_project/data/FaceForensics/original_sequences/actors/c40/videos/09__outside_talking_still_laughing.mp4'
 
 label, confidence = predict_video(video_path, model)
 print(f"Video is predicted as: {label} \n")

@@ -3,9 +3,9 @@ import os
 import shutil
 
 # Đường dẫn đến thư mục chứa video và nơi lưu khung hình
-faceforensics_real_dir = "D:/project/data/FaceForensics/manipulated_sequences/DeepFakeDetection/c40/videos/"
-faceforensics_fake_dir = "D:/project/data/FaceForensics/original_sequences/actors/c40/videos/"
-output_dir = "D:/project/frames/"
+faceforensics_real_dir = "D:/Deepfake_Detection_project/data/FaceForensics1/original_sequences/actors/c23/videos/"
+faceforensics_fake_dir = "D:/Deepfake_Detection_project/data/FaceForensics1/manipulated_sequences/DeepFakeDetection/c23/videos/"
+output_dir = "D:/Deepfake_Detection_project/frames1/"
 
 # Tạo thư mục lưu khung hình nếu chưa có
 if not os.path.exists(output_dir):
