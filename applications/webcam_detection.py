@@ -9,7 +9,7 @@ import os
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
 
 # Tải model XceptionNet
-model = load_model('D:/Deepfake_Detection_project/deepfake_model2.h5')  # Thay bằng đường dẫn đến file model của bạn
+model = load_model('D:/Deepfake_Detection_project/deepfake_model_mtcnn.h5')  # Thay bằng đường dẫn đến file model của bạn
 
 # Khởi tạo Mediapipe Face Detection
 mp_face_detection = mp.solutions.face_detection
