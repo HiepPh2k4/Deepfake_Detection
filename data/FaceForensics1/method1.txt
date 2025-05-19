@@ -1,2 +1,0 @@
-python download_faceforensics_parallel.py D:\Deepfake_Detection\data\FaceForensics1 -d DeepFakeDetection -c raw -t videos --server EU2
-python download_faceforensics_parallel.py D:\Deepfake_Detection\data\FaceForensics1 -d DeepFakeDetection_original -c raw -t videos --server EU2

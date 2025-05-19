@@ -1,2 +1,0 @@
-python download_faceforensics.py D:\Deepfake_Detection\data\FaceForensics -d DeepFakeDetection -c c40 -t videos --server EU2
-python download_faceforensics.py D:\Deepfake_Detection\data\FaceForensics -d DeepFakeDetection_original -c c40 -t videos --server EU2
