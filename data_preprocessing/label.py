@@ -1,0 +1,19 @@
+import os
+import pandas as pd
+
+output_dir = "D:/Deepfake_Detection_project/data_preprocessing/frames_mtcnn_rgb_500/"
+images = os.listdir(output_dir)
+data = []
+
+for img in images:
+    if img.startswith("real_"):
+        label = "real"
+    elif img.startswith("fake_"):
+        label = "fake"
+    else:
+        continue
+    data.append([os.path.join(output_dir, img), label])
+
+df = pd.DataFrame(data, columns=["image_path", "label"])
+df.to_csv("D:/Deepfake_Detection_project/data_preprocessing/output_split/label_split_500/label_rgb.csv", index=False)
+print("Đã tạo file labels.csv!")
