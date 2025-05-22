@@ -8,8 +8,13 @@ import mediapipe as mp
 import os
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
 
+<<<<<<< Updated upstream:applications/webcam_detection.py
 # Tải model XceptionNet
 model = load_model('D:/Deepfake_Detection_project/deepfake_model2.h5')  # Thay bằng đường dẫn đến file model của bạn
+=======
+# Load the XceptionNet model
+model = load_model('/classification/models/model_full/deepfake_model_pretrain_3.h5')
+>>>>>>> Stashed changes:classification/webcam_detection.py
 
 # Khởi tạo Mediapipe Face Detection
 mp_face_detection = mp.solutions.face_detection
@@ -61,9 +66,14 @@ while True:
 
             # Kiểm tra xem khuôn mặt có hợp lệ không
             if face.size > 0:
+<<<<<<< Updated upstream:applications/webcam_detection.py
                 # Dự đoán deepfake
                 prediction = predict_deepfake(face, model)
                 label = "Real" if prediction < 0.5 else "Fake"  # Ngưỡng 0.3
+=======
+                prediction = predict_deepfake(face, model)
+                label = "Fake" if prediction >= 0.75 else "Real"
+>>>>>>> Stashed changes:classification/webcam_detection.py
                 confidence = prediction if label == "Fake" else 1 - prediction
 
                 # Vẽ khung và nhãn lên frame
