@@ -6,11 +6,11 @@ import os
 import mediapipe as mp
 
 # Load the XceptionNet model
-model = load_model('D:/Deepfake_Detection_project/classification/models/deepfake_model_mtcnn.h5')
+model = load_model('D:/Study/USTH_B3_ICT_GEN_13/Semester-2/Deepfake_Detection/classification/models/deepfake_model1.h5')
 
 # Initialize Mediapipe Face Detection
 mp_face_detection = mp.solutions.face_detection
-face_detection = mp_face_detection.FaceDetection(min_detection_confidence=0.5)
+face_detection = mp_face_detection.FaceDetection(min_detection_confidence=0.7)
 
 # Function to preprocess the frame/face
 def preprocess_frame(frame, target_size=(299, 299)):
@@ -22,7 +22,7 @@ def preprocess_frame(frame, target_size=(299, 299)):
     return frame
 
 # Function to predict deepfake on a video
-def predict_video(video_path, model, frame_interval=2):
+def predict_video(video_path, model, frame_interval=10):
     cap = cv2.VideoCapture(video_path)
     predictions = []
 
@@ -64,7 +64,7 @@ def predict_video(video_path, model, frame_interval=2):
     if predictions:
         max_prediction = np.max(predictions)  # Use maximum prediction
         print(f"All predictions: {predictions}")
-        label = "Real" if max_prediction < 0.1 else "Fake"  # Adjusted threshold
+        label = "Real" if max_prediction < 0.5 else "Fake"  # Adjusted threshold
         confidence = max_prediction if label == "Fake" else 1 - max_prediction
         return label, confidence
     else:
@@ -72,7 +72,7 @@ def predict_video(video_path, model, frame_interval=2):
 
 # Test a video
 #video_path = 'D:/Deepfake_Detection_project/data/FaceForensics_c23/manipulated_sequences/DeepFakeDetection/c23/videos/02_14__podium_speech_happy__3IUBEKCT.mp4'
-video_path = 'D:/Deepfake_Detection_project/data/FaceForensics_c23/manipulated_sequences/FaceSwap/c23/videos/000_003.mp4'
+video_path = 'D:/Study/USTH_B3_ICT_GEN_13/Semester-2/Deepfake_Detection/real_test_video/1.mp4'
 label, confidence = predict_video(video_path, model)
 print(f"Video is predicted as: {label}")
 print(f"Confidence: {confidence:.2f}")

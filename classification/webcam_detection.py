@@ -9,11 +9,11 @@ import os
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
 
 # Load the XceptionNet model
-model = load_model('/classification/models/model_full/deepfake_model_pretrain_3.h5')
+model = load_model('D:/Study/USTH_B3_ICT_GEN_13/Semester-2/Deepfake_Detection/classification/models/deepfake_model1.h5')
 
 # Initialize Mediapipe Face Detection
 mp_face_detection = mp.solutions.face_detection
-face_detection = mp_face_detection.FaceDetection(min_detection_confidence=0.5)
+face_detection = mp_face_detection.FaceDetection(min_detection_confidence=0.7)
 mp_drawing = mp.solutions.drawing_utils
 
 # Function to preprocess the frame/face
@@ -62,7 +62,7 @@ while True:
             # Check if the face region is valid
             if face.size > 0:
                 prediction = predict_deepfake(face, model)
-                label = "Fake" if prediction >= 0.75 else "Real"
+                label = "Fake" if prediction >= 0.5 else "Real"
                 confidence = prediction if label == "Fake" else 1 - prediction
 
                 # Draw rectangle and label on the frame
