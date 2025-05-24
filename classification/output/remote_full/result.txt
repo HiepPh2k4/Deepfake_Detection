@@ -1,0 +1,125 @@
+G:\Hiep\Deepfake_Detection\.venv\Scripts\python.exe G:\Hiep\Deepfake_Detection\classification\train_xception3_finetuning.py
+Thiết bị: cuda
+Phiên bản PyTorch: 2.7.0+cu118
+Tên GPU: NVIDIA GeForce RTX 3060
+CUDA Version: 11.8
+Số ảnh huấn luyện: 41820
+Số ảnh kiểm tra: 8962
+Số ảnh thử nghiệm: 8962
+G:\Hiep\Deepfake_Detection\.venv\lib\site-packages\timm\models\_factory.py:126: UserWarning: Mapping deprecated model name xception to current legacy_xception.
+  model = create_fn(
+Epoch 1/3 - Train: 100%|██████████| 1307/1307 [06:53<00:00,  3.16it/s]
+Epoch 1/3 - Val: 100%|██████████| 281/281 [01:29<00:00,  3.14it/s]
+Epoch 1/3:
+  Train Loss: 0.7453, Accuracy: 0.8326, Precision: 0.8326, Recall: 1.0000, AUC: 0.5326
+  Val Loss: 0.7194, Accuracy: 0.8326, Precision: 0.8326, Recall: 1.0000, AUC: 0.5515
+Đã lưu mô hình tốt nhất tại G:/Hiep/Deepfake_Detection/classification/models/models_remote_full/deepfake_model_pretrain_3.pt
+Epoch 2/3 - Train: 100%|██████████| 1307/1307 [04:24<00:00,  4.93it/s]
+Epoch 2/3 - Val: 100%|██████████| 281/281 [00:53<00:00,  5.21it/s]
+Epoch 2/3:
+  Train Loss: 0.7074, Accuracy: 0.8326, Precision: 0.8326, Recall: 1.0000, AUC: 0.5785
+  Val Loss: 0.7064, Accuracy: 0.8326, Precision: 0.8326, Recall: 1.0000, AUC: 0.6007
+Epoch 3/3 - Train: 100%|██████████| 1307/1307 [04:24<00:00,  4.95it/s]
+Epoch 3/3 - Val: 100%|██████████| 281/281 [00:54<00:00,  5.18it/s]
+Epoch 1/15 - Train:   0%|          | 0/1307 [00:00<?, ?it/s]Epoch 3/3:
+  Train Loss: 0.6970, Accuracy: 0.8326, Precision: 0.8326, Recall: 1.0000, AUC: 0.6147
+  Val Loss: 0.7041, Accuracy: 0.8326, Precision: 0.8326, Recall: 1.0000, AUC: 0.6095
+Đã lưu mô hình sau pre-training!
+Epoch 1/15 - Train: 100%|██████████| 1307/1307 [10:58<00:00,  1.99it/s]
+Epoch 1/15 - Val: 100%|██████████| 281/281 [00:54<00:00,  5.18it/s]
+Epoch 1/15:
+  Train Loss: 0.4316, Accuracy: 0.8741, Precision: 0.8717, Recall: 0.9953, AUC: 0.9213
+  Val Loss: 0.3342, Accuracy: 0.9073, Precision: 0.9060, Recall: 0.9916, AUC: 0.9651
+Epoch 2/15 - Train:   0%|          | 0/1307 [00:00<?, ?it/s]Đã lưu mô hình tốt nhất tại G:/Hiep/Deepfake_Detection/classification/models/models_remote_full/deepfake_model_best.pt
+Epoch 2/15 - Train: 100%|██████████| 1307/1307 [10:58<00:00,  1.98it/s]
+Epoch 2/15 - Val: 100%|██████████| 281/281 [00:54<00:00,  5.18it/s]
+Epoch 2/15:
+  Train Loss: 0.2670, Accuracy: 0.9243, Precision: 0.9213, Recall: 0.9940, AUC: 0.9761
+  Val Loss: 0.2275, Accuracy: 0.9425, Precision: 0.9410, Recall: 0.9933, AUC: 0.9832
+Đã lưu mô hình tốt nhất tại G:/Hiep/Deepfake_Detection/classification/models/models_remote_full/deepfake_model_best.pt
+Epoch 3/15 - Train: 100%|██████████| 1307/1307 [10:58<00:00,  1.98it/s]
+Epoch 3/15 - Val: 100%|██████████| 281/281 [00:54<00:00,  5.20it/s]
+Epoch 3/15:
+  Train Loss: 0.2099, Accuracy: 0.9434, Precision: 0.9406, Recall: 0.9948, AUC: 0.9854
+  Val Loss: 0.3307, Accuracy: 0.9412, Precision: 0.9520, Recall: 0.9787, AUC: 0.9762
+Epoch 4/15 - Train: 100%|██████████| 1307/1307 [10:58<00:00,  1.98it/s]
+Epoch 4/15 - Val: 100%|██████████| 281/281 [00:54<00:00,  5.17it/s]
+Epoch 4/15:
+  Train Loss: 0.1727, Accuracy: 0.9553, Precision: 0.9529, Recall: 0.9955, AUC: 0.9901
+  Val Loss: 0.2049, Accuracy: 0.9511, Precision: 0.9506, Recall: 0.9929, AUC: 0.9869
+Epoch 5/15 - Train:   0%|          | 0/1307 [00:00<?, ?it/s]Đã lưu mô hình tốt nhất tại G:/Hiep/Deepfake_Detection/classification/models/models_remote_full/deepfake_model_best.pt
+Epoch 5/15 - Train: 100%|██████████| 1307/1307 [10:58<00:00,  1.99it/s]
+Epoch 5/15 - Val: 100%|██████████| 281/281 [00:54<00:00,  5.18it/s]
+Epoch 5/15:
+  Train Loss: 0.1531, Accuracy: 0.9600, Precision: 0.9576, Recall: 0.9961, AUC: 0.9929
+  Val Loss: 0.2291, Accuracy: 0.9664, Precision: 0.9753, Recall: 0.9846, AUC: 0.9908
+Đã lưu mô hình tốt nhất tại G:/Hiep/Deepfake_Detection/classification/models/models_remote_full/deepfake_model_best.pt
+Epoch 6/15 - Train: 100%|██████████| 1307/1307 [10:58<00:00,  1.99it/s]
+Epoch 6/15 - Val: 100%|██████████| 281/281 [00:54<00:00,  5.17it/s]
+Epoch 6/15:
+  Train Loss: 0.1395, Accuracy: 0.9643, Precision: 0.9620, Recall: 0.9964, AUC: 0.9937
+  Val Loss: 0.1636, Accuracy: 0.9594, Precision: 0.9584, Recall: 0.9944, AUC: 0.9923
+Epoch 7/15 - Train: 100%|██████████| 1307/1307 [10:58<00:00,  1.98it/s]
+Epoch 7/15 - Val: 100%|██████████| 281/281 [00:54<00:00,  5.17it/s]
+Epoch 7/15:
+  Train Loss: 0.1219, Accuracy: 0.9696, Precision: 0.9676, Recall: 0.9968, AUC: 0.9951
+  Val Loss: 0.1852, Accuracy: 0.9701, Precision: 0.9753, Recall: 0.9891, AUC: 0.9918
+Đã lưu mô hình tốt nhất tại G:/Hiep/Deepfake_Detection/classification/models/models_remote_full/deepfake_model_best.pt
+Epoch 8/15 - Train: 100%|██████████| 1307/1307 [10:58<00:00,  1.98it/s]
+Epoch 8/15 - Val: 100%|██████████| 281/281 [00:54<00:00,  5.20it/s]
+Epoch 9/15 - Train:   0%|          | 0/1307 [00:00<?, ?it/s]Epoch 8/15:
+  Train Loss: 0.1147, Accuracy: 0.9712, Precision: 0.9695, Recall: 0.9967, AUC: 0.9956
+  Val Loss: 0.1973, Accuracy: 0.9430, Precision: 0.9370, Recall: 0.9987, AUC: 0.9921
+Epoch 9/15 - Train: 100%|██████████| 1307/1307 [10:58<00:00,  1.98it/s]
+Epoch 9/15 - Val: 100%|██████████| 281/281 [00:54<00:00,  5.17it/s]
+Epoch 9/15:
+  Train Loss: 0.1052, Accuracy: 0.9731, Precision: 0.9714, Recall: 0.9971, AUC: 0.9964
+  Val Loss: 0.1645, Accuracy: 0.9678, Precision: 0.9690, Recall: 0.9930, AUC: 0.9927
+Epoch 10/15 - Train: 100%|██████████| 1307/1307 [10:58<00:00,  1.98it/s]
+Epoch 10/15 - Val: 100%|██████████| 281/281 [00:54<00:00,  5.20it/s]
+Epoch 10/15:
+  Train Loss: 0.0971, Accuracy: 0.9757, Precision: 0.9738, Recall: 0.9976, AUC: 0.9968
+  Val Loss: 0.1590, Accuracy: 0.9656, Precision: 0.9654, Recall: 0.9944, AUC: 0.9931
+Epoch 11/15 - Train: 100%|██████████| 1307/1307 [10:58<00:00,  1.99it/s]
+Epoch 11/15 - Val: 100%|██████████| 281/281 [00:54<00:00,  5.17it/s]
+Epoch 11/15:
+  Train Loss: 0.0913, Accuracy: 0.9775, Precision: 0.9759, Recall: 0.9976, AUC: 0.9973
+  Val Loss: 0.1492, Accuracy: 0.9717, Precision: 0.9714, Recall: 0.9953, AUC: 0.9934
+Đã lưu mô hình tốt nhất tại G:/Hiep/Deepfake_Detection/classification/models/models_remote_full/deepfake_model_best.pt
+Epoch 12/15 - Train: 100%|██████████| 1307/1307 [10:58<00:00,  1.98it/s]
+Epoch 12/15 - Val: 100%|██████████| 281/281 [00:54<00:00,  5.20it/s]
+Epoch 12/15:
+  Train Loss: 0.0876, Accuracy: 0.9792, Precision: 0.9780, Recall: 0.9975, AUC: 0.9974
+  Val Loss: 0.1733, Accuracy: 0.9722, Precision: 0.9752, Recall: 0.9918, AUC: 0.9919
+Epoch 13/15 - Train:   0%|          | 0/1307 [00:00<?, ?it/s]Đã lưu mô hình tốt nhất tại G:/Hiep/Deepfake_Detection/classification/models/models_remote_full/deepfake_model_best.pt
+Epoch 13/15 - Train: 100%|██████████| 1307/1307 [10:58<00:00,  1.99it/s]
+Epoch 13/15 - Val: 100%|██████████| 281/281 [00:54<00:00,  5.16it/s]
+Epoch 13/15:
+  Train Loss: 0.0780, Accuracy: 0.9813, Precision: 0.9800, Recall: 0.9978, AUC: 0.9979
+  Val Loss: 0.2024, Accuracy: 0.9712, Precision: 0.9771, Recall: 0.9886, AUC: 0.9925
+Epoch 14/15 - Train: 100%|██████████| 1307/1307 [10:58<00:00,  1.99it/s]
+Epoch 14/15 - Val: 100%|██████████| 281/281 [00:54<00:00,  5.18it/s]
+Epoch 14/15:
+  Train Loss: 0.0768, Accuracy: 0.9812, Precision: 0.9800, Recall: 0.9978, AUC: 0.9977
+  Val Loss: 0.1659, Accuracy: 0.9633, Precision: 0.9625, Recall: 0.9946, AUC: 0.9921
+Epoch 15/15 - Train: 100%|██████████| 1307/1307 [10:58<00:00,  1.98it/s]
+Epoch 15/15 - Val: 100%|██████████| 281/281 [00:54<00:00,  5.18it/s]
+Epoch 15/15:
+  Train Loss: 0.0791, Accuracy: 0.9812, Precision: 0.9800, Recall: 0.9978, AUC: 0.9979
+  Val Loss: 0.1619, Accuracy: 0.9560, Precision: 0.9537, Recall: 0.9956, AUC: 0.9934
+Đã lưu mô hình cuối!
+G:\Hiep\Deepfake_Detection\.venv\lib\site-packages\timm\models\_factory.py:126: UserWarning: Mapping deprecated model name xception to current legacy_xception.
+  model = create_fn(
+Đã tải mô hình tốt nhất để đánh giá!
+Đánh giá tập test: 100%|██████████| 281/281 [01:29<00:00,  3.15it/s]
+Test Loss: 0.1056
+Test Accuracy: 96.74%
+Test Precision: 97.00%
+Test Recall: 99.16%
+Test AUC: 99.14%
+Test F1-score: 98.06%
+Confusion Matrix:
+[[1271  229]
+ [  63 7399]]
+
+Process finished with exit code 0

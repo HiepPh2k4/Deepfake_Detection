@@ -1,27 +1,48 @@
 import cv2
 import numpy as np
-from tensorflow.keras.models import load_model
-from tensorflow.keras.preprocessing.image import img_to_array
-import os
+import torch
+from torchvision import transforms
+from PIL import Image
+import timm
 import mediapipe as mp
 
-# Load the XceptionNet model
-model = load_model('D:/Study/USTH_B3_ICT_GEN_13/Semester-2/Deepfake_Detection/classification/models/deepfake_model1.h5')
+# Định nghĩa thiết bị (GPU hoặc CPU)
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+print(f"Thiết bị: {device}")
+if torch.cuda.is_available():
+    print(f"Phiên bản PyTorch: {torch.__version__}")
+    print(f"Tên GPU: {torch.cuda.get_device_name(0)}")
+    print(f"CUDA Version: {torch.version.cuda}")
 
-# Initialize Mediapipe Face Detection
+# Tải mô hình XceptionNet
+model = timm.create_model('xception', pretrained=False, num_classes=1).to(device)
+try:
+    model.load_state_dict(torch.load('G:/Hiep/Deepfake_Detection/classification/models/models_remote/deepfake_model_final_18.pt'))
+    model.eval()
+    print("Đã tải mô hình XceptionNet!")
+except Exception as e:
+    print(f"Lỗi khi tải mô hình: {e}")
+    exit()
+
+# Khởi tạo Mediapipe Face Detection
 mp_face_detection = mp.solutions.face_detection
 face_detection = mp_face_detection.FaceDetection(min_detection_confidence=0.7)
 
-# Function to preprocess the frame/face
-def preprocess_frame(frame, target_size=(299, 299)):
-    frame = cv2.resize(frame, target_size)
+# Hàm chuẩn hóa khung hình/khuôn mặt
+transform = transforms.Compose([
+    transforms.Resize((299, 299)),
+    transforms.ToTensor(),
+    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+])
+
+def preprocess_frame(frame):
     frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-    frame = img_to_array(frame)
-    frame = frame / 255.0
-    frame = np.expand_dims(frame, axis=0)
+    frame = Image.fromarray(frame)
+    frame = transform(frame)
+    frame = frame.unsqueeze(0).to(device)
     return frame
 
-# Function to predict deepfake on a video
+# Hàm dự đoán deepfake trên video
 def predict_video(video_path, model, frame_interval=10):
     cap = cv2.VideoCapture(video_path)
     predictions = []
@@ -33,46 +54,53 @@ def predict_video(video_path, model, frame_interval=10):
             break
 
         if frame_count % frame_interval == 0:
-            # Convert frame to RGB for Mediapipe
             rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
             results = face_detection.process(rgb_frame)
 
-            # Check if faces are detected
             if results.detections:
                 for detection in results.detections:
-                    # Get the bounding box of the face
                     bbox = detection.location_data.relative_bounding_box
                     h, w, _ = frame.shape
-                    x, y = int(bbox.xmin * w), int(bbox.ymin * h)
-                    width, height = int(bbox.width * w), int(bbox.height * h)
+                    x, y = int(bbox.xmin * w - 0.2 * bbox.width * w), int(bbox.ymin * h - 0.2 * bbox.height * h)
+                    width, height = int(bbox.width * w * 1.3), int(bbox.height * h * 1.3)
+                    x, y = max(0, x), max(0, y)
+                    width, height = min(w - x, width), min(h - y, height)
 
-                    # Crop the face from the frame
-                    face = frame[max(0, y):y + height, max(0, x):x + width]
+                    face = frame[y:y + height, x:x + width]
 
-                    # Check if the face region is valid
-                    if face.size > 0:
-                        processed_frame = preprocess_frame(face)
-                        pred = model.predict(processed_frame)
-                        predictions.append(pred[0][0])
-                        print(f"Frame {frame_count}: Prediction = {pred[0][0]:.4f}")
-                    break  # Only process the first detected face
+                    if face.size > 0 and face.shape[0] >= 50 and face.shape[1] >= 50:
+                        try:
+                            face = cv2.convertScaleAbs(face, alpha=1.2, beta=20)  # Điều chỉnh ánh sáng
+                            prediction = predict_deepfake(face, model)
+                            predictions.append(prediction)
+                            print(f"Frame {frame_count}: Prediction = {prediction:.4f}")
+                        except Exception as e:
+                            print(f"Lỗi khi xử lý khung hình {frame_count}: {e}")
+                    break  # Chỉ xử lý khuôn mặt đầu tiên
 
         frame_count += 1
 
     cap.release()
 
     if predictions:
-        max_prediction = np.max(predictions)  # Use maximum prediction
-        print(f"All predictions: {predictions}")
-        label = "Real" if max_prediction < 0.5 else "Fake"  # Adjusted threshold
+        max_prediction = np.max(predictions)  # Lấy xác suất tối đa
+        print(f"Tất cả dự đoán: {predictions}")
+        label = "Real" if max_prediction < 0.5 else "Fake"
         confidence = max_prediction if label == "Fake" else 1 - max_prediction
         return label, confidence
     else:
         return "Fake", 0
 
-# Test a video
-#video_path = 'D:/Deepfake_Detection_project/data/FaceForensics_c23/manipulated_sequences/DeepFakeDetection/c23/videos/02_14__podium_speech_happy__3IUBEKCT.mp4'
-video_path = 'D:/Study/USTH_B3_ICT_GEN_13/Semester-2/Deepfake_Detection/real_test_video/1.mp4'
+# Hàm dự đoán deepfake trên một khung hình
+def predict_deepfake(frame, model):
+    processed_frame = preprocess_frame(frame)
+    with torch.no_grad():
+        output = model(processed_frame)
+        pred = torch.sigmoid(output).item()  # Xác suất là fake
+    return pred
+
+# Kiểm tra video
+video_path = 'G:/Hiep/Deepfake_Detection/data/FaceForensics_c23/original_sequences/youtube/c23/videos/720.mp4'
 label, confidence = predict_video(video_path, model)
-print(f"Video is predicted as: {label}")
-print(f"Confidence: {confidence:.2f}")
+print(f"Video được dự đoán là: {label}")
+print(f"Xác suất: {confidence:.2f}")
