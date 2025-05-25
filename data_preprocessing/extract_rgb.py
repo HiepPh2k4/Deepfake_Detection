@@ -9,10 +9,10 @@ from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, r
 
 # Đường dẫn đến thư mục cha chứa dữ liệu FaceForensics
 base_data_dir = "D:/Deepfake_Detection_project/data/FaceForensics_c23/"
-output_dir = "D:/Deepfake_Detection_project/data_preprocessing/frames_mtcnn_rgb_500/"
+output_dir = "D:/Deepfake_Detection_project/data_preprocessing/frames_mtcnn_rgb_full/"
 
 # Danh sách thư mục cần bỏ qua
-excluded_folders = ["actors", "DeepFakeDetection"]
+excluded_folders = ["youtube", "Deepfakes","Face2Face","FaceShifter","FaceSwap","NeuralTextures"]
 
 # Tạo thư mục lưu khung hình nếu chưa có
 if not os.path.exists(output_dir):
@@ -141,7 +141,6 @@ def process_videos(video_dir, label, output_folder):
         for _ in tqdm(pool.imap(process_video, video_args), total=len(video_args), desc=f"Processing {label} videos"):
             pass
 
-# Hàm xử lý video thật từ original_sequences, bỏ qua thư mục actors
 def process_real_folders(base_data_dir, output_dir):
     original_dir = os.path.join(base_data_dir, "original_sequences")
 
@@ -159,7 +158,6 @@ def process_real_folders(base_data_dir, output_dir):
     else:
         print(f"Thư mục video thật không tồn tại: {original_dir}")
 
-# Hàm xử lý video giả từ manipulated_sequences, bỏ qua DeepFakeDetection
 def process_fake_folders(base_data_dir, output_dir):
     manipulated_dir = os.path.join(base_data_dir, "manipulated_sequences")
 
@@ -180,13 +178,10 @@ def process_fake_folders(base_data_dir, output_dir):
 if __name__ == "__main__":
     mp.set_start_method("spawn", force=True)
 
-    # Gọi hàm để xử lý tất cả thư mục thật
     process_real_folders(base_data_dir, output_dir)
 
-    # Gọi hàm để xử lý tất cả thư mục giả
     process_fake_folders(base_data_dir, output_dir)
 
-    # Tính và in metrics
     calculate_metrics()
 
     print("Hoàn tất trích xuất khung hình và tính toán metrics từ các thư mục video!")

@@ -16,3 +16,7 @@ if torch.cuda.is_available():
     print("CUDA Version:", torch.version.cuda)
 else:
     print("Không tìm thấy GPU hoặc CUDA chưa được cấu hình đúng.")
+
+
+import multiprocessing
+print(f"Number of CPU cores: {multiprocessing.cpu_count()}")
