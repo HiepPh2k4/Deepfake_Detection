@@ -2,30 +2,18 @@ import os
 import cv2
 import random
 import glob
-from multiprocessing import Pool, Manager
+from multiprocessing import Pool
 import multiprocessing as mp
 from tqdm import tqdm
-import numpy as np
-from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, recall_score, f1_score
 from mtcnn import MTCNN
-import pandas as pd
-import tensorflow as tf
-
-# Suppress TensorFlow logs and warnings
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # Suppress all TensorFlow logs (errors only)
-os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'  # Disable oneDNN to avoid related logs
-
-# Silence Keras deprecation warnings
-tf.get_logger().setLevel('ERROR')  # Only show TensorFlow errors
 
 # Configuration
 DATA_DIR = "D:/Deepfake_Detection_project/data/FaceForensics_c23/"
-OUTPUT_DIR = "D:/Deepfake_Detection_project/data_preprocessing/frames_mtcnn_rgb_500/"
-EXCLUDED_FOLDERS = ["actors", "DeepFakeDetection"]
-MAX_FRAMES_PER_VIDEO = 8
+OUTPUT_DIR = "D:/Deepfake_Detection_project/data_preprocessing/frames/youtube/"
+EXCLUDED_FOLDERS = ["actors", "DeepFakeDetection", "FaceShifter"]
+MAX_FRAMES_PER_VIDEO = 20
 TARGET_FRAME_SIZE = (299, 299)
-TARGET_VIDEO_COUNT = 500
-
+TARGET_VIDEO_COUNT = 720
 
 def setup_output_directory():
     """Create the output directory if it doesn't exist."""
@@ -33,9 +21,7 @@ def setup_output_directory():
         os.makedirs(OUTPUT_DIR)
         print(f"Created output directory: {OUTPUT_DIR}")
 
-
-def extract_frames(video_path, output_folder, label, source_folder_name, detection_results, frame_metadata,
-                   max_frames=MAX_FRAMES_PER_VIDEO, target_size=TARGET_FRAME_SIZE):
+def extract_frames(video_path, output_folder, label, source_folder_name, max_frames=MAX_FRAMES_PER_VIDEO, target_size=TARGET_FRAME_SIZE):
     """Extract frames from a video, detect faces, crop them, and save the results."""
     detector = MTCNN()
 
@@ -66,7 +52,6 @@ def extract_frames(video_path, output_folder, label, source_folder_name, detecti
         frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         faces = detector.detect_faces(frame_rgb)
 
-        detection_results['y_true'].append(1)
         if faces:
             # Get coordinates of the first detected face
             x, y, w, h = faces[0]['box']
@@ -94,51 +79,16 @@ def extract_frames(video_path, output_folder, label, source_folder_name, detecti
             output_path = os.path.join(output_folder, frame_name)
             cv2.imwrite(output_path, face_img)
             print(f"Saved frame: {output_path}")
-
-            # Store metadata
-            frame_metadata.append({
-                "image_path": output_path,
-                "label": label
-            })
-            detection_results['y_pred'].append(1)
         else:
             print(f"No face detected in frame {frame_idx}, skipping.")
-            detection_results['y_pred'].append(0)
 
     # Release video capture
     cap.release()
 
-
-def compute_metrics(detection_results):
-    """Calculate and display confusion matrix and performance metrics."""
-    y_true = list(detection_results['y_true'])
-    y_pred = list(detection_results['y_pred'])
-
-    if not y_true or not y_pred:
-        print("No data available to compute metrics.")
-        return
-
-    cm = confusion_matrix(y_true, y_pred)
-    print("\nConfusion Matrix:")
-    print(cm)
-
-    accuracy = accuracy_score(y_true, y_pred)
-    precision = precision_score(y_true, y_pred, zero_division=0)
-    recall = recall_score(y_true, y_pred, zero_division=0)
-    f1 = f1_score(y_true, y_pred, zero_division=0)
-
-    print("\nPerformance Metrics:")
-    print(f"Accuracy: {accuracy:.4f}")
-    print(f"Precision: {precision:.4f}")
-    print(f"Recall: {recall:.4f}")
-    print(f"F1-Score: {f1:.4f}")
-
-
 def process_video(args):
     """Wrapper function for multiprocessing to process a single video."""
-    video_path, label, output_folder, source_folder_name, detection_results, frame_metadata = args
-    extract_frames(video_path, output_folder, label, source_folder_name, detection_results, frame_metadata)
-
+    video_path, label, output_folder, source_folder_name = args
+    extract_frames(video_path, output_folder, label, source_folder_name)
 
 def collect_and_sample_videos(data_dir, target_count=TARGET_VIDEO_COUNT):
     """Collect valid videos and randomly sample the target number."""
@@ -203,45 +153,33 @@ def collect_and_sample_videos(data_dir, target_count=TARGET_VIDEO_COUNT):
     if len(selected_videos) < target_count:
         remaining_videos = [v for v in video_files if v not in selected_videos]
         additional_videos = random.sample(remaining_videos,
-                                          min(len(remaining_videos), target_count - len(selected_videos)))
+                                         min(len(remaining_videos), target_count - len(selected_videos)))
         selected_videos.extend(additional_videos)
 
     print(f"Selected {len(selected_videos)} videos from all folders.")
     return selected_videos[:target_count]
 
-
-def process_videos(selected_videos, output_folder, detection_results, frame_metadata):
+def process_videos(selected_videos, output_folder):
     """Process all selected videos using multiprocessing."""
     video_args = [
         (
             video_path,
             label,
             output_folder,
-            os.path.basename(os.path.dirname(os.path.dirname(video_dir))),
-            detection_results,
-            frame_metadata
+            os.path.basename(os.path.dirname(os.path.dirname(video_dir)))
         )
         for video_path, label, video_dir in selected_videos
     ]
 
     print(f"Starting processing of {len(video_args)} videos...")
-    with Pool(processes=max(1, mp.cpu_count() // 2)) as pool:
+    with Pool() as pool:
         for _ in tqdm(pool.imap_unordered(process_video, video_args), total=len(video_args), desc="Processing videos"):
             pass
-
 
 def main():
     """Main function to orchestrate the video processing pipeline."""
     # Set multiprocessing start method for Windows compatibility
     mp.set_start_method("spawn", force=True)
-
-    # Initialize multiprocessing Manager for shared data
-    manager = Manager()
-    detection_results = manager.dict({
-        'y_true': manager.list(),
-        'y_pred': manager.list()
-    })
-    frame_metadata = manager.list()
 
     # Create output directory
     setup_output_directory()
@@ -250,18 +188,9 @@ def main():
     selected_videos = collect_and_sample_videos(DATA_DIR)
 
     # Process videos
-    process_videos(selected_videos, OUTPUT_DIR, detection_results, frame_metadata)
+    process_videos(selected_videos, OUTPUT_DIR)
 
-    # Compute and display metrics
-    compute_metrics(detection_results)
-
-    # Save metadata to CSV
-    metadata_df = pd.DataFrame(list(frame_metadata))
-    metadata_df.to_csv(os.path.join(OUTPUT_DIR, "frame_metadata.csv"), index=False)
-    print("Saved metadata to frame_metadata.csv")
-
-    print("Completed frame extraction and metric computation for 500 videos!")
-
+    print("Completed frame extraction!")
 
 if __name__ == '__main__':
     main()

@@ -9,10 +9,10 @@ from sklearn.metrics import confusion_matrix, accuracy_score, precision_score, r
 
 # Đường dẫn đến thư mục cha chứa dữ liệu FaceForensics
 base_data_dir = "D:/Deepfake_Detection_project/data/FaceForensics_c23/"
-output_dir = "D:/Deepfake_Detection_project/data_preprocessing/frames_mtcnn_rgb_full/"
+output_dir = "D:/Deepfake_Detection_project/data_preprocessing/frames/youtube/"
 
 # Danh sách thư mục cần bỏ qua
-excluded_folders = ["youtube", "Deepfakes","Face2Face","FaceShifter","FaceSwap","NeuralTextures"]
+excluded_folders = ["actors", "Deepfakes","Face2Face","FaceShifter","FaceSwap","NeuralTextures","DeepFakeDetection"]
 
 # Tạo thư mục lưu khung hình nếu chưa có
 if not os.path.exists(output_dir):
@@ -94,30 +94,6 @@ def extract_frames(video_path, output_folder, label, source_folder_name, max_fra
         frame_idx += 1
     vidcap.release()
 
-# Hàm tính confusion matrix và các metrics
-def calculate_metrics():
-    y_true = detection_results['y_true']
-    y_pred = detection_results['y_pred']
-
-    if len(y_true) == 0 or len(y_pred) == 0:
-        print("Không có dữ liệu để tính metrics.")
-        return
-
-    cm = confusion_matrix(y_true, y_pred)
-    print("\nConfusion Matrix:")
-    print(cm)
-
-    accuracy = accuracy_score(y_true, y_pred)
-    precision = precision_score(y_true, y_pred, zero_division=0)
-    recall = recall_score(y_true, y_pred, zero_division=0)
-    f1 = f1_score(y_true, y_pred, zero_division=0)
-
-    print("\nMetrics:")
-    print(f"Accuracy: {accuracy:.4f}")
-    print(f"Precision: {precision:.4f}")
-    print(f"Recall: {recall:.4f}")
-    print(f"F1-Score: {f1:.4f}")
-
 # Hàm phụ để gọi extract_frames với multiprocessing
 def process_video(args):
     video_path, label, output_folder, source_folder_name = args
@@ -182,6 +158,5 @@ if __name__ == "__main__":
 
     process_fake_folders(base_data_dir, output_dir)
 
-    calculate_metrics()
 
     print("Hoàn tất trích xuất khung hình và tính toán metrics từ các thư mục video!")

@@ -11,7 +11,7 @@ print(f"Thiết bị: {device}")
 
 # Tải mô hình
 model = timm.create_model('xception', pretrained=False, num_classes=1).to(device)
-model.load_state_dict(torch.load('D:/Deepfake_Detection_project/classification/models/models_full/deepfake_model_best.pt'))
+model.load_state_dict(torch.load('/classification/models_face/models_full/deepfake_model_best.pt'))
 model.eval()
 print("Đã tải mô hình XceptionNet!")
 

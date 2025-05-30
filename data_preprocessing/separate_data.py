@@ -17,4 +17,4 @@ train_df.to_csv("D:/Deepfake_Detection_project/data_preprocessing/output_split/l
 val_df.to_csv("D:/Deepfake_Detection_project/data_preprocessing/output_split/label_split_full/val_rgb.csv", index=False)
 test_df.to_csv("D:/Deepfake_Detection_project/data_preprocessing/output_split/label_split_full/test_rgb.csv", index=False)
 
-print("Đã chia dữ liệu thành công!")
+print("completely!")

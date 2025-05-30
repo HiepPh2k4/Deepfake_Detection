@@ -1,0 +1,280 @@
+D:\Anaconda\envs\deepfake39_env\python.exe D:\Deepfake_Detection_project\classification\train_cnn.py
+Device: cuda
+Train images: 2800
+Validation images: 600
+Test images: 600
+Epoch 1/3 - Train:   0%|          | 0/88 [00:00<?, ?it/s]Device: cuda
+Device: cuda
+Device: cuda
+Device: cuda
+D:\Deepfake_Detection_project\classification\train_cnn.py:47: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Epoch 1/3 - Train: 100%|██████████| 88/88 [02:24<00:00,  1.64s/it]
+Epoch 1/3 - Val:   0%|          | 0/19 [00:00<?, ?it/s]Device: cuda
+Device: cuda
+Device: cuda
+Device: cuda
+D:\Deepfake_Detection_project\classification\train_cnn.py:68: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Epoch 1/3 - Val: 100%|██████████| 19/19 [00:44<00:00,  2.35s/it]
+Epoch 1/3:
+  Train: Loss=1.3925, Acc=0.8304, Prec=0.8336, Rec=0.9953, AUC=0.4929
+  Val: Loss=0.7943, Acc=0.8333, Prec=0.8333, Rec=1.0000, AUC=0.4694
+  Current best val accuracy: -inf
+Epoch 2/3 - Train:   0%|          | 0/88 [00:00<?, ?it/s]Saved best model at D:/Deepfake_Detection_project/classification/models/models_custom_500/deepfake_model_pretrain.pt
+Device: cuda
+Device: cuda
+Device: cuda
+Device: cuda
+D:\Deepfake_Detection_project\classification\train_cnn.py:47: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Epoch 2/3 - Train: 100%|██████████| 88/88 [02:21<00:00,  1.61s/it]
+Epoch 2/3 - Val:   0%|          | 0/19 [00:00<?, ?it/s]Device: cuda
+Device: cuda
+Device: cuda
+Device: cuda
+D:\Deepfake_Detection_project\classification\train_cnn.py:68: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Epoch 2/3 - Val: 100%|██████████| 19/19 [00:45<00:00,  2.40s/it]
+Epoch 3/3 - Train:   0%|          | 0/88 [00:00<?, ?it/s]Epoch 2/3:
+  Train: Loss=0.9007, Acc=0.8339, Prec=0.8339, Rec=1.0000, AUC=0.4445
+  Val: Loss=0.7707, Acc=0.8333, Prec=0.8333, Rec=1.0000, AUC=0.4968
+  Current best val accuracy: 0.8333
+Device: cuda
+Device: cuda
+Device: cuda
+Device: cuda
+D:\Deepfake_Detection_project\classification\train_cnn.py:47: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Epoch 3/3 - Train: 100%|██████████| 88/88 [02:21<00:00,  1.61s/it]
+Epoch 3/3 - Val:   0%|          | 0/19 [00:00<?, ?it/s]Device: cuda
+Device: cuda
+Device: cuda
+Device: cuda
+D:\Deepfake_Detection_project\classification\train_cnn.py:68: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Epoch 3/3 - Val: 100%|██████████| 19/19 [00:44<00:00,  2.33s/it]
+Epoch 3/3:
+  Train: Loss=0.8784, Acc=0.8339, Prec=0.8339, Rec=1.0000, AUC=0.4535
+  Val: Loss=0.7732, Acc=0.8333, Prec=0.8333, Rec=1.0000, AUC=0.4853
+  Current best val accuracy: 0.8333
+Epoch 1/17 - Train:   0%|          | 0/88 [00:00<?, ?it/s]Saved pre-trained model at D:/Deepfake_Detection_project/classification/models/models_custom_500/deepfake_model_pretrain.pt
+Device: cuda
+Device: cuda
+Device: cuda
+Device: cuda
+D:\Deepfake_Detection_project\classification\train_cnn.py:47: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Epoch 1/17 - Train: 100%|██████████| 88/88 [06:59<00:00,  4.77s/it]
+Epoch 1/17 - Val:   0%|          | 0/19 [00:00<?, ?it/s]Device: cuda
+Device: cuda
+Device: cuda
+Device: cuda
+D:\Deepfake_Detection_project\classification\train_cnn.py:68: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Epoch 1/17 - Val: 100%|██████████| 19/19 [00:44<00:00,  2.34s/it]
+Epoch 1/17:
+  Train: Loss=0.8151, Acc=0.8336, Prec=0.8339, Rec=0.9996, AUC=0.5395
+  Val: Loss=0.7530, Acc=0.8333, Prec=0.8333, Rec=1.0000, AUC=0.5827
+  Current best val accuracy: -inf
+Epoch 2/17 - Train:   0%|          | 0/88 [00:00<?, ?it/s]Saved best model at D:/Deepfake_Detection_project/classification/models/models_custom_500/deepfake_model_best.pt
+Device: cuda
+Device: cuda
+Device: cuda
+Device: cuda
+D:\Deepfake_Detection_project\classification\train_cnn.py:47: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Epoch 2/17 - Train: 100%|██████████| 88/88 [07:00<00:00,  4.78s/it]
+Epoch 2/17 - Val:   0%|          | 0/19 [00:00<?, ?it/s]Device: cuda
+Device: cuda
+Device: cuda
+Device: cuda
+D:\Deepfake_Detection_project\classification\train_cnn.py:68: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Epoch 2/17 - Val: 100%|██████████| 19/19 [00:44<00:00,  2.34s/it]
+Epoch 3/17 - Train:   0%|          | 0/88 [00:00<?, ?it/s]Epoch 2/17:
+  Train: Loss=0.8136, Acc=0.8339, Prec=0.8339, Rec=1.0000, AUC=0.5190
+  Val: Loss=0.7506, Acc=0.8333, Prec=0.8333, Rec=1.0000, AUC=0.5365
+  Current best val accuracy: 0.8333
+Device: cuda
+Device: cuda
+Device: cuda
+Device: cuda
+D:\Deepfake_Detection_project\classification\train_cnn.py:47: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Epoch 3/17 - Train: 100%|██████████| 88/88 [07:00<00:00,  4.78s/it]
+Epoch 3/17 - Val:   0%|          | 0/19 [00:00<?, ?it/s]Device: cuda
+Device: cuda
+Device: cuda
+Device: cuda
+D:\Deepfake_Detection_project\classification\train_cnn.py:68: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Epoch 3/17 - Val: 100%|██████████| 19/19 [00:44<00:00,  2.33s/it]
+Epoch 4/17 - Train:   0%|          | 0/88 [00:00<?, ?it/s]Epoch 3/17:
+  Train: Loss=0.7832, Acc=0.8339, Prec=0.8339, Rec=1.0000, AUC=0.5615
+  Val: Loss=0.7632, Acc=0.8333, Prec=0.8333, Rec=1.0000, AUC=0.5471
+  Current best val accuracy: 0.8333
+Device: cuda
+Device: cuda
+Device: cuda
+Device: cuda
+D:\Deepfake_Detection_project\classification\train_cnn.py:47: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Epoch 4/17 - Train: 100%|██████████| 88/88 [07:00<00:00,  4.78s/it]
+Epoch 4/17 - Val:   0%|          | 0/19 [00:00<?, ?it/s]Device: cuda
+Device: cuda
+Device: cuda
+Device: cuda
+D:\Deepfake_Detection_project\classification\train_cnn.py:68: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Epoch 4/17 - Val: 100%|██████████| 19/19 [00:44<00:00,  2.33s/it]
+Epoch 5/17 - Train:   0%|          | 0/88 [00:00<?, ?it/s]Epoch 4/17:
+  Train: Loss=0.7863, Acc=0.8339, Prec=0.8339, Rec=1.0000, AUC=0.5459
+  Val: Loss=0.7876, Acc=0.8333, Prec=0.8333, Rec=1.0000, AUC=0.5353
+  Current best val accuracy: 0.8333
+Device: cuda
+Device: cuda
+Device: cuda
+Device: cuda
+D:\Deepfake_Detection_project\classification\train_cnn.py:47: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Epoch 5/17 - Train: 100%|██████████| 88/88 [07:00<00:00,  4.78s/it]
+Epoch 5/17 - Val:   0%|          | 0/19 [00:00<?, ?it/s]Device: cuda
+Device: cuda
+Device: cuda
+Device: cuda
+D:\Deepfake_Detection_project\classification\train_cnn.py:68: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Epoch 5/17 - Val: 100%|██████████| 19/19 [00:44<00:00,  2.33s/it]
+Epoch 6/17 - Train:   0%|          | 0/88 [00:00<?, ?it/s]Epoch 5/17:
+  Train: Loss=0.7636, Acc=0.8339, Prec=0.8339, Rec=1.0000, AUC=0.5961
+  Val: Loss=0.7167, Acc=0.8333, Prec=0.8333, Rec=1.0000, AUC=0.6111
+  Current best val accuracy: 0.8333
+Device: cuda
+Device: cuda
+Device: cuda
+Device: cuda
+D:\Deepfake_Detection_project\classification\train_cnn.py:47: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Epoch 6/17 - Train: 100%|██████████| 88/88 [07:01<00:00,  4.78s/it]
+Epoch 6/17 - Val:   0%|          | 0/19 [00:00<?, ?it/s]Device: cuda
+Device: cuda
+Device: cuda
+Device: cuda
+D:\Deepfake_Detection_project\classification\train_cnn.py:68: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Epoch 6/17 - Val: 100%|██████████| 19/19 [00:44<00:00,  2.33s/it]
+Epoch 7/17 - Train:   0%|          | 0/88 [00:00<?, ?it/s]Epoch 6/17:
+  Train: Loss=0.7591, Acc=0.8339, Prec=0.8339, Rec=1.0000, AUC=0.6077
+  Val: Loss=0.7455, Acc=0.8333, Prec=0.8333, Rec=1.0000, AUC=0.6051
+  Current best val accuracy: 0.8333
+Device: cuda
+Device: cuda
+Device: cuda
+Device: cuda
+D:\Deepfake_Detection_project\classification\train_cnn.py:47: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Epoch 7/17 - Train: 100%|██████████| 88/88 [07:00<00:00,  4.78s/it]
+Epoch 7/17 - Val:   0%|          | 0/19 [00:00<?, ?it/s]Device: cuda
+Device: cuda
+Device: cuda
+Device: cuda
+D:\Deepfake_Detection_project\classification\train_cnn.py:68: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Epoch 7/17 - Val: 100%|██████████| 19/19 [00:44<00:00,  2.34s/it]
+Epoch 8/17 - Train:   0%|          | 0/88 [00:00<?, ?it/s]Epoch 7/17:
+  Train: Loss=0.7432, Acc=0.8339, Prec=0.8339, Rec=1.0000, AUC=0.6291
+  Val: Loss=0.7273, Acc=0.8333, Prec=0.8333, Rec=1.0000, AUC=0.6108
+  Current best val accuracy: 0.8333
+Device: cuda
+Device: cuda
+Device: cuda
+Device: cuda
+D:\Deepfake_Detection_project\classification\train_cnn.py:47: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Epoch 8/17 - Train: 100%|██████████| 88/88 [07:00<00:00,  4.78s/it]
+Epoch 8/17 - Val:   0%|          | 0/19 [00:00<?, ?it/s]Device: cuda
+Device: cuda
+Device: cuda
+Device: cuda
+D:\Deepfake_Detection_project\classification\train_cnn.py:68: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Epoch 8/17 - Val: 100%|██████████| 19/19 [00:44<00:00,  2.34s/it]
+Epoch 9/17 - Train:   0%|          | 0/88 [00:00<?, ?it/s]Epoch 8/17:
+  Train: Loss=0.7379, Acc=0.8339, Prec=0.8339, Rec=1.0000, AUC=0.6385
+  Val: Loss=0.7480, Acc=0.8333, Prec=0.8333, Rec=1.0000, AUC=0.6397
+  Current best val accuracy: 0.8333
+Device: cuda
+Device: cuda
+Device: cuda
+Device: cuda
+D:\Deepfake_Detection_project\classification\train_cnn.py:47: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Epoch 9/17 - Train: 100%|██████████| 88/88 [07:00<00:00,  4.78s/it]
+Epoch 9/17 - Val:   0%|          | 0/19 [00:00<?, ?it/s]Device: cuda
+Device: cuda
+Device: cuda
+Device: cuda
+D:\Deepfake_Detection_project\classification\train_cnn.py:68: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Epoch 9/17 - Val: 100%|██████████| 19/19 [00:44<00:00,  2.35s/it]
+Epoch 9/17:
+  Train: Loss=0.7338, Acc=0.8339, Prec=0.8339, Rec=1.0000, AUC=0.6498
+  Val: Loss=0.7124, Acc=0.8333, Prec=0.8333, Rec=1.0000, AUC=0.6635
+  Current best val accuracy: 0.8333
+Epoch 10/17 - Train:   0%|          | 0/88 [00:00<?, ?it/s]Device: cuda
+Device: cuda
+Device: cuda
+Device: cuda
+D:\Deepfake_Detection_project\classification\train_cnn.py:47: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Epoch 10/17 - Train: 100%|██████████| 88/88 [07:00<00:00,  4.78s/it]
+Epoch 10/17 - Val:   0%|          | 0/19 [00:00<?, ?it/s]Device: cuda
+Device: cuda
+Device: cuda
+Device: cuda
+D:\Deepfake_Detection_project\classification\train_cnn.py:68: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Epoch 10/17 - Val: 100%|██████████| 19/19 [00:44<00:00,  2.34s/it]
+Epoch 11/17 - Train:   0%|          | 0/88 [00:00<?, ?it/s]Epoch 10/17:
+  Train: Loss=0.7203, Acc=0.8339, Prec=0.8339, Rec=1.0000, AUC=0.6742
+  Val: Loss=0.7453, Acc=0.8333, Prec=0.8333, Rec=1.0000, AUC=0.5905
+  Current best val accuracy: 0.8333
+Device: cuda
+Device: cuda
+Device: cuda
+Device: cuda
+D:\Deepfake_Detection_project\classification\train_cnn.py:47: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Epoch 11/17 - Train: 100%|██████████| 88/88 [07:01<00:00,  4.78s/it]
+Epoch 11/17 - Val:   0%|          | 0/19 [00:00<?, ?it/s]Device: cuda
+Device: cuda
+Device: cuda
+Device: cuda
+D:\Deepfake_Detection_project\classification\train_cnn.py:68: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Epoch 11/17 - Val: 100%|██████████| 19/19 [00:44<00:00,  2.34s/it]
+Epoch 11/17:
+  Train: Loss=0.7454, Acc=0.8339, Prec=0.8339, Rec=1.0000, AUC=0.6369
+  Val: Loss=0.7107, Acc=0.8333, Prec=0.8333, Rec=1.0000, AUC=0.6397
+  Current best val accuracy: 0.8333
+Early stopping at epoch 11
+Saved final model at D:/Deepfake_Detection_project/classification/models/models_custom_500/deepfake_model_final.pt
+Evaluating test set:   0%|          | 0/19 [00:00<?, ?it/s]Device: cuda
+Device: cuda
+Device: cuda
+Device: cuda
+D:\Deepfake_Detection_project\classification\train_cnn.py:183: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with autocast():
+Evaluating test set: 100%|██████████| 19/19 [00:44<00:00,  2.34s/it]
+Test Loss: 0.5134
+Test Accuracy: 83.50%
+Test Precision: 83.50%
+Test Recall: 100.00%
+Test AUC: 63.48%
+Test F1-score: 91.01%
+Confusion Matrix:
+[[  0  99]
+ [  0 501]]
+
+Process finished with exit code 0

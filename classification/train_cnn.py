@@ -113,7 +113,7 @@ def train_model(model, train_loader, val_loader, epochs, save_path, patience=10)
 # Main execution block
 if __name__ == '__main__':
     # Load data
-    base_path = "D:/Deepfake_Detection_project/data_preprocessing/output_split/label_split_full"
+    base_path = "D:/Deepfake_Detection_project/data_preprocessing/output_split/label_split_500"
     train_dataset = DeepfakeDataset(f"{base_path}/train_rgb.csv", transform=transform)
     val_dataset = DeepfakeDataset(f"{base_path}/val_rgb.csv", transform=transform)
     test_dataset = DeepfakeDataset(f"{base_path}/test_rgb.csv", transform=transform)
@@ -129,8 +129,8 @@ if __name__ == '__main__':
     test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False, num_workers=4, pin_memory=True)
 
     # Model paths
-    model_base_path = "D:/Deepfake_Detection_project/classification/models/models_full"
-    output_base_path = "D:/Deepfake_Detection_project/classification/output/output_full"
+    model_base_path = "/classification/models_face/models_custom_500"
+    output_base_path = "D:/Deepfake_Detection_project/classification/output/output_custom_500"
 
     # Create directories if they don't exist
     os.makedirs(model_base_path, exist_ok=True)

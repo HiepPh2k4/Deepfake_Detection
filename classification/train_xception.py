@@ -1,246 +1,269 @@
-import pandas as pd
+import matplotlib.pyplot as plt
 import numpy as np
+import pandas as pd
+import seaborn as sns
+import timm
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from torch.utils.data import Dataset, DataLoader
-from torchvision import transforms
-from PIL import Image
-import timm
-from sklearn.metrics import confusion_matrix, f1_score, precision_score, recall_score, roc_auc_score
-import matplotlib.pyplot as plt
-import seaborn as sns
+from sklearn.metrics import (
+    average_precision_score,
+    confusion_matrix,
+    f1_score,
+    precision_recall_curve,
+    precision_score,
+    recall_score,
+    roc_auc_score,
+)
+from torch.utils.data import DataLoader
 from tqdm import tqdm
 
+from transforms import DeepfakeDataset, train_transform, val_test_transform
+
+# Constants
+DATA_PATH = "D:/Deepfake_Detection_project/data_preprocessing/output_split/label_split_full"
+MODEL_PATH = "/classification/models_face/models_full"
+OUTPUT_PATH = "D:/Deepfake_Detection_project/classification/output/output_full"
+BATCH_SIZE = 32
+NUM_WORKERS = 6
+PRETRAIN_EPOCHS = 3
+FINETUNE_EPOCHS = 15
+LEARNING_RATE = 2e-4
+WEIGHT_DECAY = 1e-4
+POS_WEIGHT = 4.0
+PATIENCE = 10
+
 # Set device
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-print(f"Device: {device}")
+DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-# Custom Dataset
-class DeepfakeDataset(Dataset):
-    def __init__(self, csv_file, transform=None):
-        self.data = pd.read_csv(csv_file)
-        self.transform = transform
 
-    def __len__(self):
-        return len(self.data)
+def create_model():
+    """Create and modify Xception model for binary classification."""
+    model = timm.create_model("xception", pretrained=True, num_classes=1)
+    model.fc = nn.Sequential(
+        nn.Linear(model.fc.in_features, 512),
+        nn.ReLU(),
+        nn.Dropout(0.5),
+        nn.Linear(512, 1),
+    )
+    return model.to(DEVICE)
 
-    def __getitem__(self, idx):
-        img_path = self.data.iloc[idx]['image_path']
-        label = 0 if self.data.iloc[idx]['label'] == 'real' else 1
-        image = Image.open(img_path).convert('RGB')
-        if self.transform:
-            image = self.transform(image)
-        return image, float(label)
 
-# Data transforms
-transform = transforms.Compose([
-    transforms.Resize((299, 299)),
-    transforms.RandomHorizontalFlip(),
-    transforms.RandomRotation(10),
-    transforms.ColorJitter(brightness=0.2, contrast=0.2),
-    transforms.ToTensor(),
-    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
-])
-
-# Load data
-base_path = "D:/Deepfake_Detection_project/data_preprocessing/output_split/label_split_full"
-train_dataset = DeepfakeDataset(f"{base_path}/train_rgb.csv", transform=transform)
-val_dataset = DeepfakeDataset(f"{base_path}/val_rgb.csv", transform=transform)
-test_dataset = DeepfakeDataset(f"{base_path}/test_rgb.csv", transform=transform)
-
-print(f"Train images: {len(train_dataset)}")
-print(f"Validation images: {len(val_dataset)}")
-print(f"Test images: {len(test_dataset)}")
-
-# DataLoaders
-batch_size = 32
-train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
-val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
-test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
-
-# Model
-model = timm.create_model('xception', pretrained=True, num_classes=1).to(device)
-
-# Metrics computation
 def compute_metrics(y_true, y_pred, y_prob):
+    """Compute evaluation metrics for binary classification."""
     y_pred = (y_pred > 0.5).astype(int)
     cm = confusion_matrix(y_true, y_pred)
-    f1 = f1_score(y_true, y_pred)
-    precision = precision_score(y_true, y_pred)
-    recall = recall_score(y_true, y_pred)
-    auc = roc_auc_score(y_true, y_prob)
-    accuracy = (y_pred == y_true).mean()
-    return cm, f1, precision, recall, auc, accuracy
+    return {
+        "cm": cm,
+        "accuracy": (y_pred == y_true).mean(),
+        "precision": precision_score(y_true, y_pred),
+        "recall": recall_score(y_true, y_pred),
+        "f1": f1_score(y_true, y_pred),
+        "auc": roc_auc_score(y_true, y_prob),
+        "ap": average_precision_score(y_true, y_prob),
+    }
 
-# Training function
-def train_model(model, train_loader, val_loader, epochs, save_path, patience=10):
-    optimizer = optim.Adam(model.parameters(), lr=0.0002, weight_decay=1e-5)
-    criterion = nn.BCEWithLogitsLoss(pos_weight=torch.tensor([6.0]).to(device))
-    best_val_accuracy = -float('inf')
+
+def train_epoch(model, loader, criterion, optimizer):
+    """Run one training epoch."""
+    model.train()
+    total_loss, labels, probs = 0, [], []
+    for images, targets in tqdm(loader, desc="Training"):
+        images, targets = images.to(DEVICE), targets.to(DEVICE).float().unsqueeze(1)
+        optimizer.zero_grad()
+        outputs = model(images)
+        loss = criterion(outputs, targets)
+        loss.backward()
+        optimizer.step()
+        total_loss += loss.item() * images.size(0)
+        probs.extend(torch.sigmoid(outputs).detach().cpu().numpy().flatten())
+        labels.extend(targets.cpu().numpy().flatten())
+    return total_loss / len(loader.dataset), np.array(labels), np.array(probs)
+
+
+def validate_epoch(model, loader, criterion):
+    """Run one validation epoch."""
+    model.eval()
+    total_loss, labels, probs = 0, [], []
+    with torch.no_grad():
+        for images, targets in loader:
+            images, targets = images.to(DEVICE), targets.to(DEVICE).float().unsqueeze(1)
+            outputs = model(images)
+            loss = criterion(outputs, targets)
+            total_loss += loss.item() * images.size(0)
+            probs.extend(torch.sigmoid(outputs).cpu().numpy().flatten())
+            labels.extend(targets.cpu().numpy().flatten())
+    return total_loss / len(loader.dataset), np.array(labels), np.array(probs)
+
+
+def train_model(model, train_loader, val_loader, epochs, save_path):
+    """Train model with early stopping and learning rate scheduling."""
+    optimizer = optim.Adam(model.parameters(), lr=LEARNING_RATE, weight_decay=WEIGHT_DECAY)
+    criterion = nn.BCEWithLogitsLoss(pos_weight=torch.tensor([POS_WEIGHT]).to(DEVICE))
+    scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode="min", factor=0.1, patience=5)
+    best_val_accuracy = 0
     patience_counter = 0
-    history = {'loss': [], 'val_loss': [], 'accuracy': [], 'val_accuracy': [],
-               'precision': [], 'val_precision': [], 'recall': [], 'val_recall': [],
-               'auc': [], 'val_auc': []}
+    history = {"train_loss": [], "val_loss": [], "train_acc": [], "val_acc": []}
 
     for epoch in range(epochs):
-        # Training
-        model.train()
-        train_loss, train_preds, train_probs, train_labels = 0.0, [], [], []
-        for images, labels in tqdm(train_loader, desc=f"Epoch {epoch + 1}/{epochs} - Train"):
-            images, labels = images.to(device), labels.to(device).float().unsqueeze(1)
-            optimizer.zero_grad()
-            outputs = model(images)
-            loss = criterion(outputs, labels)
-            loss.backward()
-            optimizer.step()
-            train_loss += loss.item()
-            train_probs.extend(torch.sigmoid(outputs).detach().cpu().numpy().flatten())
-            train_preds.extend((torch.sigmoid(outputs) > 0.5).float().detach().cpu().numpy().flatten())
-            train_labels.extend(labels.cpu().numpy().flatten())
+        # Train
+        train_loss, train_labels, train_probs = train_epoch(model, train_loader, criterion, optimizer)
+        train_metrics = compute_metrics(train_labels, train_probs, train_probs)
 
-        train_loss /= len(train_loader)
-        _, _, train_precision, train_recall, train_auc, train_accuracy = compute_metrics(
-            np.array(train_labels), np.array(train_preds), np.array(train_probs))
+        # Validate
+        val_loss, val_labels, val_probs = validate_epoch(model, val_loader, criterion)
+        val_metrics = compute_metrics(val_labels, val_probs, val_probs)
 
-        # Validation
-        model.eval()
-        val_loss, val_preds, val_probs, val_labels = 0.0, [], [], []
-        with torch.no_grad():
-            for images, labels in tqdm(val_loader, desc=f"Epoch {epoch + 1}/{epochs} - Val"):
-                images, labels = images.to(device), labels.to(device).float().unsqueeze(1)
-                outputs = model(images)
-                loss = criterion(outputs, labels)
-                val_loss += loss.item()
-                val_probs.extend(torch.sigmoid(outputs).cpu().numpy().flatten())
-                val_preds.extend((torch.sigmoid(outputs) > 0.5).float().cpu().numpy().flatten())
-                val_labels.extend(labels.cpu().numpy().flatten())
+        # Update scheduler
+        scheduler.step(val_loss)
 
-        val_loss /= len(val_loader)
-        _, _, val_precision, val_recall, val_auc, val_accuracy = compute_metrics(
-            np.array(val_labels), np.array(val_preds), np.array(val_probs))
+        # Save history
+        history["train_loss"].append(train_loss)
+        history["val_loss"].append(val_loss)
+        history["train_acc"].append(train_metrics["accuracy"])
+        history["val_acc"].append(val_metrics["accuracy"])
 
-        # Update history
-        history['loss'].append(train_loss)
-        history['val_loss'].append(val_loss)
-        history['accuracy'].append(train_accuracy)
-        history['val_accuracy'].append(val_accuracy)
-        history['precision'].append(train_precision)
-        history['val_precision'].append(val_precision)
-        history['recall'].append(train_recall)
-        history['val_recall'].append(val_recall)
-        history['auc'].append(train_auc)
-        history['val_auc'].append(val_auc)
-
-        # Print metrics
-        print(f"Epoch {epoch + 1}/{epochs}:")
-        print(f"  Train: Loss={train_loss:.4f}, Acc={train_accuracy:.4f}, Prec={train_precision:.4f}, "
-              f"Rec={train_recall:.4f}, AUC={train_auc:.4f}")
-        print(f"  Val: Loss={val_loss:.4f}, Acc={val_accuracy:.4f}, Prec={val_precision:.4f}, "
-              f"Rec={val_recall:.4f}, AUC={val_auc:.4f}")
+        # Print progress
+        print(
+            f"Epoch {epoch+1}/{epochs}: "
+            f"Train Loss={train_loss:.4f}, Acc={train_metrics['accuracy']:.4f}, "
+            f"Val Loss={val_loss:.4f}, Acc={val_metrics['accuracy']:.4f}"
+        )
 
         # Save best model
-        if val_accuracy > best_val_accuracy:
-            best_val_accuracy = val_accuracy
+        if val_metrics["accuracy"] > best_val_accuracy:
+            best_val_accuracy = val_metrics["accuracy"]
             torch.save(model.state_dict(), save_path)
-            print(f"Saved best model at {save_path}")
             patience_counter = 0
         else:
             patience_counter += 1
 
         # Early stopping
-        if patience_counter >= patience:
-            print(f"Early stopping at epoch {epoch + 1}")
+        if patience_counter >= PATIENCE:
+            print(f"Early stopping at epoch {epoch+1}")
             break
 
     return history
 
-# Model paths
-model_base_path = "D:/Deepfake_Detection_project/classification/models/models_full"
-output_base_path = "D:/Deepfake_Detection_project/classification/output/output_full"
 
-# Pre-training (3 epochs, freeze layers)
-for name, param in model.named_parameters():
-    if 'fc' not in name:
-        param.requires_grad = False
+def evaluate_model(model, test_loader, criterion):
+    """Evaluate model on test set."""
+    test_loss, test_labels, test_probs = validate_epoch(model, test_loader, criterion)
+    metrics = compute_metrics(test_labels, test_probs, test_probs)
+    return test_loss, metrics, test_labels, test_probs
 
-history_pretrain = train_model(
-    model, train_loader, val_loader, epochs=3,
-    save_path=f"{model_base_path}/deepfake_model_pretrain.pt"
-)
 
-# Fine-tuning (15 epochs, unfreeze layers)
-for param in model.parameters():
-    param.requires_grad = True
+def plot_results(history, metrics, test_labels, test_probs, output_path):
+    """Plot training history, confusion matrix, and precision-recall curve."""
+    # Training history
+    plt.figure(figsize=(12, 4))
+    plt.subplot(1, 2, 1)
+    plt.plot(history["train_loss"], label="Train Loss")
+    plt.plot(history["val_loss"], label="Val Loss")
+    plt.title("Loss")
+    plt.xlabel("Epoch")
+    plt.ylabel("Loss")
+    plt.legend()
+    plt.subplot(1, 2, 2)
+    plt.plot(history["train_acc"], label="Train Acc")
+    plt.plot(history["val_acc"], label="Val Acc")
+    plt.title("Accuracy")
+    plt.xlabel("Epoch")
+    plt.ylabel("Accuracy")
+    plt.legend()
+    plt.savefig(f"{output_path}/training_plots.png")
+    plt.close()
 
-history_finetune = train_model(
-    model, train_loader, val_loader, epochs=15,
-    save_path=f"{model_base_path}/deepfake_model_best.pt", patience=10
-)
+    # Confusion matrix
+    plt.figure(figsize=(6, 5))
+    sns.heatmap(metrics["cm"], annot=True, fmt="d", cmap="Blues", xticklabels=[0, 1], yticklabels=[0, 1])
+    plt.title("Confusion Matrix")
+    plt.xlabel("Predicted")
+    plt.ylabel("Actual")
+    plt.savefig(f"{output_path}/confusion_matrix.png")
+    plt.close()
 
-# Save final model
-torch.save(model.state_dict(), f"{model_base_path}/deepfake_model_final.pt")
-print("Saved final model")
+    # Precision-Recall curve
+    precision, recall, _ = precision_recall_curve(test_labels, test_probs)
+    plt.figure()
+    plt.plot(recall, precision, label=f"PR Curve (AP={metrics['ap']:.2f})")
+    plt.xlabel("Recall")
+    plt.ylabel("Precision")
+    plt.title("Precision-Recall Curve")
+    plt.legend()
+    plt.savefig(f"{output_path}/pr_curve.png")
+    plt.close()
 
-# Load best model for evaluation
-best_model = timm.create_model('xception', pretrained=False, num_classes=1).to(device)
-best_model.load_state_dict(torch.load(f"{model_base_path}/deepfake_model_best.pt"))
-best_model.eval()
 
-# Evaluate on test set
-criterion = nn.BCEWithLogitsLoss()
-test_loss, test_preds, test_probs, test_labels = 0.0, [], [], []
-with torch.no_grad():
-    for images, labels in tqdm(test_loader, desc="Evaluating test set"):
-        images, labels = images.to(device), labels.to(device).float().unsqueeze(1)
-        outputs = best_model(images)
-        loss = criterion(outputs, labels)
-        test_loss += loss.item()
-        test_probs.extend(torch.sigmoid(outputs).cpu().numpy().flatten())
-        test_preds.extend((torch.sigmoid(outputs) > 0.5).float().cpu().numpy().flatten())
-        test_labels.extend(labels.cpu().numpy().flatten())
+def main():
+    """Main function to run training and evaluation."""
+    # Load datasets
+    train_dataset = DeepfakeDataset(f"{DATA_PATH}/train_rgb.csv", transform=train_transform)
+    val_dataset = DeepfakeDataset(f"{DATA_PATH}/val_rgb.csv", transform=val_test_transform)
+    test_dataset = DeepfakeDataset(f"{DATA_PATH}/test_rgb.csv", transform=val_test_transform)
+    print(
+        f"Train: {len(train_dataset)} images, "
+        f"Validation: {len(val_dataset)} images, "
+        f"Test: {len(test_dataset)} images"
+    )
 
-test_loss /= len(test_loader)
-cm, f1, precision, recall, auc, accuracy = compute_metrics(
-    np.array(test_labels), np.array(test_preds), np.array(test_probs))
+    # Create data loaders
+    train_loader = DataLoader(
+        train_dataset, batch_size=BATCH_SIZE, shuffle=True, num_workers=NUM_WORKERS, pin_memory=True
+    )
+    val_loader = DataLoader(
+        val_dataset, batch_size=BATCH_SIZE, shuffle=False, num_workers=NUM_WORKERS, pin_memory=True
+    )
+    test_loader = DataLoader(
+        test_dataset, batch_size=BATCH_SIZE, shuffle=False, num_workers=NUM_WORKERS, pin_memory=True
+    )
 
-# Print test metrics
-print(f"Test Loss: {test_loss:.4f}")
-print(f"Test Accuracy: {accuracy * 100:.2f}%")
-print(f"Test Precision: {precision * 100:.2f}%")
-print(f"Test Recall: {recall * 100:.2f}%")
-print(f"Test AUC: {auc * 100:.2f}%")
-print(f"Test F1-score: {f1 * 100:.2f}%")
-print(f"Confusion Matrix:\n{cm}")
+    # Initialize model
+    model = create_model()
 
-# Plot confusion matrix
-plt.figure(figsize=(8, 6))
-sns.heatmap(cm, annot=True, fmt="d", cmap="Blues", xticklabels=["Real", "Fake"], yticklabels=["Real", "Fake"])
-plt.title("Confusion Matrix (Test Set)")
-plt.xlabel("Predicted")
-plt.ylabel("Actual")
-plt.savefig(f"{output_base_path}/confusion_matrix.png")
-plt.show()
+    # Pre-training (freeze backbone)
+    for name, param in model.named_parameters():
+        if "fc" not in name:
+            param.requires_grad = False
+    history_pretrain = train_model(
+        model, train_loader, val_loader, PRETRAIN_EPOCHS, f"{MODEL_PATH}/deepfake_model_pretrain.pt"
+    )
 
-# Combine and plot training history
-history_combined = {key: history_pretrain[key] + history_finetune[key] for key in history_pretrain}
-plt.figure(figsize=(12, 4))
+    # Fine-tuning (unfreeze all)
+    for param in model.parameters():
+        param.requires_grad = True
+    history_finetune = train_model(
+        model, train_loader, val_loader, FINETUNE_EPOCHS, f"{MODEL_PATH}/deepfake_model_best.pt"
+    )
 
-plt.subplot(1, 2, 1)
-plt.plot(history_combined['loss'], label='Train Loss')
-plt.plot(history_combined['val_loss'], label='Val Loss')
-plt.title('Loss over Epochs')
-plt.xlabel('Epoch')
-plt.ylabel('Loss')
-plt.legend()
+    # Save final model
+    torch.save(model.state_dict(), f"{MODEL_PATH}/deepfake_model_final.pt")
 
-plt.subplot(1, 2, 2)
-plt.plot(history_combined['accuracy'], label='Train Accuracy')
-plt.plot(history_combined['val_accuracy'], label='Val Accuracy')
-plt.title('Accuracy over Epochs')
-plt.xlabel('Epoch')
-plt.ylabel('Accuracy')
-plt.legend()
+    # Combine history
+    history = {
+        k: history_pretrain[k] + history_finetune[k] for k in history_pretrain
+    }
 
-plt.savefig(f"{output_base_path}/training_plots.png")
-plt.show()
+    # Evaluate on test set
+    best_model = create_model()
+    best_model.load_state_dict(torch.load(f"{MODEL_PATH}/deepfake_model_best.pt"))
+    criterion = nn.BCEWithLogitsLoss()
+    test_loss, metrics, test_labels, test_probs = evaluate_model(best_model, test_loader, criterion)
+
+    # Print test results
+    print("\nTest Results:")
+    print(f"Loss: {test_loss:.4f}")
+    print(f"Accuracy: {metrics['accuracy']*100:.1f}%")
+    print(f"Precision: {metrics['precision']*100:.1f}%")
+    print(f"Recall: {metrics['recall']*100:.1f}%")
+    print(f"F1 Score: {metrics['f1']*100:.1f}%")
+    print(f"AUC: {metrics['auc']*100:.1f}%")
+    print(f"Average Precision: {metrics['ap']*100:.1f}%")
+    print(f"Confusion Matrix:\n{metrics['cm']}")
+
+    # Plot results
+    plot_results(history, metrics, test_labels, test_probs, OUTPUT_PATH)
+
+
+if __name__ == "__main__":
+    main()
