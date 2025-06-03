@@ -1,0 +1,56 @@
+G:\Hiep\Deepfake_Detection\.venv\Scripts\python.exe G:\Hiep\Deepfake_Detection\classification\train_xception.py
+Train: 34827 images, Validation: 7463 images, Test: 7464 images
+G:\Hiep\Deepfake_Detection\.venv\lib\site-packages\timm\models\_factory.py:126: UserWarning: Mapping deprecated model name xception to current legacy_xception.
+  model = create_fn(
+Training: 100%|██████████| 1089/1089 [02:45<00:00,  6.57it/s]
+Epoch 1/3: Train Loss=0.7724, Acc=0.7986, Val Loss=0.8409, Acc=0.7990
+Training: 100%|██████████| 1089/1089 [02:43<00:00,  6.66it/s]
+Epoch 2/3: Train Loss=0.7534, Acc=0.7990, Val Loss=0.8233, Acc=0.7990
+Training: 100%|██████████| 1089/1089 [02:43<00:00,  6.66it/s]
+Epoch 3/3: Train Loss=0.7487, Acc=0.7990, Val Loss=0.7578, Acc=0.7990
+Training: 100%|██████████| 1089/1089 [08:11<00:00,  2.21it/s]
+Epoch 1/15: Train Loss=0.5446, Acc=0.8208, Val Loss=0.3274, Acc=0.8888
+Training: 100%|██████████| 1089/1089 [08:11<00:00,  2.22it/s]
+Epoch 2/15: Train Loss=0.3814, Acc=0.8849, Val Loss=0.2891, Acc=0.8998
+Training: 100%|██████████| 1089/1089 [08:11<00:00,  2.22it/s]
+Epoch 3/15: Train Loss=0.3265, Acc=0.9027, Val Loss=0.2593, Acc=0.9531
+Training: 100%|██████████| 1089/1089 [08:10<00:00,  2.22it/s]
+Epoch 4/15: Train Loss=0.2806, Acc=0.9209, Val Loss=0.2152, Acc=0.9582
+Training: 100%|██████████| 1089/1089 [08:10<00:00,  2.22it/s]
+Epoch 5/15: Train Loss=0.2651, Acc=0.9229, Val Loss=0.1998, Acc=0.9590
+Training: 100%|██████████| 1089/1089 [08:10<00:00,  2.22it/s]
+Epoch 6/15: Train Loss=0.2404, Acc=0.9336, Val Loss=0.1899, Acc=0.9637
+Training: 100%|██████████| 1089/1089 [08:10<00:00,  2.22it/s]
+Epoch 7/15: Train Loss=0.2301, Acc=0.9343, Val Loss=0.2239, Acc=0.9694
+Training: 100%|██████████| 1089/1089 [08:12<00:00,  2.21it/s]
+Epoch 8/15: Train Loss=0.2144, Acc=0.9406, Val Loss=0.1995, Acc=0.9684
+Training: 100%|██████████| 1089/1089 [08:13<00:00,  2.21it/s]
+Epoch 9/15: Train Loss=0.2076, Acc=0.9442, Val Loss=0.2108, Acc=0.9707
+Training: 100%|██████████| 1089/1089 [08:11<00:00,  2.21it/s]
+Training:   0%|          | 0/1089 [00:00<?, ?it/s]Epoch 10/15: Train Loss=0.1951, Acc=0.9468, Val Loss=0.1680, Acc=0.9583
+Training: 100%|██████████| 1089/1089 [08:11<00:00,  2.21it/s]
+Training:   0%|          | 0/1089 [00:00<?, ?it/s]Epoch 11/15: Train Loss=0.1874, Acc=0.9475, Val Loss=0.1617, Acc=0.9696
+Training: 100%|██████████| 1089/1089 [08:11<00:00,  2.22it/s]
+Training:   0%|          | 0/1089 [00:00<?, ?it/s]Epoch 12/15: Train Loss=0.1860, Acc=0.9496, Val Loss=0.2364, Acc=0.9680
+Training: 100%|██████████| 1089/1089 [08:11<00:00,  2.21it/s]
+Epoch 13/15: Train Loss=0.1739, Acc=0.9540, Val Loss=0.1523, Acc=0.9712
+Training: 100%|██████████| 1089/1089 [08:11<00:00,  2.22it/s]
+Epoch 14/15: Train Loss=0.1734, Acc=0.9525, Val Loss=0.1630, Acc=0.9735
+Training: 100%|██████████| 1089/1089 [08:11<00:00,  2.22it/s]
+Epoch 15/15: Train Loss=0.1672, Acc=0.9552, Val Loss=0.1385, Acc=0.9724
+G:\Hiep\Deepfake_Detection\.venv\lib\site-packages\timm\models\_factory.py:126: UserWarning: Mapping deprecated model name xception to current legacy_xception.
+  model = create_fn(
+
+Test Results:
+Loss: 0.0777
+Accuracy: 97.3%
+Precision: 98.0%
+Recall: 98.5%
+F1 Score: 98.3%
+AUC: 99.5%
+Average Precision: 99.9%
+Confusion Matrix:
+[[1382  118]
+ [  87 5877]]
+
+Process finished with exit code 0

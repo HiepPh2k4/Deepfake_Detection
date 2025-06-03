@@ -21,21 +21,25 @@ from tqdm import tqdm
 from transforms import DeepfakeDataset, train_transform, val_test_transform
 
 # Constants
-DATA_PATH = "D:/Deepfake_Detection_project/data_preprocessing/output_split/label_split_full"
-MODEL_PATH = "/classification/models_face/models_full"
-OUTPUT_PATH = "D:/Deepfake_Detection_project/classification/output/output_full"
+# DATA_PATH = "D:/Deepfake_Detection_project/data_preprocessing/output_split/label_split_full"
+# MODEL_PATH = "/classification/models_face/models_full"
+# OUTPUT_PATH = "D:/Deepfake_Detection_project/classification/output/output_full"
+
+DATA_PATH = "G:/Hiep/Deepfake_Detection/data_preprocessing/output_split/label_full_remote"
+MODEL_PATH = "G:/Hiep/Deepfake_Detection/classification/models/model_remote_full"
+OUTPUT_PATH = "G:/Hiep/Deepfake_Detection/classification/output/output_remote_full"
+
 BATCH_SIZE = 32
 NUM_WORKERS = 6
 PRETRAIN_EPOCHS = 3
 FINETUNE_EPOCHS = 15
 LEARNING_RATE = 2e-4
 WEIGHT_DECAY = 1e-4
-POS_WEIGHT = 4.0
-PATIENCE = 10
+POS_WEIGHT = 0.17
+PATIENCE = 5
 
 # Set device
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-
 
 def create_model():
     """Create and modify Xception model for binary classification."""

@@ -1,0 +1,12 @@
+/1/6/2025/
+Test Results:
+Loss: 0.1947
+Accuracy: 91.6%
+Precision: 99.1%
+Recall: 91.0%
+F1 Score: 94.9%
+AUC: 98.1%
+Average Precision: 99.7%
+Confusion Matrix:
+[[ 1943    97]
+ [ 1087 10971]]

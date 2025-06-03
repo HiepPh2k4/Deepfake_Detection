@@ -2,12 +2,17 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 # Đường dẫn đến file nhãn
-label_path = 'D:/Deepfake_Detection_project/data_preprocessing/output_split/label_split_full/label_rgb.csv'
+# label_path = 'D:/Deepfake_Detection_project/data_preprocessing/output_split/label_split_full/label_rgb.csv'
+label_path = 'G:/Hiep/Deepfake_Detection/data_preprocessing/output_split/label_full_remote/label_rgb.csv'
 
 # Đường dẫn đầu ra cho các file train, validation, test
-train_path = 'D:/Deepfake_Detection_project/data_preprocessing/output_split/label_split_pp/train.csv'
-val_path = 'D:/Deepfake_Detection_project/data_preprocessing/output_split/label_split_pp/val.csv'
-test_path = 'D:/Deepfake_Detection_project/data_preprocessing/output_split/label_split_pp/test.csv'
+# train_path = 'D:/Deepfake_Detection_project/data_preprocessing/output_split/label_test_remote/train.csv'
+# val_path = 'D:/Deepfake_Detection_project/data_preprocessing/output_split/label_test_remote/val.csv'
+# test_path = 'D:/Deepfake_Detection_project/data_preprocessing/output_split/label_test_remote/test.csv'
+
+train_path = 'G:/Hiep/Deepfake_Detection/data_preprocessing/output_split/label_test_remote/train.csv'
+val_path = 'G:/Hiep/Deepfake_Detection/data_preprocessing/output_split/label_test_remote/val.csv'
+test_path = 'G:/Hiep/Deepfake_Detection/data_preprocessing/output_split/label_test_remote/test.csv'
 
 # Đọc file nhãn
 df = pd.read_csv(label_path)

@@ -7,11 +7,12 @@
     <list default="true" id="905f0653-f1ac-4d38-abc3-d833c3dd4a42" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classification/gputest.py" beforeDir="false" afterPath="$PROJECT_DIR$/classification/gputest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classification/import_video.py" beforeDir="false" afterPath="$PROJECT_DIR$/classification/import_video.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classification/train_xception3_finetuning.py" beforeDir="false" afterPath="$PROJECT_DIR$/classification/train_xception3_finetuning.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classification/model_custom.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/classification/train_cnn.py" beforeDir="false" afterPath="$PROJECT_DIR$/classification/train_cnn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/classification/train_xception.py" beforeDir="false" afterPath="$PROJECT_DIR$/classification/train_xception.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/classification/webcam_detection.py" beforeDir="false" afterPath="$PROJECT_DIR$/classification/webcam_detection.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data_preprocessing/label.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_preprocessing/label.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_preprocessing/separate_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_preprocessing/separate_data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_preprocessing/split_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_preprocessing/split_data.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +93,9 @@
       <workItem from="1747980745135" duration="398000" />
       <workItem from="1748052842296" duration="62000" />
       <workItem from="1748053254187" duration="2015000" />
+      <workItem from="1748492812635" duration="3120000" />
+      <workItem from="1748513118755" duration="180000" />
+      <workItem from="1748827283367" duration="365000" />
     </task>
     <servers />
   </component>
@@ -104,6 +108,6 @@
     <SUITE FILE_PATH="coverage/Deepfake_Detection$import_video.coverage" NAME="import_video Coverage Results" MODIFIED="1747976530805" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classification" />
     <SUITE FILE_PATH="coverage/Deepfake_Detection$test.coverage" NAME="test Coverage Results" MODIFIED="1747981056389" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_preprocessing" />
     <SUITE FILE_PATH="coverage/Deepfake_Detection$separate_data.coverage" NAME="separate_data Coverage Results" MODIFIED="1747708129249" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data_preprocessing" />
-    <SUITE FILE_PATH="coverage/Deepfake_Detection$webcam_detection.coverage" NAME="webcam_detection Coverage Results" MODIFIED="1748055250288" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classification" />
+    <SUITE FILE_PATH="coverage/Deepfake_Detection$webcam_detection.coverage" NAME="webcam_detection Coverage Results" MODIFIED="1748827608384" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/classification" />
   </component>
 </project>

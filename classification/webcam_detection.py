@@ -1,5 +1,6 @@
 import cv2
 import torch
+import torch.nn as nn
 from torchvision import transforms
 from PIL import Image
 import timm
@@ -9,9 +10,21 @@ import mediapipe as mp
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Thiết bị: {device}")
 
+# Tạo model với cùng kiến trúc như lúc training
+def create_model():
+    """Create and modify Xception model for binary classification."""
+    model = timm.create_model("xception", pretrained=False, num_classes=1)
+    model.fc = nn.Sequential(
+        nn.Linear(model.fc.in_features, 512),
+        nn.ReLU(),
+        nn.Dropout(0.5),
+        nn.Linear(512, 1),
+    )
+    return model.to(device)
+
 # Tải mô hình
-model = timm.create_model('xception', pretrained=False, num_classes=1).to(device)
-model.load_state_dict(torch.load('/classification/models_face/models_full/deepfake_model_best.pt'))
+model = create_model()
+model.load_state_dict(torch.load('G:/Hiep/Deepfake_Detection/classification/models/model_remote_full/deepfake_model_best.pt', map_location=device))
 model.eval()
 print("Đã tải mô hình XceptionNet!")
 
@@ -69,9 +82,11 @@ while True:
                     label = "Real" if prediction < 0.7 else "Fake"
                     confidence = prediction if label == "Fake" else 1 - prediction
 
-                    cv2.rectangle(frame, (x, y), (x + width, y + height), (0, 255, 0), 2)
+                    # Màu sắc khác nhau cho Real/Fake
+                    color = (0, 255, 0) if label == "Real" else (0, 0, 255)
+                    cv2.rectangle(frame, (x, y), (x + width, y + height), color, 2)
                     cv2.putText(frame, f"{label}: {confidence:.2f}", (x, y - 10),
-                                cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
+                                cv2.FONT_HERSHEY_SIMPLEX, 0.9, color, 2)
                 except Exception as e:
                     print(f"Lỗi xử lý khuôn mặt: {e}")
 

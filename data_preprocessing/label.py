@@ -1,8 +1,8 @@
 import os
 import pandas as pd
 
-# output_dir = "G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb/"
-output_dir = "/data_preprocessing/frames_full/"
+output_dir = "G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb/"
+# output_dir = "/data_preprocessing/frames_full/"
 images = os.listdir(output_dir)
 data = []
 
