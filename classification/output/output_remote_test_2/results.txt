@@ -1,0 +1,113 @@
+G:\Hiep\Deepfake_Detection\.venv\Scripts\python.exe G:\Hiep\Deepfake_Detection\classification\advanced_train.py
+Training: 100%|██████████| 1089/1089 [03:15<00:00,  5.56it/s]
+Validation: 100%|██████████| 234/234 [01:02<00:00,  3.77it/s]
+Epoch 1/3: Train Loss: 0.0688, Train Accuracy: 0.5376, Val Loss: 0.0547, Val Accuracy: 0.5537
+Training: 100%|██████████| 1089/1089 [03:18<00:00,  5.47it/s]
+Validation: 100%|██████████| 234/234 [01:03<00:00,  3.67it/s]
+Training:   0%|          | 0/1089 [00:00<?, ?it/s]Epoch 2/3: Train Loss: 0.0552, Train Accuracy: 0.5611, Val Loss: 0.0536, Val Accuracy: 0.4938
+Training: 100%|██████████| 1089/1089 [03:21<00:00,  5.40it/s]
+Validation: 100%|██████████| 234/234 [01:05<00:00,  3.59it/s]
+Epoch 3/3: Train Loss: 0.0539, Train Accuracy: 0.5820, Val Loss: 0.0523, Val Accuracy: 0.7060
+Training: 100%|██████████| 1089/1089 [08:57<00:00,  2.03it/s]
+Validation: 100%|██████████| 234/234 [01:03<00:00,  3.71it/s]
+Finetune Epoch 1/15: Train Loss: 0.0490, Train Accuracy: 0.6614, Val Loss: 0.0348, Val Accuracy: 0.7313
+Training: 100%|██████████| 1089/1089 [09:03<00:00,  2.00it/s]
+Validation: 100%|██████████| 234/234 [01:02<00:00,  3.75it/s]
+Finetune Epoch 2/15: Train Loss: 0.0391, Train Accuracy: 0.7519, Val Loss: 0.0256, Val Accuracy: 0.8862
+Training: 100%|██████████| 1089/1089 [09:00<00:00,  2.01it/s]
+Validation: 100%|██████████| 234/234 [01:02<00:00,  3.75it/s]
+Finetune Epoch 3/15: Train Loss: 0.0342, Train Accuracy: 0.7873, Val Loss: 0.0205, Val Accuracy: 0.8716
+Training: 100%|██████████| 1089/1089 [09:00<00:00,  2.01it/s]
+Validation: 100%|██████████| 234/234 [01:02<00:00,  3.74it/s]
+Finetune Epoch 4/15: Train Loss: 0.0313, Train Accuracy: 0.8145, Val Loss: 0.0195, Val Accuracy: 0.8762
+Training: 100%|██████████| 1089/1089 [08:53<00:00,  2.04it/s]
+Validation: 100%|██████████| 234/234 [01:02<00:00,  3.75it/s]
+Finetune Epoch 5/15: Train Loss: 0.0293, Train Accuracy: 0.8299, Val Loss: 0.0194, Val Accuracy: 0.9071
+Training: 100%|██████████| 1089/1089 [08:52<00:00,  2.05it/s]
+Validation: 100%|██████████| 234/234 [01:02<00:00,  3.77it/s]
+Finetune Epoch 6/15: Train Loss: 0.0273, Train Accuracy: 0.8446, Val Loss: 0.0164, Val Accuracy: 0.8970
+Training: 100%|██████████| 1089/1089 [08:55<00:00,  2.03it/s]
+Validation: 100%|██████████| 234/234 [01:03<00:00,  3.67it/s]
+Finetune Epoch 7/15: Train Loss: 0.0263, Train Accuracy: 0.8504, Val Loss: 0.0156, Val Accuracy: 0.9276
+Training: 100%|██████████| 1089/1089 [08:51<00:00,  2.05it/s]
+Validation: 100%|██████████| 234/234 [01:02<00:00,  3.74it/s]
+Finetune Epoch 8/15: Train Loss: 0.0251, Train Accuracy: 0.8575, Val Loss: 0.0152, Val Accuracy: 0.9177
+Training: 100%|██████████| 1089/1089 [08:55<00:00,  2.03it/s]
+Validation: 100%|██████████| 234/234 [01:03<00:00,  3.68it/s]
+Training:   0%|          | 0/1089 [00:00<?, ?it/s]Finetune Epoch 9/15: Train Loss: 0.0247, Train Accuracy: 0.8618, Val Loss: 0.0161, Val Accuracy: 0.9459
+Training: 100%|██████████| 1089/1089 [08:51<00:00,  2.05it/s]
+Validation: 100%|██████████| 234/234 [01:02<00:00,  3.76it/s]
+Finetune Epoch 10/15: Train Loss: 0.0236, Train Accuracy: 0.8688, Val Loss: 0.0145, Val Accuracy: 0.9298
+Training: 100%|██████████| 1089/1089 [08:58<00:00,  2.02it/s]
+Validation: 100%|██████████| 234/234 [01:02<00:00,  3.73it/s]
+Training:   0%|          | 0/1089 [00:00<?, ?it/s]Finetune Epoch 11/15: Train Loss: 0.0232, Train Accuracy: 0.8740, Val Loss: 0.0149, Val Accuracy: 0.9400
+Training: 100%|██████████| 1089/1089 [08:51<00:00,  2.05it/s]
+Validation: 100%|██████████| 234/234 [01:02<00:00,  3.77it/s]
+Finetune Epoch 12/15: Train Loss: 0.0224, Train Accuracy: 0.8777, Val Loss: 0.0129, Val Accuracy: 0.9338
+Training: 100%|██████████| 1089/1089 [08:52<00:00,  2.04it/s]
+Validation: 100%|██████████| 234/234 [01:01<00:00,  3.81it/s]
+Training:   0%|          | 0/1089 [00:00<?, ?it/s]Finetune Epoch 13/15: Train Loss: 0.0218, Train Accuracy: 0.8819, Val Loss: 0.0159, Val Accuracy: 0.9042
+Training: 100%|██████████| 1089/1089 [08:55<00:00,  2.03it/s]
+Validation: 100%|██████████| 234/234 [00:59<00:00,  3.91it/s]
+Finetune Epoch 14/15: Train Loss: 0.0221, Train Accuracy: 0.8752, Val Loss: 0.0137, Val Accuracy: 0.9416
+Training: 100%|██████████| 1089/1089 [08:48<00:00,  2.06it/s]
+Validation: 100%|██████████| 234/234 [01:02<00:00,  3.73it/s]
+Finetune Epoch 15/15: Train Loss: 0.0206, Train Accuracy: 0.8888, Val Loss: 0.0123, Val Accuracy: 0.9334
+Validation: 100%|██████████| 234/234 [01:02<00:00,  3.76it/s]
+
+Test Results:
+Loss: 0.0122, Accuracy: 0.9361, F1: 0.9587, AUC: 0.9869, MCC: 0.8267
+Fake Detection: 0.9284, Real Detection: 0.9667
+Confusion Matrix:
+Real: 1450 TN, 50 FP
+Fake: 427 FN, 5537 TP
+
+Classification Report:
+              precision    recall  f1-score   support
+
+        Real       0.77      0.97      0.86      1500
+        Fake       0.99      0.93      0.96      5964
+
+    accuracy                           0.94      7464
+   macro avg       0.88      0.95      0.91      7464
+weighted avg       0.95      0.94      0.94      7464
+
+Analyzing Errors: 100%|██████████| 234/234 [01:00<00:00,  3.84it/s]
+Results saved to: G:/Hiep/Deepfake_Detection/classification/output/output_remote_test_2
+
+Process finished with exit code 0
+
+
+
+Test Results:
+Loss: 0.0122
+Accuracy: 0.9361
+F1: 0.9587
+AUC: 0.9869
+MCC: 0.8267
+Fake Detection Rate: 0.9284
+Real Detection Rate: 0.9667
+Confusion Matrix:
+Real: 1450 TN, 50 FP
+Fake: 427 FN, 5537 TP
+
+
+G:\Hiep\Deepfake_Detection\.venv\Scripts\python.exe G:\Hiep\Deepfake_Detection\classification\evl_test_2.py
+Test: 7464 images
+Inference: 100%|██████████| 234/234 [01:00<00:00,  3.84it/s]
+
+Test Results:
+Loss: 0.2056
+Accuracy: 93.6%
+Precision: 99.1%
+Recall: 92.8%
+F1 Score: 95.9%
+AUC: 98.7%
+Average Precision: 99.7%
+Confusion Matrix:
+[[1450   50]
+ [ 427 5537]]
+
+Misclassified samples saved to G:/Hiep/Deepfake_Detection/classification/output/output_remote_test_2/misclassified_samples.txt
+
+Process finished with exit code 0

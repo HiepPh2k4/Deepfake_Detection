@@ -25,9 +25,9 @@ from transforms import DeepfakeDataset, train_transform, val_test_transform
 # MODEL_PATH = "/classification/models_face/models_full"
 # OUTPUT_PATH = "D:/Deepfake_Detection_project/classification/output/output_full"
 
-DATA_PATH = "G:/Hiep/Deepfake_Detection/data_preprocessing/output_split/label_full_remote"
-MODEL_PATH = "G:/Hiep/Deepfake_Detection/classification/models/model_remote_full"
-OUTPUT_PATH = "G:/Hiep/Deepfake_Detection/classification/output/output_remote_full"
+DATA_PATH = "G:/Hiep/Deepfake_Detection/data_preprocessing/output_split/label_test_remote"
+MODEL_PATH = "G:/Hiep/Deepfake_Detection/classification/models/model_remote_testt"
+OUTPUT_PATH = "G:/Hiep/Deepfake_Detection/classification/output/output_remote_testt"
 
 BATCH_SIZE = 32
 NUM_WORKERS = 6
@@ -35,8 +35,8 @@ PRETRAIN_EPOCHS = 3
 FINETUNE_EPOCHS = 15
 LEARNING_RATE = 2e-4
 WEIGHT_DECAY = 1e-4
-POS_WEIGHT = 0.17
-PATIENCE = 5
+POS_WEIGHT = 0.25
+PATIENCE = 7
 
 # Set device
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -104,7 +104,7 @@ def train_model(model, train_loader, val_loader, epochs, save_path):
     """Train model with early stopping and learning rate scheduling."""
     optimizer = optim.Adam(model.parameters(), lr=LEARNING_RATE, weight_decay=WEIGHT_DECAY)
     criterion = nn.BCEWithLogitsLoss(pos_weight=torch.tensor([POS_WEIGHT]).to(DEVICE))
-    scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode="min", factor=0.1, patience=5)
+    scheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode="min", factor=0.1, patience=5) #0.5 vaf 3 tot hon
     best_val_accuracy = 0
     patience_counter = 0
     history = {"train_loss": [], "val_loss": [], "train_acc": [], "val_acc": []}
@@ -202,9 +202,9 @@ def plot_results(history, metrics, test_labels, test_probs, output_path):
 def main():
     """Main function to run training and evaluation."""
     # Load datasets
-    train_dataset = DeepfakeDataset(f"{DATA_PATH}/train_rgb.csv", transform=train_transform)
-    val_dataset = DeepfakeDataset(f"{DATA_PATH}/val_rgb.csv", transform=val_test_transform)
-    test_dataset = DeepfakeDataset(f"{DATA_PATH}/test_rgb.csv", transform=val_test_transform)
+    train_dataset = DeepfakeDataset(f"{DATA_PATH}/train.csv", transform=train_transform)
+    val_dataset = DeepfakeDataset(f"{DATA_PATH}/val.csv", transform=val_test_transform)
+    test_dataset = DeepfakeDataset(f"{DATA_PATH}/test.csv", transform=val_test_transform)
     print(
         f"Train: {len(train_dataset)} images, "
         f"Validation: {len(val_dataset)} images, "
@@ -250,7 +250,7 @@ def main():
 
     # Evaluate on test set
     best_model = create_model()
-    best_model.load_state_dict(torch.load(f"{MODEL_PATH}/deepfake_model_best.pt"))
+    best_model.load_state_dict(torch.load(f"{MODEL_PATH}/deepfake_model_final.pt"))
     criterion = nn.BCEWithLogitsLoss()
     test_loss, metrics, test_labels, test_probs = evaluate_model(best_model, test_loader, criterion)
 
@@ -271,3 +271,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

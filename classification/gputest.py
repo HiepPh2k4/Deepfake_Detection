@@ -63,7 +63,7 @@ def calculate_pos_weight(csv_path):
 
 # Sử dụng:
 # THAY ĐỔI PATH NÀY THÀNH PATH THỰC TẾ CỦA BẠN
-csv_path = "G:/Hiep/Deepfake_Detection/data_preprocessing/output_split/label_full_remote/train_rgb.csv"
+csv_path = "G:/Hiep/Deepfake_Detection/data_preprocessing/output_split/label_test_remote/val.csv"
 
 try:
     optimal_pos_weight = calculate_pos_weight(csv_path)

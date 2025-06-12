@@ -24,7 +24,7 @@ def create_model():
 
 # Tải mô hình
 model = create_model()
-model.load_state_dict(torch.load('G:/Hiep/Deepfake_Detection/classification/models/model_remote_full/deepfake_model_best.pt', map_location=device))
+model.load_state_dict(torch.load('G:/Hiep/Deepfake_Detection/classification/models/model_remote_full/deepfake_model_final.pt', map_location=device))
 model.eval()
 print("Đã tải mô hình XceptionNet!")
 

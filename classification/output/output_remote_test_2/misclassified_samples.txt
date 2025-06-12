@@ -1,0 +1,2385 @@
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_359_317_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4305
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_077_100_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4725
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_512_495_frame3.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4392
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_712_716_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2836
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_726_713_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3653
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_215_208_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3613
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_947_951_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4584
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_101_096_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1676
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Face2Face_024_073_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2745
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_631_551_frame3.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4305
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_442_195_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2200
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_325_frame8.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5708
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_091_116_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4995
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_233_995_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4968
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_324_356_frame6.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4013
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Face2Face_227_169_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4630
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_312_021_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3290
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_456_435_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4511
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_794_779_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3798
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_622_frame1.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5001
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_582_172_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4432
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_495_512_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4155
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_759_755_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3534
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_632_548_frame3.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2248
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_626_562_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2204
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_113_983_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4964
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_907_795_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4566
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_497_403_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4378
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_873_872_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2418
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Face2Face_014_790_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4854
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_632_548_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4223
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_450_533_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2870
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_074_frame4.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.6651
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_240_290_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3568
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_850_frame5.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.6040
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_951_frame3.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5452
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Face2Face_562_626_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4110
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_175_159_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3468
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_423_421_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2180
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_304_300_frame3.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2028
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_777_frame8.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5103
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_519_515_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4530
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_048_029_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2402
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_629_618_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3339
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_427_frame0.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5085
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_036_035_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4570
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_212_179_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.0752
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Face2Face_824_419_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1417
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_736_785_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4811
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_197_224_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1783
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_326_501_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1785
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_569_921_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3811
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_626_562_frame3.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2457
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_233_995_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1861
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Face2Face_133_148_frame6.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4841
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_492_frame2.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.7402
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_654_648_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1308
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_897_969_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1903
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_431_447_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2850
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_485_425_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4516
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_423_421_frame6.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3058
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_304_300_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4568
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_762_832_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4365
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_705_frame7.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5358
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_016_209_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3403
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_764_frame2.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5212
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_268_269_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4823
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_756_503_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3341
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_271_264_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3390
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_538_493_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1915
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_955_078_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4811
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Face2Face_525_509_frame3.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3720
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_033_097_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3342
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_109_frame8.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5053
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_526_436_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4871
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_280_249_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4947
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_709_390_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3849
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_508_831_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2933
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Face2Face_991_064_frame6.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4854
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_986_994_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3465
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_095_053_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4781
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Face2Face_711_681_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2927
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_226_frame3.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5458
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_647_622_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3189
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_554_572_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4020
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_516_frame4.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5285
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_387_311_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3403
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_592_500_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3566
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_419_824_frame6.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4058
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_884_968_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4961
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_149_152_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4588
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_399_488_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4805
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_279_298_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3209
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_257_420_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4971
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_791_770_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4979
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_819_frame0.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5334
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_344_020_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.0668
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_943_942_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2066
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Face2Face_951_947_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4193
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_985_frame9.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5462
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_492_325_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3035
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_115_939_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.0956
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_599_frame7.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.6295
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Face2Face_171_173_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4232
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_824_419_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1905
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_443_514_frame6.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3924
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_226_491_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2797
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_093_121_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4609
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_129_127_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4408
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_101_096_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1768
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_508_831_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3463
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_734_699_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4714
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_472_511_frame6.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4654
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_058_039_frame3.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2781
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_036_035_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2842
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_284_263_frame3.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4252
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Face2Face_092_098_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3984
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_903_792_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3760
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_198_106_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4365
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_871_814_frame3.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3546
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_917_924_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3822
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_497_403_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4943
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_045_889_frame6.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4603
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_811_920_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4039
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_543_559_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2614
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_007_132_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3598
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_127_129_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4431
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_062_066_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4502
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_430_459_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3668
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_198_106_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4622
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_345_259_frame6.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4399
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_426_frame3.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.6366
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_157_245_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4098
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_657_644_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4114
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Face2Face_227_169_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2546
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_077_100_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3659
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_675_608_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1922
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_575_603_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4652
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_552_851_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3272
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_083_213_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4945
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Face2Face_379_158_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4220
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_298_279_frame3.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2218
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_418_507_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4624
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_005_010_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4637
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_541_523_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4428
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_730_frame1.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5620
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_473_366_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4206
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_997_040_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4317
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_238_282_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4376
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_368_378_frame3.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4304
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_071_054_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1832
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_513_frame7.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5318
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_509_525_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4657
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_314_347_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4818
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_496_417_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4739
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_765_867_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4825
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_345_259_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2351
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_554_frame3.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5579
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_292_294_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1147
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_664_668_frame6.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2225
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_838_810_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3872
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_878_866_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2947
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_943_942_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4945
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_797_844_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3473
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_491_226_frame6.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1869
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_381_376_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1673
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_526_436_frame3.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4619
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_721_715_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4192
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_383_353_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4442
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_770_791_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2413
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_889_045_frame6.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3796
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_840_800_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1814
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_506_478_frame6.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3789
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_908_207_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4971
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_408_424_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4959
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_526_436_frame3.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4793
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_771_849_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3255
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_395_401_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3604
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_637_427_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3809
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_010_005_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2149
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_069_961_frame3.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3946
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_223_586_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1803
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_115_939_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2581
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_274_frame3.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5200
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_683_607_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3162
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_572_554_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4049
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_502_504_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1537
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_502_504_frame3.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2531
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_949_868_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4669
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_453_402_frame3.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4759
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_615_687_frame3.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4094
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_492_325_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4763
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_867_765_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1336
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_522_337_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1645
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_995_233_frame3.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4664
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_370_483_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2239
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_148_133_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3942
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_027_009_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3674
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_497_403_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3583
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_383_353_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3316
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_096_101_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1303
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Face2Face_824_419_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3229
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_245_157_frame6.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3061
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_878_866_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1840
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_878_866_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2801
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_862_047_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4707
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_047_862_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4963
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_923_023_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3704
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_183_253_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4298
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_423_421_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3283
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_344_020_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.0800
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_587_535_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4819
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_766_761_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3386
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_083_213_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1848
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_464_463_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4381
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_512_495_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3649
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_174_964_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2849
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_499_539_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1293
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_874_291_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4891
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_772_708_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2310
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_473_366_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2592
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_629_618_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4367
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_073_024_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4841
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_820_818_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4611
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_617_566_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1337
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_055_147_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1357
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_475_frame0.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5287
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_155_576_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4635
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_508_831_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3565
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_931_frame1.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.6208
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_860_905_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3448
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_300_304_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2725
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_133_148_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1677
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_070_057_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4852
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_452_frame7.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5764
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_378_368_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2808
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_338_336_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4867
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_705_frame8.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5574
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_564_971_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4285
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_688_645_frame3.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2108
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_397_602_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4989
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_826_frame3.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5110
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_307_365_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4198
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_149_152_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4159
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_212_179_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.0699
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_619_620_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3319
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_930_frame0.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5450
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_212_179_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1594
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_279_298_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2567
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_103_082_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3300
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_554_572_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3955
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_712_716_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1350
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_248_232_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4383
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_130_139_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3221
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_889_045_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3486
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_789_753_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.0915
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_804_738_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1324
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_736_785_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3791
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_871_frame5.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5174
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_735_774_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4011
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_319_352_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3278
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_685_613_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4407
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_655_444_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3729
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_234_187_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4867
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_642_635_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2041
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_533_450_frame6.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4345
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Face2Face_824_419_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.0498
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_204_230_frame3.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3640
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_659_749_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3609
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_148_133_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4818
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_808_829_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3953
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_600_505_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4658
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_620_619_frame3.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4027
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_873_872_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2365
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_728_673_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4755
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_593_577_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2382
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_992_980_frame6.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3930
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_613_685_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4472
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_675_608_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1698
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_764_frame8.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5221
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_524_580_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4267
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_474_281_frame6.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4999
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_819_786_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4901
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_889_045_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3139
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_883_013_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4340
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Face2Face_024_073_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4005
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_088_060_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1986
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_768_793_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4647
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_778_798_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3928
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_845_846_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4145
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_419_824_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2767
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_053_095_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3661
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_274_frame4.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5772
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_383_353_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2311
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_204_230_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1348
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_824_419_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1185
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_936_frame9.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5276
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_137_165_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3979
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_898_922_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3837
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Face2Face_156_243_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3633
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_423_421_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1776
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_100_077_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2513
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_140_frame5.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5749
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_456_435_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3841
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_239_218_frame6.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2930
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_551_631_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4132
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_641_662_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2170
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_604_703_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1741
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_004_982_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3190
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_252_266_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2497
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_555_516_frame6.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4761
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_731_741_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3703
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_226_491_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3090
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_148_133_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4611
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_431_447_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4068
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_233_995_frame3.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3089
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_775_742_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4764
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_027_009_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2044
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_012_026_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4107
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_205_184_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3335
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_597_595_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2258
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_679_665_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1464
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_843_859_frame3.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4806
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_858_frame9.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.6069
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_906_frame9.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.6623
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_354_362_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4844
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_846_845_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4540
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_878_866_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1941
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_749_frame6.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5947
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_620_frame6.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5193
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_240_290_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2590
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_765_867_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4488
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_419_824_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2683
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_053_095_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4363
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_271_264_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3959
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_688_frame2.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.7182
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_526_436_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3703
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_840_800_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2607
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_075_977_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4690
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_252_266_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4307
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_037_072_frame3.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.0995
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_922_898_frame3.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4062
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_690_689_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2375
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_223_586_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2887
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Face2Face_829_808_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4865
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_826_833_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4900
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_438_434_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2962
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_443_514_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4853
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_846_845_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2729
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_522_337_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1693
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_842_714_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2569
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_856_881_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3190
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Face2Face_683_607_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4735
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_449_451_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1652
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_615_687_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3501
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_698_frame1.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5143
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_473_366_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3378
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_499_539_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4265
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_826_833_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4209
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_103_082_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4941
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Face2Face_171_173_frame3.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4001
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_161_141_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4784
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_113_983_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3248
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_684_717_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3340
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_737_719_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4407
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_116_091_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4102
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_019_018_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2251
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_873_872_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3193
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_408_424_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4743
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_470_468_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3725
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_302_323_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3046
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_826_frame9.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5371
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_889_045_frame3.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4432
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_209_frame1.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5437
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_470_468_frame3.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4572
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_313_283_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3934
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_016_209_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4480
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_139_130_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3331
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_345_259_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4046
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_456_435_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3796
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_619_620_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4501
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_873_872_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2911
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_491_226_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3606
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_955_078_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2341
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_087_081_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2646
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_892_112_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3446
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_976_954_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4021
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_728_673_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3628
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_314_347_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3784
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_828_830_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4131
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_240_290_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3014
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_354_362_frame3.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3647
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_641_662_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4228
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_304_300_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3428
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_506_478_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2895
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_021_312_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4317
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Face2Face_078_955_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4367
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_601_653_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4387
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_869_780_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4762
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Face2Face_922_898_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4459
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_361_448_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4873
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Face2Face_526_436_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2639
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_155_576_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4663
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_075_977_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4851
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_062_066_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4846
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_033_097_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4761
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_281_474_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2470
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_642_635_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4639
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_088_060_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3593
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Face2Face_115_939_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3846
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_817_frame7.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5126
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_243_156_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2926
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_702_612_frame6.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4586
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_673_frame2.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5109
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_489_022_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3521
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_626_562_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1162
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_255_214_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3410
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_243_156_frame3.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3666
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_233_995_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2522
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_098_092_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4678
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_416_342_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3302
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_601_653_frame6.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3282
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_692_610_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4951
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_083_213_frame6.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4845
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_521_517_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4142
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_427_frame1.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5085
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_277_335_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3656
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_010_005_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3922
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Face2Face_873_872_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2641
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_738_804_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3339
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_223_586_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3775
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_084_042_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3679
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_824_419_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2205
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_667_frame5.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5033
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_824_419_frame6.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2990
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_807_frame3.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5482
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_092_098_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4310
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_334_318_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1706
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_281_474_frame6.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2078
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_533_450_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4663
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_807_273_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3226
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_133_148_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2445
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_179_frame6.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5166
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_797_frame7.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5586
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_386_154_frame6.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4981
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_163_031_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4846
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_749_659_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2510
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_723_frame3.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5017
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_523_541_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3926
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_415_484_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1790
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_468_470_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2880
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_368_378_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4262
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Face2Face_016_209_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4267
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_565_frame7.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5333
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_496_417_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3832
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_148_133_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4547
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Face2Face_345_259_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3015
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_551_631_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3927
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_229_247_frame6.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3544
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_629_618_frame9.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3113
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_566_617_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4568
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_891_876_frame3.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4745
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_993_989_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4997
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_212_179_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.1448
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_050_059_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4638
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_974_953_frame7.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2226
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_450_533_frame2.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2962
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_522_337_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4937
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_756_503_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.3902
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_216_164_frame0.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.0921
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_892_112_frame8.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2215
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_986_994_frame6.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4415
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_702_612_frame4.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2723
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_166_167_frame5.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4978
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_583_558_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.4926
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_966_frame4.jpg
+True Label: 0.0
+Predicted Label: 1
+Probability: 0.5176
+--------------------------------------------------
+Image Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_753_789_frame1.jpg
+True Label: 1.0
+Predicted Label: 0
+Probability: 0.2647
+--------------------------------------------------
