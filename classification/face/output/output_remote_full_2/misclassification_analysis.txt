@@ -1,0 +1,27 @@
+Total misclassified samples: 997
+Fake misclassified as Real: 868
+Real misclassified as Fake: 129
+
+Fake misclassified as Real:
+1. Index: 11095, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_DeepFakeDetection_13_02__walking_down_indoor_hall_disgust__CP5HFV3K_frame3.jpg, Confidence: 0.9445
+2. Index: 2947, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_344_020_frame8.jpg, Confidence: 0.9247
+3. Index: 9148, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceShifter_105_180_frame5.jpg, Confidence: 0.9032
+4. Index: 10017, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_DeepFakeDetection_03_14__walking_down_indoor_hall_disgust__KJ221YN0_frame9.jpg, Confidence: 0.8987
+5. Index: 9536, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_DeepFakeDetection_07_06__podium_speech_happy__NMGYPBXE_frame7.jpg, Confidence: 0.8958
+6. Index: 9459, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_DeepFakeDetection_06_18__outside_talking_pan_laughing__DEA1TCLN_frame6.jpg, Confidence: 0.8945
+7. Index: 9596, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_223_586_frame0.jpg, Confidence: 0.8826
+8. Index: 2515, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceShifter_506_478_frame2.jpg, Confidence: 0.8810
+9. Index: 4479, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_281_474_frame7.jpg, Confidence: 0.8809
+10. Index: 6876, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_DeepFakeDetection_27_25__walking_down_indoor_hall_disgust__GNIMW95Z_frame8.jpg, Confidence: 0.8656
+
+Real misclassified as Fake:
+1. Index: 5950, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_actors_26__talking_against_wall_frame1.jpg, Confidence: 0.8655
+2. Index: 11502, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_622_frame1.jpg, Confidence: 0.8492
+3. Index: 4215, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_313_frame2.jpg, Confidence: 0.8383
+4. Index: 5011, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_216_frame9.jpg, Confidence: 0.7993
+5. Index: 4222, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_408_frame0.jpg, Confidence: 0.7992
+6. Index: 4897, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_454_frame4.jpg, Confidence: 0.7882
+7. Index: 9344, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_actors_25__outside_talking_still_laughing_frame5.jpg, Confidence: 0.7755
+8. Index: 12935, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_actors_27__walking_and_outside_surprised_frame5.jpg, Confidence: 0.7701
+9. Index: 4267, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_790_frame4.jpg, Confidence: 0.7700
+10. Index: 5909, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_835_frame4.jpg, Confidence: 0.7417

@@ -1,0 +1,39 @@
+G:\Hiep\Deepfake_Detection\.venv\Scripts\python.exe G:\Hiep\Deepfake_Detection\classification\multimodels_test\train_shufflenet_v2.py
+Number of training images: 65788
+Number of validation images: 14097
+Number of test images: 14098
+Epoch 2/18 [Train]:   0%|          | 0/2056 [00:00<?, ?it/s]Epoch 1/18, Train Loss: 0.0287, Train Accuracy: 0.8507, Validation Loss: 0.0195, Validation Accuracy: 0.9076
+Epoch 3/18 [Train]:   0%|          | 0/2056 [00:00<?, ?it/s]Epoch 2/18, Train Loss: 0.0177, Train Accuracy: 0.9070, Validation Loss: 0.0167, Validation Accuracy: 0.8886
+Epoch 4/18 [Train]:   0%|          | 0/2056 [00:00<?, ?it/s]Epoch 3/18, Train Loss: 0.0139, Train Accuracy: 0.9266, Validation Loss: 0.0163, Validation Accuracy: 0.8921
+Epoch 5/18 [Train]:   0%|          | 0/2056 [00:00<?, ?it/s]Epoch 4/18, Train Loss: 0.0119, Train Accuracy: 0.9375, Validation Loss: 0.0150, Validation Accuracy: 0.9232
+Epoch 6/18 [Train]:   0%|          | 0/2056 [00:00<?, ?it/s]Epoch 5/18, Train Loss: 0.0106, Train Accuracy: 0.9440, Validation Loss: 0.0171, Validation Accuracy: 0.9225
+Epoch 7/18 [Train]:   0%|          | 0/2056 [00:00<?, ?it/s]Epoch 6/18, Train Loss: 0.0099, Train Accuracy: 0.9491, Validation Loss: 0.0148, Validation Accuracy: 0.9271
+Epoch 8/18 [Train]:   0%|          | 0/2056 [00:00<?, ?it/s]Epoch 7/18, Train Loss: 0.0089, Train Accuracy: 0.9543, Validation Loss: 0.0139, Validation Accuracy: 0.9342
+Epoch 9/18 [Train]:   0%|          | 0/2056 [00:00<?, ?it/s]Epoch 8/18, Train Loss: 0.0089, Train Accuracy: 0.9542, Validation Loss: 0.0151, Validation Accuracy: 0.9437
+Epoch 10/18 [Train]:   0%|          | 0/2056 [00:00<?, ?it/s]Epoch 9/18, Train Loss: 0.0081, Train Accuracy: 0.9578, Validation Loss: 0.0164, Validation Accuracy: 0.9469
+Epoch 11/18 [Train]:   0%|          | 0/2056 [00:00<?, ?it/s]Epoch 10/18, Train Loss: 0.0083, Train Accuracy: 0.9577, Validation Loss: 0.0157, Validation Accuracy: 0.9362
+Epoch 12/18 [Train]:   0%|          | 0/2056 [00:00<?, ?it/s]Epoch 11/18, Train Loss: 0.0078, Train Accuracy: 0.9614, Validation Loss: 0.0190, Validation Accuracy: 0.9014
+Epoch 12/18, Train Loss: 0.0075, Train Accuracy: 0.9638, Validation Loss: 0.0164, Validation Accuracy: 0.9489
+Early stopping triggered after 12 epochs
+Saved final model ShuffleNetV2!
+
+Evaluation results for ShuffleNetV2 on test set:
+accuracy: 0.9478
+f1: 0.9693
+auc: 0.9810
+mcc: 0.7975
+fake_detection_rate: 0.9620
+real_detection_rate: 0.8637
+confusion_matrix:
+[[ 1762   278]
+ [  458 11600]]
+true_negatives: 1762
+false_positives: 278
+false_negatives: 458
+true_positives: 11600
+
+Number of misclassified samples: 736
+Some misclassified samples (displaying up to 5):
+Saved model ShuffleNetV2!
+
+Process finished with exit code 0

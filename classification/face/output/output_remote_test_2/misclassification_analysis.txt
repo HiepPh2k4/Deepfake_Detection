@@ -1,0 +1,27 @@
+Total misclassified samples: 477
+Fake misclassified as Real: 427
+Real misclassified as Fake: 50
+
+Fake misclassified as Real:
+1. Index: 4256, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Face2Face_824_419_frame7.jpg, Confidence: 0.9502
+2. Index: 1567, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_Deepfakes_344_020_frame0.jpg, Confidence: 0.9332
+3. Index: 3948, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_212_179_frame0.jpg, Confidence: 0.9301
+4. Index: 809, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_212_179_frame9.jpg, Confidence: 0.9248
+5. Index: 3458, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_344_020_frame0.jpg, Confidence: 0.9200
+6. Index: 4083, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_789_753_frame0.jpg, Confidence: 0.9085
+7. Index: 7360, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_216_164_frame0.jpg, Confidence: 0.9079
+8. Index: 1660, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_NeuralTextures_115_939_frame4.jpg, Confidence: 0.9044
+9. Index: 5373, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_037_072_frame3.jpg, Confidence: 0.9005
+10. Index: 2589, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/fake_FaceSwap_292_294_frame0.jpg, Confidence: 0.8853
+
+Real misclassified as Fake:
+1. Index: 918, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_492_frame2.jpg, Confidence: 0.7402
+2. Index: 5290, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_688_frame2.jpg, Confidence: 0.7182
+3. Index: 532, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_074_frame4.jpg, Confidence: 0.6651
+4. Index: 5117, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_906_frame9.jpg, Confidence: 0.6623
+5. Index: 2090, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_426_frame3.jpg, Confidence: 0.6366
+6. Index: 1684, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_599_frame7.jpg, Confidence: 0.6295
+7. Index: 3733, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_931_frame1.jpg, Confidence: 0.6208
+8. Index: 5110, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_858_frame9.jpg, Confidence: 0.6069
+9. Index: 618, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_850_frame5.jpg, Confidence: 0.6040
+10. Index: 5142, Path: G:/Hiep/Deepfake_Detection/data_preprocessing/frames/frames_mtcnn_rgb_full/real_youtube_749_frame6.jpg, Confidence: 0.5947

@@ -1,5 +1,0 @@
-Test AUC: 0.9995
-Test Accuracy: 0.9870
-Test Precision: 0.9895
-Test Recall: 0.9844
-Test F1-Score: 0.9869
