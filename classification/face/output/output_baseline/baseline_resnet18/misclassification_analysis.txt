@@ -1,0 +1,39 @@
+MISCLASSIFICATION ANALYSIS - ResNet18
+============================================================
+
+Total misclassified samples: 2432
+Fake misclassified as Real: 1930
+Real misclassified as Fake: 502
+
+TOP 5 FAKE MISCLASSIFIED AS REAL:
+1. G:/Hiep/Deepfake_Detection/data_preprocessing/frames\fake_NeuralTextures_344_020\frame12.jpg
+   Confidence: 0.9186
+
+2. G:/Hiep/Deepfake_Detection/data_preprocessing/frames\fake_NeuralTextures_548_632\frame6.jpg
+   Confidence: 0.9107
+
+3. G:/Hiep/Deepfake_Detection/data_preprocessing/frames\fake_NeuralTextures_344_020\frame0.jpg
+   Confidence: 0.9094
+
+4. G:/Hiep/Deepfake_Detection/data_preprocessing/frames\fake_NeuralTextures_344_020\frame9.jpg
+   Confidence: 0.9080
+
+5. G:/Hiep/Deepfake_Detection/data_preprocessing/frames\fake_NeuralTextures_344_020\frame13.jpg
+   Confidence: 0.8987
+
+TOP 5 REAL MISCLASSIFIED AS FAKE:
+1. G:/Hiep/Deepfake_Detection/data_preprocessing/frames\real_youtube_399\frame3.jpg
+   Confidence: 0.9355
+
+2. G:/Hiep/Deepfake_Detection/data_preprocessing/frames\real_youtube_145\frame3.jpg
+   Confidence: 0.9233
+
+3. G:/Hiep/Deepfake_Detection/data_preprocessing/frames\real_youtube_145\frame14.jpg
+   Confidence: 0.9136
+
+4. G:/Hiep/Deepfake_Detection/data_preprocessing/frames\real_youtube_145\frame9.jpg
+   Confidence: 0.9004
+
+5. G:/Hiep/Deepfake_Detection/data_preprocessing/frames\real_youtube_145\frame13.jpg
+   Confidence: 0.8955
+

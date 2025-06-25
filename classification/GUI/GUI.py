@@ -124,7 +124,7 @@ class DeepfakeGUI(QMainWindow):
             label = "Fake" if avg_prob > 0.5 else "Real"
             self.result_label.setText(f"Prediction: {label} ({avg_prob*100:.1f}%)")
         else:
-            self.result_label.setText("Error: No valid frames")
+            self.result_label.setText("Error: No valid ff_frames")
 
     def predict_frame(self, frame_rgb):
         """Predict real/fake for a single frame."""

@@ -1,0 +1,14 @@
+{
+  "model_name": "EfficientNet-B0",
+  "test_loss": 0.019708786816388473,
+  "accuracy": 0.9001040582726326,
+  "f1": 0.9397810218978102,
+  "auc": 0.9545016540852364,
+  "mcc": 0.6597122886318242,
+  "fake_detection_rate": 0.9112524191318773,
+  "real_detection_rate": 0.8341511285574092,
+  "inference_time_ms": 1.4475415326057934,
+  "fps": 690.8264650616615,
+  "parameters_millions": 4.008829,
+  "total_misclassified": 2112
+}

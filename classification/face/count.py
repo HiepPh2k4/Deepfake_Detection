@@ -63,7 +63,7 @@ def calculate_pos_weight(csv_path):
 
 # Sử dụng:
 # THAY ĐỔI PATH NÀY THÀNH PATH THỰC TẾ CỦA BẠN
-csv_path = "G:/Hiep/Deepfake_Detection/data_preprocessing/output_split/label_full_remote/train_rgb.csv"
+csv_path = "G:/Hiep/Deepfake_Detection/data_preprocessing/output_split/train.csv"
 
 try:
     optimal_pos_weight = calculate_pos_weight(csv_path)
@@ -78,6 +78,6 @@ except Exception as e:
 # print("-----------------------------------------------------------------------")
 #
 # import os
-# fake_count = len(os.listdir("D:/Deepfake_Detection_project/data_preprocessing/output_audio/train/fake"))
-# real_count = len(os.listdir("D:/Deepfake_Detection_project/data_preprocessing/output_audio/train/real"))
+# fake_count = len(os.listdir("D:/Deepfake_Detection_project/data_preprocessing/fakeavceleb_frames/train/fake"))
+# real_count = len(os.listdir("D:/Deepfake_Detection_project/data_preprocessing/fakeavceleb_frames/train/real"))
 # print(f"Fake: {fake_count}, Real: {real_count}")

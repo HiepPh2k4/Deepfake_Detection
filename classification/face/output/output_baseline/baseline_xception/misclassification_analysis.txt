@@ -1,0 +1,39 @@
+MISCLASSIFICATION ANALYSIS - Xception
+============================================================
+
+Total misclassified samples: 2894
+Fake misclassified as Real: 2573
+Real misclassified as Fake: 321
+
+TOP 5 FAKE MISCLASSIFIED AS REAL:
+1. G:/Hiep/Deepfake_Detection/data_preprocessing/frames\fake_NeuralTextures_344_020\frame12.jpg
+   Confidence: 0.9592
+
+2. G:/Hiep/Deepfake_Detection/data_preprocessing/frames\fake_NeuralTextures_344_020\frame13.jpg
+   Confidence: 0.9426
+
+3. G:/Hiep/Deepfake_Detection/data_preprocessing/frames\fake_Face2Face_824_419\frame10.jpg
+   Confidence: 0.9363
+
+4. G:/Hiep/Deepfake_Detection/data_preprocessing/frames\fake_NeuralTextures_233_995\frame12.jpg
+   Confidence: 0.9333
+
+5. G:/Hiep/Deepfake_Detection/data_preprocessing/frames\fake_NeuralTextures_344_020\frame6.jpg
+   Confidence: 0.9332
+
+TOP 5 REAL MISCLASSIFIED AS FAKE:
+1. G:/Hiep/Deepfake_Detection/data_preprocessing/frames\real_youtube_226\frame5.jpg
+   Confidence: 0.9434
+
+2. G:/Hiep/Deepfake_Detection/data_preprocessing/frames\real_actors_20__walking_and_outside_surprised\frame4.jpg
+   Confidence: 0.9072
+
+3. G:/Hiep/Deepfake_Detection/data_preprocessing/frames\real_actors_21__walking_and_outside_surprised\frame4.jpg
+   Confidence: 0.9072
+
+4. G:/Hiep/Deepfake_Detection/data_preprocessing/frames\real_youtube_030\frame7.jpg
+   Confidence: 0.9019
+
+5. G:/Hiep/Deepfake_Detection/data_preprocessing/frames\real_youtube_403\frame2.jpg
+   Confidence: 0.8711
+

@@ -1,0 +1,624 @@
+D:\Anaconda\envs\deepfake39_env\python.exe D:\Deepfake_Detection_project\classification\voice\Implementation\baseline\baseline_train.py
+Starting training of baseline models...
+Available models: shufflenet, efficientnet, squeezenet
+D:\Anaconda\envs\deepfake39_env\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+D:\Anaconda\envs\deepfake39_env\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ShuffleNet_V2_X0_5_Weights.IMAGENET1K_V1`. You can also use `weights=ShuffleNet_V2_X0_5_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Number of training samples: 2411
+Number of validation samples: 603
+Number of test samples: 1710
+Classes: ['real', 'fake']
+Class distribution: [1205 1206]
+Class weights: tensor([1.0004, 0.9996], device='cuda:0')
+
+SHUFFLENET Model (Mel spectrogram input, 299x299):
+  Total parameters: 343,842
+  Trainable parameters: 343,842
+  Size: 1.31 MB
+
+Starting training for shufflenet...
+Epoch: 100%|██████████| 101/101 [00:23<00:00,  4.25it/s]
+Epoch 1: Train Loss=0.6920, Train Acc=0.5404, Train F1=0.5564, Train AUC=0.5623
+           Val Loss=0.6897, Val Acc=0.7148, Val F1=0.7124, Val AUC=0.7908
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:23<00:00,  4.30it/s]
+Epoch 2: Train Loss=0.6901, Train Acc=0.5807, Train F1=0.5540, Train AUC=0.6169
+           Val Loss=0.6864, Val Acc=0.7512, Val F1=0.7312, Val AUC=0.8612
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:23<00:00,  4.23it/s]
+Epoch 3: Train Loss=0.6880, Train Acc=0.6109, Train F1=0.5904, Train AUC=0.6612
+           Val Loss=0.6826, Val Acc=0.7811, Val F1=0.7668, Val AUC=0.8872
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.18it/s]
+Epoch 4: Train Loss=0.6851, Train Acc=0.6483, Train F1=0.6388, Train AUC=0.7033
+           Val Loss=0.6779, Val Acc=0.7944, Val F1=0.7855, Val AUC=0.8972
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.16it/s]
+Epoch 5: Train Loss=0.6813, Train Acc=0.6761, Train F1=0.6689, Train AUC=0.7441
+           Val Loss=0.6716, Val Acc=0.8259, Val F1=0.8229, Val AUC=0.9085
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.15it/s]
+Epoch 6: Train Loss=0.6779, Train Acc=0.6786, Train F1=0.6715, Train AUC=0.7302
+           Val Loss=0.6632, Val Acc=0.8242, Val F1=0.8203, Val AUC=0.9143
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.12it/s]
+Epoch 7: Train Loss=0.6721, Train Acc=0.7084, Train F1=0.7070, Train AUC=0.7656
+           Val Loss=0.6516, Val Acc=0.8358, Val F1=0.8302, Val AUC=0.9199
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.12it/s]
+Epoch 8: Train Loss=0.6623, Train Acc=0.7055, Train F1=0.7014, Train AUC=0.7627
+           Val Loss=0.6359, Val Acc=0.8342, Val F1=0.8288, Val AUC=0.9264
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.11it/s]
+Epoch 9: Train Loss=0.6530, Train Acc=0.7271, Train F1=0.7238, Train AUC=0.7978
+           Val Loss=0.6160, Val Acc=0.8375, Val F1=0.8419, Val AUC=0.9322
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.13it/s]
+Epoch 10: Train Loss=0.6417, Train Acc=0.7495, Train F1=0.7469, Train AUC=0.8195
+           Val Loss=0.5901, Val Acc=0.8441, Val F1=0.8494, Val AUC=0.9414
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.13it/s]
+Epoch 11: Train Loss=0.6264, Train Acc=0.7565, Train F1=0.7579, Train AUC=0.8196
+           Val Loss=0.5633, Val Acc=0.8524, Val F1=0.8576, Val AUC=0.9476
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.12it/s]
+Epoch 12: Train Loss=0.6089, Train Acc=0.7271, Train F1=0.7276, Train AUC=0.7837
+           Val Loss=0.5193, Val Acc=0.8624, Val F1=0.8650, Val AUC=0.9524
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.12it/s]
+Epoch 13: Train Loss=0.5890, Train Acc=0.7491, Train F1=0.7517, Train AUC=0.8019
+           Val Loss=0.4866, Val Acc=0.8657, Val F1=0.8752, Val AUC=0.9618
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.12it/s]
+Epoch 14: Train Loss=0.5706, Train Acc=0.7321, Train F1=0.7352, Train AUC=0.7892
+           Val Loss=0.4496, Val Acc=0.8723, Val F1=0.8802, Val AUC=0.9679
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.09it/s]
+Epoch 15: Train Loss=0.5418, Train Acc=0.7677, Train F1=0.7701, Train AUC=0.8246
+           Val Loss=0.4151, Val Acc=0.8806, Val F1=0.8909, Val AUC=0.9738
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.12it/s]
+Epoch 16: Train Loss=0.5155, Train Acc=0.7636, Train F1=0.7649, Train AUC=0.8175
+           Val Loss=0.3759, Val Acc=0.8922, Val F1=0.9002, Val AUC=0.9767
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:27<00:00,  3.65it/s]
+Epoch 17: Train Loss=0.5045, Train Acc=0.7872, Train F1=0.7907, Train AUC=0.8474
+           Val Loss=0.3474, Val Acc=0.9038, Val F1=0.9099, Val AUC=0.9798
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:25<00:00,  4.03it/s]
+Epoch 18: Train Loss=0.4727, Train Acc=0.7943, Train F1=0.7940, Train AUC=0.8523
+           Val Loss=0.3263, Val Acc=0.8988, Val F1=0.9069, Val AUC=0.9834
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.08it/s]
+Epoch 19: Train Loss=0.4577, Train Acc=0.7831, Train F1=0.7838, Train AUC=0.8458
+           Val Loss=0.2842, Val Acc=0.9187, Val F1=0.9233, Val AUC=0.9859
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:25<00:00,  4.00it/s]
+Epoch 20: Train Loss=0.4300, Train Acc=0.7972, Train F1=0.7985, Train AUC=0.8527
+           Val Loss=0.2709, Val Acc=0.9104, Val F1=0.9167, Val AUC=0.9878
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.10it/s]
+Epoch 21: Train Loss=0.4045, Train Acc=0.8171, Train F1=0.8160, Train AUC=0.8697
+           Val Loss=0.2537, Val Acc=0.9254, Val F1=0.9300, Val AUC=0.9902
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:25<00:00,  3.99it/s]
+Epoch 22: Train Loss=0.3962, Train Acc=0.8378, Train F1=0.8381, Train AUC=0.8919
+           Val Loss=0.2309, Val Acc=0.9270, Val F1=0.9315, Val AUC=0.9914
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:25<00:00,  4.01it/s]
+Epoch 23: Train Loss=0.3897, Train Acc=0.7926, Train F1=0.7936, Train AUC=0.8462
+           Val Loss=0.2156, Val Acc=0.9270, Val F1=0.9315, Val AUC=0.9925
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.14it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 24: Train Loss=0.3573, Train Acc=0.8134, Train F1=0.8140, Train AUC=0.8552
+           Val Loss=0.2190, Val Acc=0.9303, Val F1=0.9346, Val AUC=0.9925
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.11it/s]
+Epoch 25: Train Loss=0.3616, Train Acc=0.7793, Train F1=0.7809, Train AUC=0.8154
+           Val Loss=0.2028, Val Acc=0.9353, Val F1=0.9390, Val AUC=0.9930
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.11it/s]
+Epoch 26: Train Loss=0.3616, Train Acc=0.8026, Train F1=0.8023, Train AUC=0.8555
+           Val Loss=0.1952, Val Acc=0.9353, Val F1=0.9390, Val AUC=0.9941
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.10it/s]
+Epoch 27: Train Loss=0.3414, Train Acc=0.8461, Train F1=0.8469, Train AUC=0.8961
+           Val Loss=0.1772, Val Acc=0.9453, Val F1=0.9479, Val AUC=0.9947
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.09it/s]
+Epoch 28: Train Loss=0.3355, Train Acc=0.8258, Train F1=0.8264, Train AUC=0.8715
+           Val Loss=0.1748, Val Acc=0.9453, Val F1=0.9479, Val AUC=0.9947
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.10it/s]
+Epoch 29: Train Loss=0.3074, Train Acc=0.8428, Train F1=0.8428, Train AUC=0.8908
+           Val Loss=0.1694, Val Acc=0.9436, Val F1=0.9464, Val AUC=0.9952
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.12it/s]
+Epoch 30: Train Loss=0.3111, Train Acc=0.8084, Train F1=0.8089, Train AUC=0.8558
+           Val Loss=0.1668, Val Acc=0.9420, Val F1=0.9449, Val AUC=0.9952
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.10it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 31: Train Loss=0.3093, Train Acc=0.8482, Train F1=0.8485, Train AUC=0.8999
+           Val Loss=0.1686, Val Acc=0.9370, Val F1=0.9404, Val AUC=0.9956
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.11it/s]
+Epoch 32: Train Loss=0.2938, Train Acc=0.8063, Train F1=0.8082, Train AUC=0.8518
+           Val Loss=0.1525, Val Acc=0.9453, Val F1=0.9479, Val AUC=0.9958
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.10it/s]
+Epoch 33: Train Loss=0.2758, Train Acc=0.8598, Train F1=0.8598, Train AUC=0.9001
+           Val Loss=0.1329, Val Acc=0.9519, Val F1=0.9539, Val AUC=0.9956
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.12it/s]
+Epoch 34: Train Loss=0.2847, Train Acc=0.8117, Train F1=0.8132, Train AUC=0.8552
+           Val Loss=0.1365, Val Acc=0.9502, Val F1=0.9524, Val AUC=0.9958
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.14it/s]
+Epoch 35: Train Loss=0.3011, Train Acc=0.8034, Train F1=0.8051, Train AUC=0.8512
+           Val Loss=0.1198, Val Acc=0.9569, Val F1=0.9585, Val AUC=0.9965
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.10it/s]
+Epoch 36: Train Loss=0.2809, Train Acc=0.8499, Train F1=0.8504, Train AUC=0.8905
+           Val Loss=0.1283, Val Acc=0.9519, Val F1=0.9539, Val AUC=0.9967
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.10it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 37: Train Loss=0.2572, Train Acc=0.8611, Train F1=0.8602, Train AUC=0.9048
+           Val Loss=0.1419, Val Acc=0.9453, Val F1=0.9479, Val AUC=0.9970
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.07it/s]
+Epoch 38: Train Loss=0.2662, Train Acc=0.8482, Train F1=0.8490, Train AUC=0.8863
+           Val Loss=0.1141, Val Acc=0.9552, Val F1=0.9569, Val AUC=0.9969
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.10it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 39: Train Loss=0.2596, Train Acc=0.8536, Train F1=0.8544, Train AUC=0.8975
+           Val Loss=0.1167, Val Acc=0.9536, Val F1=0.9554, Val AUC=0.9970
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.12it/s]
+Epoch 40: Train Loss=0.2560, Train Acc=0.8519, Train F1=0.8513, Train AUC=0.8997
+           Val Loss=0.1122, Val Acc=0.9552, Val F1=0.9569, Val AUC=0.9970
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.11it/s]
+Epoch 41: Train Loss=0.2533, Train Acc=0.8685, Train F1=0.8690, Train AUC=0.9114
+           Val Loss=0.1100, Val Acc=0.9536, Val F1=0.9554, Val AUC=0.9973
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.10it/s]
+Epoch 42: Train Loss=0.2545, Train Acc=0.8424, Train F1=0.8422, Train AUC=0.8963
+           Val Loss=0.0978, Val Acc=0.9619, Val F1=0.9631, Val AUC=0.9974
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.12it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 43: Train Loss=0.2424, Train Acc=0.8333, Train F1=0.8331, Train AUC=0.8785
+           Val Loss=0.1064, Val Acc=0.9602, Val F1=0.9615, Val AUC=0.9974
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.09it/s]
+Epoch 44: Train Loss=0.2564, Train Acc=0.8399, Train F1=0.8405, Train AUC=0.8838
+           Val Loss=0.0943, Val Acc=0.9685, Val F1=0.9693, Val AUC=0.9976
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.09it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 45: Train Loss=0.2559, Train Acc=0.8457, Train F1=0.8463, Train AUC=0.8823
+           Val Loss=0.1010, Val Acc=0.9602, Val F1=0.9615, Val AUC=0.9977
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.12it/s]
+Epoch 46: Train Loss=0.2492, Train Acc=0.8250, Train F1=0.8256, Train AUC=0.8613
+           Val Loss=0.0944, Val Acc=0.9652, Val F1=0.9662, Val AUC=0.9980
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.08it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 47: Train Loss=0.2473, Train Acc=0.8453, Train F1=0.8459, Train AUC=0.8891
+           Val Loss=0.1006, Val Acc=0.9602, Val F1=0.9615, Val AUC=0.9980
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.10it/s]
+Epoch 48: Train Loss=0.2403, Train Acc=0.8324, Train F1=0.8325, Train AUC=0.8679
+           Val Loss=0.0776, Val Acc=0.9768, Val F1=0.9771, Val AUC=0.9980
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.13it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 49: Train Loss=0.2520, Train Acc=0.8461, Train F1=0.8455, Train AUC=0.8916
+           Val Loss=0.0896, Val Acc=0.9701, Val F1=0.9709, Val AUC=0.9982
+Epoch: 100%|██████████| 101/101 [00:24<00:00,  4.11it/s]
+Epoch 50: Train Loss=0.2519, Train Acc=0.8225, Train F1=0.8236, Train AUC=0.8634
+           Val Loss=0.0853, Val Acc=0.9701, Val F1=0.9709, Val AUC=0.9984
+Final model saved at D:/Deepfake_Detection_project/classification/voice/models\shufflenet_final_model.pth
+Loaded best model from D:/Deepfake_Detection_project/classification/voice/models\shufflenet_best_model.pth for evaluation
+Evaluating shufflenet on the test set...
+Confusion Matrix:
+[[745  15]
+ [396 554]]
+Test Accuracy: 0.7596
+Test Precision: 0.9736
+Test Recall: 0.5832
+Test F1-Score: 0.7294
+Test AUC: 0.9301
+Test EER: 0.1447
+Number of Misclassified Samples: 411
+Inference Time per Sample: 4.96ms
+Results saved for shufflenet!
+shufflenet completed
+D:\Anaconda\envs\deepfake39_env\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+D:\Anaconda\envs\deepfake39_env\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=EfficientNet_B0_Weights.IMAGENET1K_V1`. You can also use `weights=EfficientNet_B0_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Number of training samples: 2411
+Number of validation samples: 603
+Number of test samples: 1710
+Classes: ['real', 'fake']
+Class distribution: [1205 1206]
+Class weights: tensor([1.0004, 0.9996], device='cuda:0')
+
+EFFICIENTNET Model (Mel spectrogram input, 299x299):
+  Total parameters: 4,010,110
+  Trainable parameters: 4,010,110
+  Size: 15.30 MB
+
+Starting training for efficientnet...
+Epoch: 100%|██████████| 101/101 [01:00<00:00,  1.67it/s]
+Epoch 1: Train Loss=0.6670, Train Acc=0.5753, Train F1=0.4705, Train AUC=0.6218
+           Val Loss=0.5758, Val Acc=0.8093, Val F1=0.7905, Val AUC=0.8900
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\efficientnet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:57<00:00,  1.76it/s]
+Epoch 2: Train Loss=0.6062, Train Acc=0.6678, Train F1=0.6300, Train AUC=0.7267
+           Val Loss=0.4777, Val Acc=0.8507, Val F1=0.8529, Val AUC=0.9359
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\efficientnet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:56<00:00,  1.79it/s]
+Epoch 3: Train Loss=0.5356, Train Acc=0.7387, Train F1=0.7251, Train AUC=0.8120
+           Val Loss=0.3722, Val Acc=0.8706, Val F1=0.8758, Val AUC=0.9600
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\efficientnet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:56<00:00,  1.78it/s]
+     Epoch 4: Train Loss=0.4660, Train Acc=0.7375, Train F1=0.7319, Train AUC=0.8009
+           Val Loss=0.2789, Val Acc=0.9038, Val F1=0.9091, Val AUC=0.9813
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\efficientnet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:56<00:00,  1.78it/s]
+Epoch 5: Train Loss=0.3872, Train Acc=0.7893, Train F1=0.7883, Train AUC=0.8497
+           Val Loss=0.2107, Val Acc=0.9303, Val F1=0.9344, Val AUC=0.9890
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\efficientnet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:56<00:00,  1.79it/s]
+Epoch 6: Train Loss=0.3374, Train Acc=0.8179, Train F1=0.8203, Train AUC=0.8776
+           Val Loss=0.1653, Val Acc=0.9386, Val F1=0.9417, Val AUC=0.9932
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Best model saved at D:/Deepfake_Detection_project/classification/voice/models\efficientnet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:56<00:00,  1.79it/s]
+Epoch 7: Train Loss=0.3031, Train Acc=0.8275, Train F1=0.8270, Train AUC=0.8824
+           Val Loss=0.1251, Val Acc=0.9585, Val F1=0.9599, Val AUC=0.9960
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\efficientnet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:56<00:00,  1.79it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 8: Train Loss=0.3059, Train Acc=0.8105, Train F1=0.8131, Train AUC=0.8498
+           Val Loss=0.1368, Val Acc=0.9453, Val F1=0.9479, Val AUC=0.9972
+Epoch: 100%|██████████| 101/101 [00:56<00:00,  1.79it/s]
+Epoch 9: Train Loss=0.2597, Train Acc=0.8059, Train F1=0.8061, Train AUC=0.8454
+           Val Loss=0.1083, Val Acc=0.9552, Val F1=0.9569, Val AUC=0.9984
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\efficientnet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:56<00:00,  1.78it/s]
+Epoch 10: Train Loss=0.2416, Train Acc=0.8358, Train F1=0.8370, Train AUC=0.8729
+           Val Loss=0.0886, Val Acc=0.9635, Val F1=0.9646, Val AUC=0.9989
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\efficientnet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:56<00:00,  1.78it/s]
+Epoch 11: Train Loss=0.2439, Train Acc=0.8349, Train F1=0.8355, Train AUC=0.8751
+           Val Loss=0.0721, Val Acc=0.9768, Val F1=0.9772, Val AUC=0.9992
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\efficientnet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:56<00:00,  1.77it/s]
+Epoch 12: Train Loss=0.2294, Train Acc=0.8470, Train F1=0.8473, Train AUC=0.8881
+           Val Loss=0.0739, Val Acc=0.9735, Val F1=0.9740, Val AUC=0.9993
+Epoch: 100%|██████████| 101/101 [00:56<00:00,  1.78it/s]
+Epoch 13: Train Loss=0.2282, Train Acc=0.7997, Train F1=0.7985, Train AUC=0.8400
+           Val Loss=0.0673, Val Acc=0.9801, Val F1=0.9804, Val AUC=0.9995
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\efficientnet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:56<00:00,  1.78it/s]
+Epoch 14: Train Loss=0.2237, Train Acc=0.8536, Train F1=0.8540, Train AUC=0.8953
+           Val Loss=0.0532, Val Acc=0.9851, Val F1=0.9852, Val AUC=0.9995
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\efficientnet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:56<00:00,  1.78it/s]
+Epoch 15: Train Loss=0.1999, Train Acc=0.8731, Train F1=0.8739, Train AUC=0.9070
+           Val Loss=0.0471, Val Acc=0.9867, Val F1=0.9868, Val AUC=0.9996
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Best model saved at D:/Deepfake_Detection_project/classification/voice/models\efficientnet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:56<00:00,  1.78it/s]
+Epoch 16: Train Loss=0.2239, Train Acc=0.8158, Train F1=0.8164, Train AUC=0.8599
+           Val Loss=0.0421, Val Acc=0.9867, Val F1=0.9868, Val AUC=0.9997
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\efficientnet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:56<00:00,  1.78it/s]
+Epoch 17: Train Loss=0.2073, Train Acc=0.8324, Train F1=0.8332, Train AUC=0.8657
+           Val Loss=0.0360, Val Acc=0.9917, Val F1=0.9917, Val AUC=0.9997
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\efficientnet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:57<00:00,  1.74it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 18: Train Loss=0.1693, Train Acc=0.8698, Train F1=0.8702, Train AUC=0.8989
+           Val Loss=0.0556, Val Acc=0.9834, Val F1=0.9836, Val AUC=0.9998
+Epoch: 100%|██████████| 101/101 [00:59<00:00,  1.69it/s]
+Epoch 19: Train Loss=0.1679, Train Acc=0.8432, Train F1=0.8439, Train AUC=0.8752
+           Val Loss=0.0348, Val Acc=0.9900, Val F1=0.9901, Val AUC=0.9998
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Best model saved at D:/Deepfake_Detection_project/classification/voice/models\efficientnet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:56<00:00,  1.79it/s]
+Epoch 20: Train Loss=0.2186, Train Acc=0.8714, Train F1=0.8718, Train AUC=0.9003
+           Val Loss=0.0308, Val Acc=0.9934, Val F1=0.9934, Val AUC=0.9998
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\efficientnet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:56<00:00,  1.79it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 21: Train Loss=0.1641, Train Acc=0.8573, Train F1=0.8575, Train AUC=0.8808
+           Val Loss=0.0367, Val Acc=0.9917, Val F1=0.9917, Val AUC=0.9998
+Epoch: 100%|██████████| 101/101 [00:56<00:00,  1.78it/s]
+Epoch 22: Train Loss=0.1880, Train Acc=0.8752, Train F1=0.8747, Train AUC=0.8980
+           Val Loss=0.0257, Val Acc=0.9950, Val F1=0.9950, Val AUC=0.9998
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\efficientnet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:56<00:00,  1.79it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 23: Train Loss=0.1483, Train Acc=0.8499, Train F1=0.8503, Train AUC=0.8709
+           Val Loss=0.0268, Val Acc=0.9934, Val F1=0.9934, Val AUC=0.9999
+Epoch: 100%|██████████| 101/101 [00:56<00:00,  1.79it/s]
+Epoch 24: Train Loss=0.2104, Train Acc=0.8698, Train F1=0.8693, Train AUC=0.9034
+           Val Loss=0.0238, Val Acc=0.9950, Val F1=0.9950, Val AUC=0.9999
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\efficientnet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:56<00:00,  1.79it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 25: Train Loss=0.1630, Train Acc=0.8772, Train F1=0.8775, Train AUC=0.9105
+           Val Loss=0.0259, Val Acc=0.9950, Val F1=0.9950, Val AUC=0.9999
+Epoch: 100%|██████████| 101/101 [00:56<00:00,  1.78it/s]
+Epoch 26: Train Loss=0.1696, Train Acc=0.8399, Train F1=0.8392, Train AUC=0.8671
+           Val Loss=0.0226, Val Acc=0.9950, Val F1=0.9950, Val AUC=0.9999
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\efficientnet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:56<00:00,  1.79it/s]
+Epoch 27: Train Loss=0.1593, Train Acc=0.8851, Train F1=0.8856, Train AUC=0.9032
+           Val Loss=0.0233, Val Acc=0.9950, Val F1=0.9950, Val AUC=0.9999
+Epoch: 100%|██████████| 101/101 [00:56<00:00,  1.79it/s]
+Epoch 28: Train Loss=0.1722, Train Acc=0.8523, Train F1=0.8524, Train AUC=0.8800
+           Val Loss=0.0224, Val Acc=0.9950, Val F1=0.9950, Val AUC=0.9999
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\efficientnet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:56<00:00,  1.79it/s]
+Epoch 29: Train Loss=0.1966, Train Acc=0.8536, Train F1=0.8547, Train AUC=0.8843
+           Val Loss=0.0202, Val Acc=0.9950, Val F1=0.9950, Val AUC=0.9999
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\efficientnet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:56<00:00,  1.79it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 30: Train Loss=0.1479, Train Acc=0.8635, Train F1=0.8626, Train AUC=0.8844
+           Val Loss=0.0213, Val Acc=0.9950, Val F1=0.9950, Val AUC=0.9999
+Epoch: 100%|██████████| 101/101 [00:56<00:00,  1.79it/s]
+Epoch 31: Train Loss=0.1202, Train Acc=0.8934, Train F1=0.8933, Train AUC=0.9158
+           Val Loss=0.0173, Val Acc=0.9950, Val F1=0.9950, Val AUC=0.9999
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\efficientnet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:56<00:00,  1.79it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 32: Train Loss=0.1740, Train Acc=0.8279, Train F1=0.8276, Train AUC=0.8537
+           Val Loss=0.0183, Val Acc=0.9950, Val F1=0.9950, Val AUC=0.9999
+Epoch: 100%|██████████| 101/101 [00:56<00:00,  1.79it/s]
+Epoch 33: Train Loss=0.1611, Train Acc=0.8523, Train F1=0.8522, Train AUC=0.8818
+           Val Loss=0.0186, Val Acc=0.9950, Val F1=0.9950, Val AUC=1.0000
+Epoch: 100%|██████████| 101/101 [00:56<00:00,  1.78it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 34: Train Loss=0.1477, Train Acc=0.8515, Train F1=0.8517, Train AUC=0.8725
+           Val Loss=0.0175, Val Acc=0.9950, Val F1=0.9950, Val AUC=1.0000
+Epoch: 100%|██████████| 101/101 [00:56<00:00,  1.78it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 35: Train Loss=0.1797, Train Acc=0.8660, Train F1=0.8663, Train AUC=0.8973
+           Val Loss=0.0175, Val Acc=0.9950, Val F1=0.9950, Val AUC=1.0000
+Epoch: 100%|██████████| 101/101 [00:56<00:00,  1.78it/s]
+Epoch 36: Train Loss=0.1631, Train Acc=0.8569, Train F1=0.8564, Train AUC=0.8814
+           Val Loss=0.0189, Val Acc=0.9950, Val F1=0.9950, Val AUC=1.0000
+Early stopping at epoch 36
+Final model saved at D:/Deepfake_Detection_project/classification/voice/models\efficientnet_final_model.pth
+Loaded best model from D:/Deepfake_Detection_project/classification/voice/models\efficientnet_best_model.pth for evaluation
+Evaluating efficientnet on the test set...
+Confusion Matrix:
+[[752   8]
+ [458 492]]
+Test Accuracy: 0.7275
+Test Precision: 0.9840
+Test Recall: 0.5179
+Test F1-Score: 0.6786
+Test AUC: 0.9218
+Test EER: 0.1553
+Number of Misclassified Samples: 466
+Inference Time per Sample: 7.82ms
+Results saved for efficientnet!
+efficientnet completed
+D:\Anaconda\envs\deepfake39_env\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+D:\Anaconda\envs\deepfake39_env\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=SqueezeNet1_1_Weights.IMAGENET1K_V1`. You can also use `weights=SqueezeNet1_1_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Number of training samples: 2411
+Number of validation samples: 603
+Number of test samples: 1710
+Classes: ['real', 'fake']
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Class distribution: [1205 1206]
+Class weights: tensor([1.0004, 0.9996], device='cuda:0')
+
+D:\Anaconda\envs\deepfake39_env\python.exe D:\Deepfake_Detection_project\classification\voice\Implementation\baseline\base.py
+Starting training of baseline models...
+Available models: squeezenet
+D:\Anaconda\envs\deepfake39_env\lib\site-packages\torchvision\models\_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+D:\Anaconda\envs\deepfake39_env\lib\site-packages\torchvision\models\_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=SqueezeNet1_1_Weights.IMAGENET1K_V1`. You can also use `weights=SqueezeNet1_1_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+Number of training samples: 2411
+Number of validation samples: 603
+Number of test samples: 1710
+Classes: ['real', 'fake']
+Class distribution: [1205 1206]
+Class weights: tensor([1.0004, 0.9996], device='cuda:0')
+
+SQUEEZENET Model (Mel spectrogram input, 299x299):
+  Total parameters: 723,522
+  Trainable parameters: 723,522
+  Size: 2.76 MB
+
+Starting training for squeezenet...
+Epoch: 100%|██████████| 101/101 [00:33<00:00,  3.05it/s]
+Epoch 1: Train Loss=0.7696, Train Acc=0.4865, Train F1=0.4594, Train AUC=0.4768
+           Val Loss=0.6937, Val Acc=0.5124, Val F1=0.3691, Val AUC=0.5552
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\squeezenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:32<00:00,  3.06it/s]
+Epoch 2: Train Loss=0.6941, Train Acc=0.5425, Train F1=0.5235, Train AUC=0.5644
+           Val Loss=0.6164, Val Acc=0.6667, Val F1=0.6352, Val AUC=0.7657
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Best model saved at D:/Deepfake_Detection_project/classification/voice/models\squeezenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:33<00:00,  3.00it/s]
+Epoch 3: Train Loss=0.6539, Train Acc=0.6002, Train F1=0.6169, Train AUC=0.6280
+           Val Loss=0.5532, Val Acc=0.8027, Val F1=0.7959, Val AUC=0.8852
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Best model saved at D:/Deepfake_Detection_project/classification/voice/models\squeezenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:33<00:00,  2.99it/s]
+Epoch 4: Train Loss=0.6024, Train Acc=0.6454, Train F1=0.6329, Train AUC=0.7057
+           Val Loss=0.4967, Val Acc=0.8358, Val F1=0.8342, Val AUC=0.9211
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\squeezenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.97it/s]
+Epoch 5: Train Loss=0.5708, Train Acc=0.6810, Train F1=0.6715, Train AUC=0.7428
+           Val Loss=0.4572, Val Acc=0.8673, Val F1=0.8746, Val AUC=0.9316
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\squeezenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.97it/s]
+Epoch 6: Train Loss=0.5364, Train Acc=0.7018, Train F1=0.7069, Train AUC=0.7566
+           Val Loss=0.4162, Val Acc=0.8657, Val F1=0.8696, Val AUC=0.9355
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\squeezenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.96it/s]
+Epoch 7: Train Loss=0.5175, Train Acc=0.6794, Train F1=0.6807, Train AUC=0.7541
+           Val Loss=0.3881, Val Acc=0.8706, Val F1=0.8746, Val AUC=0.9388
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Best model saved at D:/Deepfake_Detection_project/classification/voice/models\squeezenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:33<00:00,  2.98it/s]
+Epoch 8: Train Loss=0.4922, Train Acc=0.7034, Train F1=0.7047, Train AUC=0.7695
+           Val Loss=0.3666, Val Acc=0.8773, Val F1=0.8836, Val AUC=0.9414
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\squeezenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.96it/s]
+Epoch 9: Train Loss=0.5007, Train Acc=0.7122, Train F1=0.7183, Train AUC=0.7732
+           Val Loss=0.3476, Val Acc=0.8706, Val F1=0.8754, Val AUC=0.9432
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Best model saved at D:/Deepfake_Detection_project/classification/voice/models\squeezenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.97it/s]
+Epoch 10: Train Loss=0.4803, Train Acc=0.7229, Train F1=0.7296, Train AUC=0.7844
+           Val Loss=0.3331, Val Acc=0.8789, Val F1=0.8824, Val AUC=0.9454
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\squeezenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.96it/s]
+Epoch 11: Train Loss=0.4624, Train Acc=0.7287, Train F1=0.7357, Train AUC=0.7925
+           Val Loss=0.3184, Val Acc=0.8773, Val F1=0.8806, Val AUC=0.9472
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Best model saved at D:/Deepfake_Detection_project/classification/voice/models\squeezenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.97it/s]
+Epoch 12: Train Loss=0.4930, Train Acc=0.7155, Train F1=0.7223, Train AUC=0.7823
+           Val Loss=0.3098, Val Acc=0.8773, Val F1=0.8799, Val AUC=0.9489
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Best model saved at D:/Deepfake_Detection_project/classification/voice/models\squeezenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:33<00:00,  2.98it/s]
+Epoch 13: Train Loss=0.4534, Train Acc=0.7142, Train F1=0.7163, Train AUC=0.7678
+           Val Loss=0.3069, Val Acc=0.8905, Val F1=0.8956, Val AUC=0.9518
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\squeezenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.96it/s]
+Epoch 14: Train Loss=0.4316, Train Acc=0.7499, Train F1=0.7524, Train AUC=0.8298
+           Val Loss=0.2956, Val Acc=0.8889, Val F1=0.8938, Val AUC=0.9538
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Best model saved at D:/Deepfake_Detection_project/classification/voice/models\squeezenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.96it/s]
+Epoch 15: Train Loss=0.4480, Train Acc=0.7619, Train F1=0.7665, Train AUC=0.8314
+           Val Loss=0.2851, Val Acc=0.8839, Val F1=0.8882, Val AUC=0.9553
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Best model saved at D:/Deepfake_Detection_project/classification/voice/models\squeezenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.96it/s]
+Epoch 16: Train Loss=0.4362, Train Acc=0.7495, Train F1=0.7529, Train AUC=0.8099
+           Val Loss=0.2762, Val Acc=0.8839, Val F1=0.8864, Val AUC=0.9559
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\squeezenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.96it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 17: Train Loss=0.4377, Train Acc=0.7250, Train F1=0.7277, Train AUC=0.7873
+           Val Loss=0.2779, Val Acc=0.8905, Val F1=0.8966, Val AUC=0.9581
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.95it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 18: Train Loss=0.4290, Train Acc=0.7603, Train F1=0.7669, Train AUC=0.8306
+           Val Loss=0.2770, Val Acc=0.8955, Val F1=0.9017, Val AUC=0.9596
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.94it/s]
+Epoch 19: Train Loss=0.4398, Train Acc=0.7466, Train F1=0.7555, Train AUC=0.8041
+           Val Loss=0.2604, Val Acc=0.8922, Val F1=0.8953, Val AUC=0.9600
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Best model saved at D:/Deepfake_Detection_project/classification/voice/models\squeezenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.97it/s]
+Epoch 20: Train Loss=0.4225, Train Acc=0.7478, Train F1=0.7498, Train AUC=0.8127
+           Val Loss=0.2554, Val Acc=0.8922, Val F1=0.8953, Val AUC=0.9616
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Best model saved at D:/Deepfake_Detection_project/classification/voice/models\squeezenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.96it/s]
+Epoch 21: Train Loss=0.4149, Train Acc=0.7345, Train F1=0.7417, Train AUC=0.8034
+           Val Loss=0.2528, Val Acc=0.8922, Val F1=0.8973, Val AUC=0.9636
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Best model saved at D:/Deepfake_Detection_project/classification/voice/models\squeezenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.96it/s]
+Epoch 22: Train Loss=0.4043, Train Acc=0.7549, Train F1=0.7591, Train AUC=0.8226
+           Val Loss=0.2481, Val Acc=0.8922, Val F1=0.8976, Val AUC=0.9646
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\squeezenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.95it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 23: Train Loss=0.4027, Train Acc=0.7607, Train F1=0.7626, Train AUC=0.8276
+           Val Loss=0.2494, Val Acc=0.9005, Val F1=0.9062, Val AUC=0.9663
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.95it/s]
+Epoch 24: Train Loss=0.4193, Train Acc=0.7673, Train F1=0.7730, Train AUC=0.8290
+           Val Loss=0.2444, Val Acc=0.9005, Val F1=0.9062, Val AUC=0.9675
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\squeezenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.95it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 25: Train Loss=0.4154, Train Acc=0.7275, Train F1=0.7315, Train AUC=0.7871
+           Val Loss=0.2507, Val Acc=0.9022, Val F1=0.9091, Val AUC=0.9695
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.95it/s]
+Epoch 26: Train Loss=0.4114, Train Acc=0.7420, Train F1=0.7472, Train AUC=0.8052
+           Val Loss=0.2349, Val Acc=0.9022, Val F1=0.9068, Val AUC=0.9692
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Best model saved at D:/Deepfake_Detection_project/classification/voice/models\squeezenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.96it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 27: Train Loss=0.3892, Train Acc=0.7296, Train F1=0.7337, Train AUC=0.7907
+           Val Loss=0.2380, Val Acc=0.9022, Val F1=0.9082, Val AUC=0.9708
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.96it/s]
+Epoch 28: Train Loss=0.3936, Train Acc=0.7603, Train F1=0.7681, Train AUC=0.8326
+           Val Loss=0.2301, Val Acc=0.9038, Val F1=0.9091, Val AUC=0.9710
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\squeezenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.95it/s]
+Epoch 29: Train Loss=0.3763, Train Acc=0.7930, Train F1=0.7951, Train AUC=0.8600
+           Val Loss=0.2333, Val Acc=0.9055, Val F1=0.9116, Val AUC=0.9724
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.95it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 30: Train Loss=0.4052, Train Acc=0.7466, Train F1=0.7517, Train AUC=0.8079
+           Val Loss=0.2338, Val Acc=0.9104, Val F1=0.9167, Val AUC=0.9733
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.95it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 31: Train Loss=0.3854, Train Acc=0.7578, Train F1=0.7638, Train AUC=0.8262
+           Val Loss=0.2357, Val Acc=0.9088, Val F1=0.9153, Val AUC=0.9739
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.96it/s]
+Epoch 32: Train Loss=0.4063, Train Acc=0.7395, Train F1=0.7447, Train AUC=0.7988
+           Val Loss=0.2139, Val Acc=0.9121, Val F1=0.9157, Val AUC=0.9742
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Best model saved at D:/Deepfake_Detection_project/classification/voice/models\squeezenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:35<00:00,  2.86it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 33: Train Loss=0.4134, Train Acc=0.7358, Train F1=0.7428, Train AUC=0.7985
+           Val Loss=0.2145, Val Acc=0.9154, Val F1=0.9199, Val AUC=0.9750
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.95it/s]
+Epoch 34: Train Loss=0.3781, Train Acc=0.7881, Train F1=0.7942, Train AUC=0.8516
+           Val Loss=0.2116, Val Acc=0.9171, Val F1=0.9214, Val AUC=0.9760
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Best model saved at D:/Deepfake_Detection_project/classification/voice/models\squeezenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.95it/s]
+Epoch 35: Train Loss=0.3817, Train Acc=0.7669, Train F1=0.7739, Train AUC=0.8331
+           Val Loss=0.2071, Val Acc=0.9187, Val F1=0.9223, Val AUC=0.9761
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Best model saved at D:/Deepfake_Detection_project/classification/voice/models\squeezenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.93it/s]
+Epoch 36: Train Loss=0.3826, Train Acc=0.7827, Train F1=0.7854, Train AUC=0.8524
+           Val Loss=0.2012, Val Acc=0.9154, Val F1=0.9187, Val AUC=0.9765
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\squeezenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.95it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 37: Train Loss=0.3694, Train Acc=0.7806, Train F1=0.7833, Train AUC=0.8556
+           Val Loss=0.2018, Val Acc=0.9221, Val F1=0.9258, Val AUC=0.9772
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.96it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 38: Train Loss=0.3708, Train Acc=0.7603, Train F1=0.7643, Train AUC=0.8207
+           Val Loss=0.2013, Val Acc=0.9237, Val F1=0.9274, Val AUC=0.9778
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.95it/s]
+Epoch 39: Train Loss=0.3571, Train Acc=0.7611, Train F1=0.7655, Train AUC=0.8214
+           Val Loss=0.1982, Val Acc=0.9237, Val F1=0.9277, Val AUC=0.9784
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\squeezenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.96it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 40: Train Loss=0.3674, Train Acc=0.7482, Train F1=0.7521, Train AUC=0.7995
+           Val Loss=0.2072, Val Acc=0.9171, Val F1=0.9221, Val AUC=0.9796
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.95it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 41: Train Loss=0.3892, Train Acc=0.7540, Train F1=0.7602, Train AUC=0.8099
+           Val Loss=0.2065, Val Acc=0.9187, Val F1=0.9238, Val AUC=0.9803
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.95it/s]
+Epoch 42: Train Loss=0.3547, Train Acc=0.7540, Train F1=0.7598, Train AUC=0.8172
+           Val Loss=0.1917, Val Acc=0.9270, Val F1=0.9306, Val AUC=0.9799
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Best model saved at D:/Deepfake_Detection_project/classification/voice/models\squeezenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.94it/s]
+Epoch 43: Train Loss=0.3762, Train Acc=0.7661, Train F1=0.7717, Train AUC=0.8269
+           Val Loss=0.1886, Val Acc=0.9270, Val F1=0.9306, Val AUC=0.9807
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\squeezenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.95it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 44: Train Loss=0.3360, Train Acc=0.7997, Train F1=0.8029, Train AUC=0.8531
+           Val Loss=0.1987, Val Acc=0.9204, Val F1=0.9252, Val AUC=0.9814
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.96it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 45: Train Loss=0.3565, Train Acc=0.7752, Train F1=0.7793, Train AUC=0.8365
+           Val Loss=0.1991, Val Acc=0.9187, Val F1=0.9238, Val AUC=0.9820
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.96it/s]
+Epoch 46: Train Loss=0.3555, Train Acc=0.7399, Train F1=0.7438, Train AUC=0.7890
+           Val Loss=0.1830, Val Acc=0.9303, Val F1=0.9335, Val AUC=0.9820
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Best model saved at D:/Deepfake_Detection_project/classification/voice/models\squeezenet_best_model.pth
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.96it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 47: Train Loss=0.3388, Train Acc=0.7706, Train F1=0.7742, Train AUC=0.8339
+           Val Loss=0.1856, Val Acc=0.9254, Val F1=0.9294, Val AUC=0.9826
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.96it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 48: Train Loss=0.3434, Train Acc=0.7955, Train F1=0.7974, Train AUC=0.8643
+           Val Loss=0.1905, Val Acc=0.9254, Val F1=0.9296, Val AUC=0.9830
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.96it/s]
+Epoch:   0%|          | 0/101 [00:00<?, ?it/s]Epoch 49: Train Loss=0.3470, Train Acc=0.7769, Train F1=0.7802, Train AUC=0.8324
+           Val Loss=0.1921, Val Acc=0.9221, Val F1=0.9267, Val AUC=0.9834
+Epoch: 100%|██████████| 101/101 [00:34<00:00,  2.94it/s]
+Epoch 50: Train Loss=0.3600, Train Acc=0.7835, Train F1=0.7907, Train AUC=0.8513
+           Val Loss=0.1699, Val Acc=0.9386, Val F1=0.9406, Val AUC=0.9833
+Best model saved at D:/Deepfake_Detection_project/classification/voice/models\squeezenet_best_model.pth
+Final model saved at D:/Deepfake_Detection_project/classification/voice/models\squeezenet_final_model.pth
+Loaded best model from D:/Deepfake_Detection_project/classification/voice/models\squeezenet_best_model.pth for evaluation
+Evaluating squeezenet on the test set...
+NaN detected in model outputs at batch 71
+Confusion Matrix:
+[[673  81]
+ [415 535]]
+Test Accuracy: 0.7089
+Test Precision: 0.8685
+Test Recall: 0.5632
+Test F1-Score: 0.6833
+Test AUC: 0.8128
+Test EER: 0.2599
+Number of Misclassified Samples: 496
+Inference Time per Sample: 5.70ms
+Results saved for squeezenet!
+squeezenet completed
+
+Completed 1/1 models
+
+Process finished with exit code 0
+

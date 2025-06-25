@@ -1,0 +1,71 @@
+G:\Hiep\Deepfake_Detection\.venv\Scripts\python.exe G:\Hiep\Deepfake_Detection\classification\face\Implementation\xceptionnet\train_xception.py
+Xception Model Training
+======================
+Train: 98,683, Val: 21,152, Test: 21,142
+G:\Hiep\Deepfake_Detection\.venv\lib\site-packages\torch\nn\modules\module.py:1159: UserWarning: expandable_segments not supported on this platform (Triggered internally at C:\actions-runner\_work\pytorch\pytorch\builder\windows\pytorch\c10/cuda/CUDAAllocatorConfig.h:28.)
+  return t.to(
+
+Training Xception
+Parameters: 20.82M
+Phase 1: Pretraining...
+  Epoch 1/3
+    Train Loss: 0.0453, Train Acc: 0.7116, Train F1: 0.8201, Train AUC: 0.6207, Val Loss: 0.0446, Val Acc: 0.7387, Val F1: 0.8399, Val AUC: 0.6539
+  Epoch 2/3
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0444, Train Acc: 0.7083, Train F1: 0.8153, Train AUC: 0.6555, Val Loss: 0.0450, Val Acc: 0.7828, Val F1: 0.8728, Val AUC: 0.6549
+  Epoch 3/3
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0444, Train Acc: 0.7042, Train F1: 0.8120, Train AUC: 0.6549, Val Loss: 0.0462, Val Acc: 0.8096, Val F1: 0.8917, Val AUC: 0.6503
+Phase 2: Finetuning...
+  Epoch 1/15
+    Train Loss: 0.0344, Train Acc: 0.7762, Train F1: 0.8576, Train AUC: 0.8361, Val Loss: 0.0256, Val Acc: 0.8589, Val F1: 0.9127, Val AUC: 0.9230
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]  Epoch 2/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0273, Train Acc: 0.8248, Train F1: 0.8897, Train AUC: 0.9045, Val Loss: 0.0280, Val Acc: 0.8987, Val F1: 0.9407, Val AUC: 0.9287
+  Epoch 3/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0242, Train Acc: 0.8473, Train F1: 0.9047, Train AUC: 0.9264, Val Loss: 0.0286, Val Acc: 0.8985, Val F1: 0.9399, Val AUC: 0.9363
+  Epoch 4/15
+    Train Loss: 0.0223, Train Acc: 0.8628, Train F1: 0.9150, Train AUC: 0.9384, Val Loss: 0.0233, Val Acc: 0.9001, Val F1: 0.9402, Val AUC: 0.9428
+  Epoch 5/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0210, Train Acc: 0.8712, Train F1: 0.9204, Train AUC: 0.9456, Val Loss: 0.0260, Val Acc: 0.9056, Val F1: 0.9442, Val AUC: 0.9384
+  Epoch 6/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0198, Train Acc: 0.8792, Train F1: 0.9256, Train AUC: 0.9516, Val Loss: 0.0308, Val Acc: 0.9073, Val F1: 0.9459, Val AUC: 0.9415
+  Epoch 7/15
+    Train Loss: 0.0191, Train Acc: 0.8836, Train F1: 0.9285, Train AUC: 0.9551, Val Loss: 0.0230, Val Acc: 0.8802, Val F1: 0.9269, Val AUC: 0.9406
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]  Epoch 8/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0185, Train Acc: 0.8901, Train F1: 0.9326, Train AUC: 0.9583, Val Loss: 0.0259, Val Acc: 0.9024, Val F1: 0.9420, Val AUC: 0.9435
+  Epoch 9/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0180, Train Acc: 0.8918, Train F1: 0.9337, Train AUC: 0.9605, Val Loss: 0.0288, Val Acc: 0.9106, Val F1: 0.9474, Val AUC: 0.9448
+  Epoch 10/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0176, Train Acc: 0.8934, Train F1: 0.9348, Train AUC: 0.9622, Val Loss: 0.0276, Val Acc: 0.9118, Val F1: 0.9486, Val AUC: 0.9445
+  Epoch 11/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0173, Train Acc: 0.8967, Train F1: 0.9369, Train AUC: 0.9637, Val Loss: 0.0320, Val Acc: 0.9185, Val F1: 0.9528, Val AUC: 0.9462
+  Epoch 12/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0167, Train Acc: 0.8987, Train F1: 0.9381, Train AUC: 0.9658, Val Loss: 0.0283, Val Acc: 0.9088, Val F1: 0.9462, Val AUC: 0.9441
+  Epoch 13/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0168, Train Acc: 0.9013, Train F1: 0.9398, Train AUC: 0.9660, Val Loss: 0.0291, Val Acc: 0.9148, Val F1: 0.9502, Val AUC: 0.9490
+  Epoch 14/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0137, Train Acc: 0.9202, Train F1: 0.9517, Train AUC: 0.9774, Val Loss: 0.0248, Val Acc: 0.9127, Val F1: 0.9482, Val AUC: 0.9540
+  Epoch 15/15
+    Train Loss: 0.0128, Train Acc: 0.9251, Train F1: 0.9548, Train AUC: 0.9802, Val Loss: 0.0265, Val Acc: 0.9152, Val F1: 0.9497, Val AUC: 0.9549
+Inference timing:   0%|          | 0/1322 [00:00<?, ?it/s]Measuring inference time...
+Analyzing misclassifications:   0%|          | 0/1322 [00:00<?, ?it/s]
+Test Results:
+  Accuracy: 0.8827
+  F1-Score: 0.9288
+  AUC: 0.9401
+  MCC: 0.6134
+  Inference: 2.61 ms/sample (382.4 FPS)
+Analyzing misclassifications: 100%|██████████| 1322/1322 [00:55<00:00, 23.75it/s, misclassified=2479]
+  Misclassified: 2479 samples
+  Sample misclassifications:
+    1. True: fake, Pred: real, Conf: 0.606
+    2. True: fake, Pred: real, Conf: 0.876
+    3. True: fake, Pred: real, Conf: 0.509
+    4. True: fake, Pred: real, Conf: 0.614
+    5. True: fake, Pred: real, Conf: 0.722
+
+==================================================
+SUMMARY
+==================================================
+Xception             Acc: 0.8827 F1: 0.9288 Params: 20.8M FPS: 382.4
+==================================================
+
+Process finished with exit code 0

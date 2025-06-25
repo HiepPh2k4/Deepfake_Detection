@@ -1,0 +1,14 @@
+{
+  "model_name": "ShuffleNet V2",
+  "test_loss": 0.02582067561909219,
+  "accuracy": 0.8832182385772396,
+  "f1": 0.9297561808301801,
+  "auc": 0.9299365235350929,
+  "mcc": 0.5942358821787854,
+  "fake_detection_rate": 0.903511197124689,
+  "real_detection_rate": 0.7631665031076218,
+  "inference_time_ms": 1.0050599255452217,
+  "fps": 994.96554840501,
+  "parameters_millions": 1.254629,
+  "total_misclassified": 2469
+}

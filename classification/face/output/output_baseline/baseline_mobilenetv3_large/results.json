@@ -1,0 +1,14 @@
+{
+  "model_name": "MobileNetV3-Large",
+  "test_loss": 0.02202060779323143,
+  "accuracy": 0.8792451045312648,
+  "f1": 0.92595922392042,
+  "auc": 0.9476421044120787,
+  "mcc": 0.6249279386786453,
+  "fake_detection_rate": 0.8827204865910976,
+  "real_detection_rate": 0.858684985279686,
+  "inference_time_ms": 1.1140324063292515,
+  "fps": 897.6399558205047,
+  "parameters_millions": 4.203313,
+  "total_misclassified": 2553
+}

@@ -1,68 +1,94 @@
-import matplotlib.pyplot as plt
-import numpy as np
-import pandas as pd
-import seaborn as sns
 import torch
 import torch.nn as nn
 import torch.optim as optim
-from sklearn.metrics import (
-    accuracy_score, confusion_matrix, f1_score, roc_auc_score,
-    classification_report, average_precision_score, matthews_corrcoef
-)
 from torch.utils.data import DataLoader
-from tqdm import tqdm
-import os
+from torch.cuda.amp import autocast, GradScaler
 from torch.optim.lr_scheduler import ReduceLROnPlateau
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.metrics import (accuracy_score, f1_score, roc_auc_score, matthews_corrcoef,
+                             confusion_matrix, roc_curve, precision_recall_curve,
+                             average_precision_score, precision_score, recall_score)
+import json
+import os
+import time
+from pathlib import Path
+from tqdm import tqdm
+import random
+import warnings
 
-from advanced_transforms import DeepfakeDataset, train_transform, val_test_transform
-from advanced_xception import create_optimized_model
-from train_utils import FocalLoss
+warnings.filterwarnings('ignore')
+
+from advanced_xception import ImprovedXception
+from Deepfake_Detection.classification.face.Implementation.advanced_transforms import DeepfakeDataset, train_transform, val_test_transform
 
 # Configuration
-DATA_PATH = "G:/Hiep/Deepfake_Detection/data_preprocessing/output_split/label_test_remote"
-MODEL_PATH = "G:/Hiep/Deepfake_Detection/classification/models/model_remote_test_2"
-OUTPUT_PATH = "G:/Hiep/Deepfake_Detection/classification/output/output_remote_test_2"
-BATCH_SIZE = 32
-NUM_WORKERS = 8
+def set_seed(seed):
+    torch.manual_seed(seed)
+    torch.cuda.manual_seed_all(seed)
+    np.random.seed(seed)
+    random.seed(seed)
+    torch.backends.cudnn.deterministic = True
+
+set_seed(42)
+
+DATA_PATH = "G:/Hiep/Deepfake_Detection/data_preprocessing/output_split"
+MODEL_PATH = "G:/Hiep/Deepfake_Detection/classification/face/models/enhanced_xception"
+OUTPUT_PATH = "G:/Hiep/Deepfake_Detection/classification/face/output/enhanced_xception"
+BATCH_SIZE = 16
+NUM_WORKERS = 4
+LEARNING_RATE = 2e-4
+FINETUNE_LR = 1e-4
+WEIGHT_DECAY = 1e-4
+ALPHA = 0.82
+GAMMA = 2.0
+PATIENCE = 5
+DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 PRETRAIN_EPOCHS = 3
 FINETUNE_EPOCHS = 15
-LEARNING_RATE = 2e-4
-WEIGHT_DECAY = 1e-4
-ALPHA = 0.80  # Weight for REAL (0), so 1 - ALPHA = 0.20 for FAKE (1)
-GAMMA = 2.0
-PATIENCE = 3
-DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+MIXUP_ALPHA = 0.0  # Disabled to match baseline
+SAVE_ATTENTION_FREQ = 1  # Save attention maps every epoch
+NUM_ATTENTION_SAMPLES = 5  # Save 5 samples per dataset per epoch
 
-# Create directories
 os.makedirs(MODEL_PATH, exist_ok=True)
 os.makedirs(OUTPUT_PATH, exist_ok=True)
+ATTENTION_DIR = os.path.join(OUTPUT_PATH, "attention_maps")
+os.makedirs(os.path.join(ATTENTION_DIR, "train"), exist_ok=True)
+os.makedirs(os.path.join(ATTENTION_DIR, "val"), exist_ok=True)
+os.makedirs(os.path.join(ATTENTION_DIR, "test"), exist_ok=True)
 
-def save_attention_maps(model, image, attention_maps, save_path):
-    """Save attention maps for visualization."""
-    image = image.permute(1, 2, 0).cpu().numpy()
-    image = (image - image.min()) / (image.max() - image.min())  # Normalize for display
-    plt.figure(figsize=(10, 5))
-    plt.subplot(1, 3, 1)
-    plt.imshow(image)
-    plt.title('Input Image')
-    plt.axis('off')
-    for i, att_map in enumerate(attention_maps):
-        att_map = att_map[0, 0].cpu().numpy()
-        plt.subplot(1, 3, i + 2)
-        plt.imshow(att_map, cmap='viridis')
-        plt.title(f'Attention Map {i + 1}')
-        plt.axis('off')
-    plt.savefig(save_path)
-    plt.close()
+# Focal Loss
+class FocalLoss(nn.Module):
+    def __init__(self, alpha=0.82, gamma=2.0, reduction='mean'):
+        super(FocalLoss, self).__init__()
+        self.alpha = torch.tensor([alpha, 1 - alpha]).to(DEVICE)
+        self.gamma = gamma
+        self.reduction = reduction
 
+    def forward(self, inputs, targets):
+        BCE_loss = nn.functional.binary_cross_entropy_with_logits(inputs, targets, reduction='none')
+        pt = torch.exp(-BCE_loss)
+        focal_loss = (1 - pt) ** self.gamma * BCE_loss
+        alpha_t = self.alpha[0] * (1 - targets) + self.alpha[1] * targets
+        focal_loss = alpha_t * focal_loss
+        if self.reduction == 'mean':
+            return focal_loss.mean()
+        elif self.reduction == 'sum':
+            return focal_loss.sum()
+        else:
+            return focal_loss
+
+# Metrics calculation
 def calculate_metrics(y_true, y_pred_prob, threshold=0.5):
-    """Calculate evaluation metrics."""
     y_pred = (y_pred_prob >= threshold).astype(int)
     cm = confusion_matrix(y_true, y_pred)
     tn, fp, fn, tp = cm.ravel()
-
     return {
         'accuracy': accuracy_score(y_true, y_pred),
+        'precision': precision_score(y_true, y_pred, zero_division=0),
+        'recall': recall_score(y_true, y_pred, zero_division=0),
         'f1': f1_score(y_true, y_pred, zero_division=0),
         'auc': roc_auc_score(y_true, y_pred_prob) if len(np.unique(y_true)) > 1 else 0.5,
         'mcc': matthews_corrcoef(y_true, y_pred),
@@ -75,217 +101,313 @@ def calculate_metrics(y_true, y_pred_prob, threshold=0.5):
         'true_positives': tp
     }
 
-def train_epoch(model, dataloader, criterion, optimizer, device):
-    """Train one epoch."""
+# Attention visualization
+def visualize_attention_map(model, image, label, pred_prob, save_path, image_name=""):
+    model.eval()
+    with torch.no_grad():
+        image_input = image.unsqueeze(0).to(DEVICE)
+        attention_maps = model.get_attention_maps(image_input)
+
+    image_np = image.cpu().numpy().transpose(1, 2, 0)
+    mean = np.array([0.485, 0.456, 0.406])
+    std = np.array([0.229, 0.224, 0.225])
+    image_np = (image_np * std + mean).clip(0, 1)
+
+    fig, axes = plt.subplots(1, 3, figsize=(15, 5))
+    fig.suptitle(f'{image_name}\nTrue: {"Fake" if label == 1 else "Real"} | '
+                 f'Pred: {"Fake" if pred_prob > 0.5 else "Real"} ({pred_prob:.3f})',
+                 fontsize=12)
+
+    axes[0].imshow(image_np)
+    axes[0].set_title('Original Image')
+    axes[0].axis('off')
+
+    att_map = attention_maps['cbam'][0, 0].cpu().numpy()
+    att_map = (att_map - att_map.min()) / (att_map.max() - att_map.min() + 1e-8)
+    axes[1].imshow(image_np)
+    im = axes[1].imshow(att_map, cmap='Reds', alpha=0.5)
+    axes[1].set_title('CBAM Attention Map')
+    axes[1].axis('off')
+    plt.colorbar(im, ax=axes[1], fraction=0.046, pad=0.04)
+
+    att_map_self = attention_maps['self_attention'][0, 0].cpu().numpy()
+    att_map_self = (att_map_self - att_map_self.min()) / (att_map_self.max() - att_map_self.min() + 1e-8)
+    axes[2].imshow(image_np)
+    im = axes[2].imshow(att_map_self, cmap='Blues', alpha=0.5)
+    axes[2].set_title('Self-Attention Map')
+    axes[2].axis('off')
+    plt.colorbar(im, ax=axes[2], fraction=0.046, pad=0.04)
+
+    plt.tight_layout()
+    plt.savefig(save_path, dpi=300, bbox_inches='tight')
+    plt.close()
+
+def save_attention_samples(model, dataloader, epoch, dataset_type, num_samples=5):
+    model.eval()
+    save_dir = os.path.join(ATTENTION_DIR, dataset_type, f"epoch_{epoch:03d}")
+    os.makedirs(save_dir, exist_ok=True)
+
+    indices = random.sample(range(len(dataloader.dataset)), min(num_samples, len(dataloader.dataset)))
+    for idx in indices:
+        image, label, path = dataloader.dataset[idx]
+        with torch.no_grad():
+            image_input = image.unsqueeze(0).to(DEVICE)
+            output = model(image_input)
+            pred_prob = torch.sigmoid(output).item()
+        image_name = Path(path).name
+        save_path = os.path.join(save_dir, f"{image_name}_true{'fake' if label == 1 else 'real'}_pred{pred_prob:.3f}.png")
+        visualize_attention_map(model, image, label, pred_prob, save_path, image_name)
+
+def train_epoch(model, dataloader, criterion, optimizer, scaler):
     model.train()
     running_loss = 0.0
     all_preds, all_labels = [], []
 
-    for images, labels in tqdm(dataloader, desc='Training'):
-        images, labels = images.to(device), labels.to(device).float().unsqueeze(1)
+    progress_bar = tqdm(dataloader, desc='Training')
+    for images, labels, _ in progress_bar:
+        images, labels = images.to(DEVICE), labels.to(DEVICE).float().unsqueeze(1)
         optimizer.zero_grad()
-        outputs = model(images)
-        loss = criterion(outputs, labels)
-        loss.backward()
-        optimizer.step()
+
+        with autocast(enabled=DEVICE.type == 'cuda'):
+            outputs = model(images)
+            loss = criterion(outputs, labels)
+
+        scaler.scale(loss).backward()
+        scaler.step(optimizer)
+        scaler.update()
 
         running_loss += loss.item() * images.size(0)
         preds = torch.sigmoid(outputs).detach().cpu().numpy()
         all_preds.extend(preds.flatten())
         all_labels.extend(labels.cpu().numpy().flatten())
 
+        current_loss = running_loss / (len(all_preds) * images.size(0) / len(images))
+        progress_bar.set_postfix({'loss': f'{current_loss:.4f}'})
+
     epoch_loss = running_loss / len(dataloader.dataset)
     metrics = calculate_metrics(np.array(all_labels), np.array(all_preds))
     return epoch_loss, metrics
 
-def validate_epoch(model, dataloader, criterion, device):
-    """Validate one epoch."""
+def validate_epoch(model, dataloader, criterion):
     model.eval()
     running_loss = 0.0
     all_preds, all_labels = [], []
-    attention_saved = 0
 
+    progress_bar = tqdm(dataloader, desc='Validation')
     with torch.no_grad():
-        for images, labels in tqdm(dataloader, desc='Validation'):
-            images, labels = images.to(device), labels.to(device).float().unsqueeze(1)
-            outputs = model(images)
-            loss = criterion(outputs, labels)
+        for images, labels, _ in progress_bar:
+            images, labels = images.to(DEVICE), labels.to(DEVICE).float().unsqueeze(1)
+            with autocast(enabled=DEVICE.type == 'cuda'):
+                outputs = model(images)
+                loss = criterion(outputs, labels)
 
             running_loss += loss.item() * images.size(0)
             preds = torch.sigmoid(outputs).cpu().numpy()
             all_preds.extend(preds.flatten())
             all_labels.extend(labels.cpu().numpy().flatten())
 
-            # Save attention maps for first 5 images
-            if attention_saved < 5:
-                att_maps = model.get_attention_maps(images[0].unsqueeze(0))
-                save_attention_maps(model, images[0], att_maps, f"{OUTPUT_PATH}/attention_map_{attention_saved}.png")
-                attention_saved += 1
+            current_loss = running_loss / (len(all_preds) * images.size(0) / len(images))
+            progress_bar.set_postfix({'loss': f'{current_loss:.4f}'})
 
     epoch_loss = running_loss / len(dataloader.dataset)
     metrics = calculate_metrics(np.array(all_labels), np.array(all_preds))
     return epoch_loss, metrics
 
-def plot_training_history(history, save_path):
-    """Plot training history."""
-    fig, axes = plt.subplots(2, 2, figsize=(12, 8))
-
-    axes[0, 0].plot(history['train_loss'], label='Train Loss')
-    axes[0, 0].plot(history['val_loss'], label='Val Loss')
+def save_plots(history, test_metrics, y_true, y_pred_prob):
+    fig, axes = plt.subplots(2, 3, figsize=(18, 8))
+    axes[0, 0].plot(history['train_loss'], 'b-', label='Train')
+    axes[0, 0].plot(history['val_loss'], 'r-', label='Val')
     axes[0, 0].set_title('Loss')
-    axes[0, 0].set_xlabel('Epoch')
-    axes[0, 0].set_ylabel('Loss')
     axes[0, 0].legend()
     axes[0, 0].grid(True)
 
-    axes[0, 1].plot(history['train_acc'], label='Train Accuracy')
-    axes[0, 1].plot(history['val_acc'], label='Val Accuracy')
+    axes[0, 1].plot(history['train_acc'], 'b-', label='Train')
+    axes[0, 1].plot(history['val_acc'], 'r-', label='Val')
     axes[0, 1].set_title('Accuracy')
-    axes[0, 1].set_xlabel('Epoch')
-    axes[0, 1].set_ylabel('Accuracy')
     axes[0, 1].legend()
     axes[0, 1].grid(True)
 
-    axes[1, 0].plot(history['train_f1'], label='Train F1')
-    axes[1, 0].plot(history['val_f1'], label='Val F1')
-    axes[1, 0].set_title('F1 Score')
-    axes[1, 0].set_xlabel('Epoch')
-    axes[1, 0].set_ylabel('F1 Score')
+    axes[0, 2].plot(history['train_f1'], 'b-', label='Train')
+    axes[0, 2].plot(history['val_f1'], 'r-', label='Val')
+    axes[0, 2].set_title('F1 Score')
+    axes[0, 2].legend()
+    axes[0, 2].grid(True)
+
+    axes[1, 0].plot(history['train_auc'], 'b-', label='Train')
+    axes[1, 0].plot(history['val_auc'], 'r-', label='Val')
+    axes[1, 0].set_title('AUC')
     axes[1, 0].legend()
     axes[1, 0].grid(True)
 
-    axes[1, 1].plot(history['train_auc'], label='Train AUC')
-    axes[1, 1].plot(history['val_auc'], label='Val AUC')
-    axes[1, 1].set_title('AUC')
-    axes[1, 1].set_xlabel('Epoch')
-    axes[1, 1].set_ylabel('AUC')
+    axes[1, 1].plot(history['train_precision'], 'b-', label='Train')
+    axes[1, 1].plot(history['val_precision'], 'r-', label='Val')
+    axes[1, 1].set_title('Precision')
     axes[1, 1].legend()
     axes[1, 1].grid(True)
 
+    axes[1, 2].plot(history['train_recall'], 'b-', label='Train')
+    axes[1, 2].plot(history['val_recall'], 'r-', label='Val')
+    axes[1, 2].set_title('Recall')
+    axes[1, 2].legend()
+    axes[1, 2].grid(True)
+
+    plt.suptitle('Training Progress - ImprovedXception')
     plt.tight_layout()
-    plt.savefig(save_path, dpi=300, bbox_inches='tight')
+    plt.savefig(os.path.join(OUTPUT_PATH, "training_history.png"), dpi=300, bbox_inches='tight')
     plt.close()
 
-def plot_confusion_matrix(cm, save_path):
-    """Plot confusion matrix."""
     plt.figure(figsize=(6, 4))
-    sns.heatmap(cm, annot=True, fmt='d', cmap='Blues',
+    sns.heatmap(test_metrics['confusion_matrix'], annot=True, fmt='d', cmap='Blues',
                 xticklabels=['Real', 'Fake'], yticklabels=['Real', 'Fake'])
-    plt.title('Confusion Matrix')
-    plt.ylabel('True Label')
-    plt.xlabel('Predicted Label')
+    plt.title('Confusion Matrix - Test Set')
     plt.tight_layout()
-    plt.savefig(save_path, dpi=300, bbox_inches='tight')
+    plt.savefig(os.path.join(OUTPUT_PATH, "confusion_matrix.png"), dpi=300, bbox_inches='tight')
     plt.close()
 
-def plot_roc_curve(y_true, y_pred_prob, save_path):
-    """Plot ROC curve."""
-    from sklearn.metrics import roc_curve
     fpr, tpr, _ = roc_curve(y_true, y_pred_prob)
-    auc = roc_auc_score(y_true, y_pred_prob) if len(np.unique(y_true)) > 1 else 0.5
-
+    auc = roc_auc_score(y_true, y_pred_prob)
     plt.figure(figsize=(6, 4))
-    plt.plot(fpr, tpr, label=f'AUC = {auc:.4f}')
+    plt.plot(fpr, tpr, label=f'AUC = {auc:.4f}', lw=2)
     plt.plot([0, 1], [0, 1], 'k--')
-    plt.title('ROC Curve')
-    plt.xlabel('False Positive Rate (FPR)')
-    plt.ylabel('True Positive Rate (TPR)')
+    plt.xlabel('False Positive Rate')
+    plt.ylabel('True Positive Rate')
+    plt.title('ROC Curve - Test Set')
     plt.legend()
     plt.grid(True)
     plt.tight_layout()
-    plt.savefig(save_path, dpi=300, bbox_inches='tight')
+    plt.savefig(os.path.join(OUTPUT_PATH, "roc_curve.png"), dpi=300, bbox_inches='tight')
     plt.close()
 
-def analyze_misclassifications(model, dataloader, device, output_path):
-    """Analyze misclassified samples."""
-    model.eval()
-    misclassified = {'fake_as_real': [], 'real_as_fake': []}
+    precision, recall, _ = precision_recall_curve(y_true, y_pred_prob)
+    ap = average_precision_score(y_true, y_pred_prob)
+    plt.figure(figsize=(6, 4))
+    plt.plot(recall, precision, label=f'AP = {ap:.4f}', lw=2)
+    plt.xlabel('Recall')
+    plt.ylabel('Precision')
+    plt.title('Precision-Recall Curve - Test Set')
+    plt.legend()
+    plt.grid(True)
+    plt.tight_layout()
+    plt.savefig(os.path.join(OUTPUT_PATH, "precision_recall_curve.png"), dpi=300, bbox_inches='tight')
+    plt.close()
 
+def analyze_misclassifications(model, test_loader):
+    model.eval()
+    misclassified = []
+
+    progress_bar = tqdm(test_loader, desc='Analyzing misclassifications')
     with torch.no_grad():
-        for batch_idx, (images, labels) in enumerate(tqdm(dataloader, desc='Analyzing Errors')):
-            images, labels_np = images.to(device), labels.numpy()
-            outputs = model(images)
-            probs = torch.sigmoid(outputs).cpu().numpy().flatten()
+        for images, labels, paths in progress_bar:
+            images = images.to(DEVICE)
+            labels_np = labels.numpy()
+            with autocast(enabled=DEVICE.type == 'cuda'):
+                outputs = model(images)
+                probs = torch.sigmoid(outputs).cpu().numpy().flatten()
             preds = (probs >= 0.5).astype(int)
 
             for idx in range(len(labels)):
                 if labels_np[idx] != preds[idx]:
-                    sample_idx = batch_idx * dataloader.batch_size + idx
-                    if sample_idx < len(dataloader.dataset):
-                        img_path = dataloader.dataset.data.iloc[sample_idx]['image_path']
-                        error_info = {
-                            'sample_index': sample_idx,
-                            'image_path': img_path,
-                            'actual_label': 'fake' if labels_np[idx] == 1 else 'real',
-                            'predicted_label': 'fake' if preds[idx] == 1 else 'real',
-                            'confidence': float(probs[idx]) if preds[idx] == 1 else float(1 - probs[idx])
-                        }
-                        if labels_np[idx] == 1 and preds[idx] == 0:
-                            misclassified['fake_as_real'].append(error_info)
-                        else:
-                            misclassified['real_as_fake'].append(error_info)
+                    misclassified.append({
+                        'image_path': paths[idx],
+                        'true_label': 'fake' if labels_np[idx] == 1 else 'real',
+                        'predicted_label': 'fake' if preds[idx] == 1 else 'real',
+                        'confidence': float(probs[idx]) if preds[idx] == 1 else float(1 - probs[idx]),
+                        'probability': float(probs[idx])
+                    })
 
-    # Save analysis
-    analysis_path = os.path.join(output_path, 'misclassification_analysis.txt')
-    with open(analysis_path, 'w', encoding='utf-8') as f:
-        f.write(
-            f"Total misclassified samples: {len(misclassified['fake_as_real']) + len(misclassified['real_as_fake'])}\n")
-        f.write(f"Fake misclassified as Real: {len(misclassified['fake_as_real'])}\n")
-        f.write(f"Real misclassified as Fake: {len(misclassified['real_as_fake'])}\n\n")
+            progress_bar.set_postfix({'misclassified': len(misclassified)})
 
-        if misclassified['fake_as_real']:
-            f.write("Fake misclassified as Real:\n")
-            for i, error in enumerate(
-                    sorted(misclassified['fake_as_real'], key=lambda x: x['confidence'], reverse=True)[:10], 1):
-                f.write(
-                    f"{i}. Index: {error['sample_index']}, Path: {error['image_path']}, Confidence: {error['confidence']:.4f}\n")
+    save_dir = os.path.join(OUTPUT_PATH, "misclassified_visualizations")
+    os.makedirs(save_dir, exist_ok=True)
+    for sample in misclassified[:5]:
+        idx = test_loader.dataset.data.index[test_loader.dataset.data['image_path'] == sample['image_path']].tolist()[0]
+        image, label, path = test_loader.dataset[idx]
+        image_name = Path(path).name
+        save_path = os.path.join(save_dir, f"{image_name}_true{sample['true_label']}_pred{sample['predicted_label']}.png")
+        visualize_attention_map(model, image, label, sample['probability'], save_path, image_name)
 
-        if misclassified['real_as_fake']:
-            f.write("\nReal misclassified as Fake:\n")
-            for i, error in enumerate(
-                    sorted(misclassified['real_as_fake'], key=lambda x: x['confidence'], reverse=True)[:10], 1):
-                f.write(
-                    f"{i}. Index: {error['sample_index']}, Path: {error['image_path']}, Confidence: {error['confidence']:.4f}\n")
+    with open(os.path.join(OUTPUT_PATH, "misclassification_analysis.txt"), 'w') as f:
+        f.write(f"MISCLASSIFICATION ANALYSIS - ImprovedXception\n")
+        f.write("=" * 60 + "\n\n")
+        f.write(f"Total misclassified samples: {len(misclassified)}\n")
 
-    if misclassified['fake_as_real'] or misclassified['real_as_fake']:
-        pd.DataFrame([{'error_type': k, **v} for k, errors in misclassified.items() for v in errors]).to_csv(
-            os.path.join(output_path, 'misclassified_samples.csv'), index=False)
+        fake_as_real = [m for m in misclassified if m['true_label'] == 'fake']
+        real_as_fake = [m for m in misclassified if m['true_label'] == 'real']
+
+        f.write(f"Fake misclassified as Real: {len(fake_as_real)}\n")
+        f.write(f"Real misclassified as Fake: {len(real_as_fake)}\n\n")
+
+        if fake_as_real:
+            f.write("TOP 5 FAKE MISCLASSIFIED AS REAL:\n")
+            for i, error in enumerate(sorted(fake_as_real, key=lambda x: x['confidence'], reverse=True)[:5], 1):
+                f.write(f"{i}. {error['image_path']}\n")
+                f.write(f"   Confidence: {error['confidence']:.4f}\n\n")
+
+        if real_as_fake:
+            f.write("TOP 5 REAL MISCLASSIFIED AS FAKE:\n")
+            for i, error in enumerate(sorted(real_as_fake, key=lambda x: x['confidence'], reverse=True)[:5], 1):
+                f.write(f"{i}. {error['image_path']}\n")
+                f.write(f"   Confidence: {error['confidence']:.4f}\n\n")
+
+    if misclassified:
+        pd.DataFrame(misclassified).to_csv(os.path.join(OUTPUT_PATH, "misclassified_samples.csv"), index=False)
 
     return misclassified
 
-def main():
-    """Main function."""
-    # Load data
-    train_dataset = DeepfakeDataset(f"{DATA_PATH}/train.csv", transform=train_transform)
-    val_dataset = DeepfakeDataset(f"{DATA_PATH}/val.csv", transform=val_test_transform)
-    test_dataset = DeepfakeDataset(f"{DATA_PATH}/test.csv", transform=val_test_transform)
+def train_improved_xception():
+    print("=" * 60)
+    print("IMPROVED XCEPTION TRAINING FOR DEEPFAKE DETECTION")
+    print("=" * 60)
 
-    train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True, num_workers=NUM_WORKERS,
-                              pin_memory=True)
+    model = ImprovedXception(num_classes=1, dropout_rate=0.5).to(DEVICE)
+    params = sum(p.numel() for p in model.parameters() if p.requires_grad) / 1e6
+    print(f"Model created. Parameters: {params:.2f}M")
+
+    print("\nLoading datasets...")
+    train_dataset = DeepfakeDataset(os.path.join(DATA_PATH, "train.csv"), transform=train_transform)
+    val_dataset = DeepfakeDataset(os.path.join(DATA_PATH, "val.csv"), transform=val_test_transform)
+    test_dataset = DeepfakeDataset(os.path.join(DATA_PATH, "test.csv"), transform=val_test_transform)
+
+    train_loader = DataLoader(train_dataset, batch_size=BATCH_SIZE, shuffle=True, num_workers=NUM_WORKERS, pin_memory=True)
     val_loader = DataLoader(val_dataset, batch_size=BATCH_SIZE, shuffle=False, num_workers=NUM_WORKERS, pin_memory=True)
-    test_loader = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=False, num_workers=NUM_WORKERS,
-                             pin_memory=True)
+    test_loader = DataLoader(test_dataset, batch_size=BATCH_SIZE, shuffle=False, num_workers=NUM_WORKERS, pin_memory=True)
 
-    # Initialize model
-    model = create_optimized_model(dropout_rate=0.5).to(DEVICE)
+    print(f"Dataset sizes - Train: {len(train_dataset):,}, Val: {len(val_dataset):,}, Test: {len(test_dataset):,}")
 
-    # Training history
-    history = {'train_loss': [], 'val_loss': [], 'train_acc': [], 'val_acc': [],
-               'train_f1': [], 'val_f1': [], 'train_auc': [], 'val_auc': []}
+    train_labels = [train_dataset[i][1] for i in range(len(train_dataset))]
+    fake_ratio = sum(train_labels) / len(train_labels)
+    print(f"Fake ratio in training set: {fake_ratio:.3f}")
 
-    # Pretrain (frozen backbone)
-    for param in model.base_model.parameters():
-        param.requires_grad = False
-    criterion = FocalLoss(alpha=torch.tensor([ALPHA, 1 - ALPHA]), gamma=GAMMA)
-    optimizer = optim.Adam(filter(lambda p: p.requires_grad, model.parameters()), lr=LEARNING_RATE,
-                           weight_decay=WEIGHT_DECAY)
+    criterion = FocalLoss(alpha=ALPHA, gamma=GAMMA)
+    scaler = GradScaler(enabled=DEVICE.type == 'cuda')
+    history = {
+        'train_loss': [], 'val_loss': [], 'train_acc': [], 'val_acc': [],
+        'train_f1': [], 'val_f1': [], 'train_auc': [], 'val_auc': [],
+        'train_precision': [], 'val_precision': [], 'train_recall': [], 'val_recall': []
+    }
+    best_val_loss = float('inf')
+
+    # Phase 1: Pretraining (freeze all except classifier)
+    for name, param in model.named_parameters():
+        if 'fc' in name:
+            param.requires_grad = True
+        else:
+            param.requires_grad = False
+
+    trainable_params = list(filter(lambda p: p.requires_grad, model.parameters()))
+    if not trainable_params:
+        for param in model.parameters():
+            param.requires_grad = True
+        trainable_params = list(model.parameters())
+
+    optimizer = optim.Adam(trainable_params, lr=LEARNING_RATE, weight_decay=WEIGHT_DECAY)
     scheduler = ReduceLROnPlateau(optimizer, mode='min', factor=0.5, patience=PATIENCE)
 
-    print("Starting pretraining...")
-    best_val_acc = 0
+    print("\nPhase 1: Pretraining...")
     for epoch in range(PRETRAIN_EPOCHS):
-        train_loss, train_metrics = train_epoch(model, train_loader, criterion, optimizer, DEVICE)
-        val_loss, val_metrics = validate_epoch(model, val_loader, criterion, DEVICE)
+        print(f"  Epoch {epoch + 1}/{PRETRAIN_EPOCHS}")
+        train_loss, train_metrics = train_epoch(model, train_loader, criterion, optimizer, scaler)
+        val_loss, val_metrics = validate_epoch(model, val_loader, criterion)
         scheduler.step(val_loss)
 
         history['train_loss'].append(train_loss)
@@ -296,25 +418,42 @@ def main():
         history['val_f1'].append(val_metrics['f1'])
         history['train_auc'].append(train_metrics['auc'])
         history['val_auc'].append(val_metrics['auc'])
+        history['train_precision'].append(train_metrics['precision'])
+        history['val_precision'].append(val_metrics['precision'])
+        history['train_recall'].append(train_metrics['recall'])
+        history['val_recall'].append(val_metrics['recall'])
 
         print(
-            f"Pretrain Epoch {epoch + 1}/{PRETRAIN_EPOCHS}: Train Loss: {train_loss:.4f}, Train Accuracy: {train_metrics['accuracy']:.4f}, "
-            f"Val Loss: {val_loss:.4f}, Val Accuracy: {val_metrics['accuracy']:.4f}")
+            f"    Train Loss: {train_loss:.4f}, Acc: {train_metrics['accuracy']:.4f}, "
+            f"F1: {train_metrics['f1']:.4f}, AUC: {train_metrics['auc']:.4f}, "
+            f"Precision: {train_metrics['precision']:.4f}, Recall: {train_metrics['recall']:.4f}"
+        )
+        print(
+            f"    Val Loss: {val_loss:.4f}, Acc: {val_metrics['accuracy']:.4f}, "
+            f"F1: {val_metrics['f1']:.4f}, AUC: {val_metrics['auc']:.4f}, "
+            f"Precision: {val_metrics['precision']:.4f}, Recall: {val_metrics['recall']:.4f}"
+        )
 
-        if val_metrics['accuracy'] > best_val_acc:
-            best_val_acc = val_metrics['accuracy']
-            torch.save({'model_state_dict': model.state_dict()}, f"{MODEL_PATH}/best_model.pth")
+        if val_loss < best_val_loss:
+            best_val_loss = val_loss
+            torch.save({'model_state_dict': model.state_dict()}, os.path.join(MODEL_PATH, "best_model.pth"))
 
-    # Finetune (unfreeze all)
+        if (epoch + 1) % SAVE_ATTENTION_FREQ == 0:
+            print(f"  Saving attention visualizations for epoch {epoch + 1}...")
+            save_attention_samples(model, train_loader, epoch + 1, "train", NUM_ATTENTION_SAMPLES)
+            save_attention_samples(model, val_loader, epoch + 1, "val", NUM_ATTENTION_SAMPLES)
+
+    # Phase 2: Finetuning
     for param in model.parameters():
         param.requires_grad = True
-    optimizer = optim.Adam(model.parameters(), lr=LEARNING_RATE, weight_decay=WEIGHT_DECAY)
+    optimizer = optim.Adam(model.parameters(), lr=FINETUNE_LR, weight_decay=WEIGHT_DECAY)
     scheduler = ReduceLROnPlateau(optimizer, mode='min', factor=0.5, patience=PATIENCE)
 
-    print("Starting finetuning...")
+    print("\nPhase 2: Finetuning...")
     for epoch in range(FINETUNE_EPOCHS):
-        train_loss, train_metrics = train_epoch(model, train_loader, criterion, optimizer, DEVICE)
-        val_loss, val_metrics = validate_epoch(model, val_loader, criterion, DEVICE)
+        print(f"  Epoch {epoch + 1}/{FINETUNE_EPOCHS}")
+        train_loss, train_metrics = train_epoch(model, train_loader, criterion, optimizer, scaler)
+        val_loss, val_metrics = validate_epoch(model, val_loader, criterion)
         scheduler.step(val_loss)
 
         history['train_loss'].append(train_loss)
@@ -325,62 +464,137 @@ def main():
         history['val_f1'].append(val_metrics['f1'])
         history['train_auc'].append(train_metrics['auc'])
         history['val_auc'].append(val_metrics['auc'])
+        history['train_precision'].append(train_metrics['precision'])
+        history['val_precision'].append(val_metrics['precision'])
+        history['train_recall'].append(train_metrics['recall'])
+        history['val_recall'].append(val_metrics['recall'])
 
         print(
-            f"Finetune Epoch {epoch + 1}/{FINETUNE_EPOCHS}: Train Loss: {train_loss:.4f}, Train Accuracy: {train_metrics['accuracy']:.4f}, "
-            f"Val Loss: {val_loss:.4f}, Val Accuracy: {val_metrics['accuracy']:.4f}")
+            f"    Train Loss: {train_loss:.4f}, Acc: {train_metrics['accuracy']:.4f}, "
+            f"F1: {train_metrics['f1']:.4f}, AUC: {train_metrics['auc']:.4f}, "
+            f"Precision: {train_metrics['precision']:.4f}, Recall: {train_metrics['recall']:.4f}"
+        )
+        print(
+            f"    Val Loss: {val_loss:.4f}, Acc: {val_metrics['accuracy']:.4f}, "
+            f"F1: {val_metrics['f1']:.4f}, AUC: {val_metrics['auc']:.4f}, "
+            f"Precision: {val_metrics['precision']:.4f}, Recall: {val_metrics['recall']:.4f}"
+        )
 
-        if val_metrics['accuracy'] > best_val_acc:
-            best_val_acc = val_metrics['accuracy']
-            torch.save({'model_state_dict': model.state_dict()}, f"{MODEL_PATH}/best_model.pth")
+        if val_loss < best_val_loss:
+            best_val_loss = val_loss
+            torch.save({'model_state_dict': model.state_dict()}, os.path.join(MODEL_PATH, "best_model.pth"))
 
-    # Test evaluation
-    checkpoint = torch.load(f"{MODEL_PATH}/best_model.pth")
+        if (epoch + 1) % SAVE_ATTENTION_FREQ == 0:
+            print(f"  Saving attention visualizations for epoch {epoch + 1}...")
+            save_attention_samples(model, train_loader, epoch + PRETRAIN_EPOCHS + 1, "train", NUM_ATTENTION_SAMPLES)
+            save_attention_samples(model, val_loader, epoch + PRETRAIN_EPOCHS + 1, "val", NUM_ATTENTION_SAMPLES)
+
+    torch.save({'model_state_dict': model.state_dict()}, os.path.join(MODEL_PATH, "final_model.pth"))
+
+    print("\nLoading best model for final evaluation...")
+    checkpoint = torch.load(os.path.join(MODEL_PATH, "best_model.pth"))
     model.load_state_dict(checkpoint['model_state_dict'])
-    test_loss, test_metrics = validate_epoch(model, test_loader, criterion, DEVICE)
 
-    # Print test results
-    print(f"\nTest Results:\nLoss: {test_loss:.4f}, Accuracy: {test_metrics['accuracy']:.4f}, "
-          f"F1: {test_metrics['f1']:.4f}, AUC: {test_metrics['auc']:.4f}, MCC: {test_metrics['mcc']:.4f}")
-    print(
-        f"Fake Detection: {test_metrics['fake_detection_rate']:.4f}, Real Detection: {test_metrics['real_detection_rate']:.4f}")
-    print(f"Confusion Matrix:\nReal: {test_metrics['true_negatives']} TN, {test_metrics['false_positives']} FP\n"
-          f"Fake: {test_metrics['false_negatives']} FN, {test_metrics['true_positives']} TP")
+    print("\nEvaluating on test set...")
+    test_loss, test_metrics = validate_epoch(model, test_loader, criterion)
 
-    # Classification report
-    y_true, y_pred, y_pred_prob = [], [], []
+    model.eval()
+    y_true, y_pred_prob = [], []
     with torch.no_grad():
-        for images, labels in test_loader:
+        for images, labels, _ in tqdm(test_loader, desc='Getting test predictions'):
             images = images.to(DEVICE)
-            outputs = model(images)
-            probs = torch.sigmoid(outputs).cpu().numpy()
-            preds = (probs >= 0.5).astype(int)
-            y_pred.extend(preds.flatten())
-            y_pred_prob.extend(probs.flatten())
+            with autocast(enabled=DEVICE.type == 'cuda'):
+                outputs = model(images)
+                probs = torch.sigmoid(outputs).cpu().numpy().flatten()
             y_true.extend(labels.numpy())
+            y_pred_prob.extend(probs)
 
-    print("\nClassification Report:")
-    print(classification_report(y_true, y_pred, target_names=['Real', 'Fake']))
+    y_true = np.array(y_true)
+    y_pred_prob = np.array(y_pred_prob)
 
-    # Analyze misclassifications
-    analyze_misclassifications(model, test_loader, DEVICE, OUTPUT_PATH)
+    print("\nSaving attention visualizations for test set...")
+    save_attention_samples(model, test_loader, PRETRAIN_EPOCHS + FINETUNE_EPOCHS, "test", NUM_ATTENTION_SAMPLES)
 
-    # Save plots
-    plot_training_history(history, f"{OUTPUT_PATH}/training_history.png")
-    plot_confusion_matrix(test_metrics['confusion_matrix'], f"{OUTPUT_PATH}/confusion_matrix.png")
-    plot_roc_curve(np.array(y_true), np.array(y_pred_prob), f"{OUTPUT_PATH}/roc_curve.png")
+    print("\nMeasuring inference time...")
+    start_time = time.time()
+    total_samples = 0
+    with torch.no_grad():
+        for images, _, _ in tqdm(test_loader, desc='Inference timing'):
+            images = images.to(DEVICE)
+            with autocast(enabled=DEVICE.type == 'cuda'):
+                _ = model(images)
+            total_samples += images.size(0)
+    total_time = time.time() - start_time
+    inference_time_ms = (total_time / total_samples) * 1000
+    fps = total_samples / total_time
 
-    # Save results
-    with open(f"{OUTPUT_PATH}/results.txt", 'w') as f:
-        f.write(f"Test Results:\nLoss: {test_loss:.4f}\nAccuracy: {test_metrics['accuracy']:.4f}\n"
-                f"F1: {test_metrics['f1']:.4f}\nAUC: {test_metrics['auc']:.4f}\nMCC: {test_metrics['mcc']:.4f}\n"
-                f"Fake Detection Rate: {test_metrics['fake_detection_rate']:.4f}\n"
-                f"Real Detection Rate: {test_metrics['real_detection_rate']:.4f}\n"
-                f"Confusion Matrix:\nReal: {test_metrics['true_negatives']} TN, {test_metrics['false_positives']} FP\n"
-                f"Fake: {test_metrics['false_negatives']} FN, {test_metrics['true_positives']} TP\n")
+    misclassified = analyze_misclassifications(model, test_loader)
 
-    torch.save(model.state_dict(), f"{MODEL_PATH}/final_model.pth")
-    print(f"Results saved to: {OUTPUT_PATH}")
+    print("\n" + "=" * 60)
+    print("FINAL TEST RESULTS")
+    print("=" * 60)
+    print(f"Accuracy: {test_metrics['accuracy']:.4f}")
+    print(f"Precision: {test_metrics['precision']:.4f}")
+    print(f"Recall: {test_metrics['recall']:.4f}")
+    print(f"F1-Score: {test_metrics['f1']:.4f}")
+    print(f"AUC: {test_metrics['auc']:.4f}")
+    print(f"MCC: {test_metrics['mcc']:.4f}")
+    print(f"Fake Detection Rate: {test_metrics['fake_detection_rate']:.4f}")
+    print(f"Real Detection Rate: {test_metrics['real_detection_rate']:.4f}")
+    print(f"Inference: {inference_time_ms:.2f} ms/sample ({fps:.1f} FPS)")
+    print(f"Misclassified: {len(misclassified)} samples")
+    if misclassified:
+        print("Sample misclassifications:")
+        for i, sample in enumerate(misclassified[:5], 1):
+            print(
+                f"  {i}. True: {sample['true_label']}, Pred: {sample['predicted_label']}, "
+                f"Conf: {sample['confidence']:.3f}, Path: {sample['image_path']}")
+
+    save_plots(history, test_metrics, y_true, y_pred_prob)
+
+    results = {
+        'model_name': 'ImprovedXception',
+        'test_loss': test_loss,
+        'accuracy': test_metrics['accuracy'],
+        'precision': test_metrics['precision'],
+        'recall': test_metrics['recall'],
+        'f1': test_metrics['f1'],
+        'auc': test_metrics['auc'],
+        'mcc': test_metrics['mcc'],
+        'fake_detection_rate': test_metrics['fake_detection_rate'],
+        'real_detection_rate': test_metrics['real_detection_rate'],
+        'inference_time_ms': inference_time_ms,
+        'fps': fps,
+        'parameters_millions': params,
+        'total_misclassified': len(misclassified)
+    }
+
+    with open(os.path.join(OUTPUT_PATH, "results.json"), 'w') as f:
+        json.dump(results, f, indent=2)
+
+    with open(os.path.join(OUTPUT_PATH, "results.txt"), 'w') as f:
+        f.write(f"Test Results - ImprovedXception\n")
+        f.write(f"Loss: {test_loss:.4f}\n")
+        f.write(f"Accuracy: {test_metrics['accuracy']:.4f}\n")
+        f.write(f"Precision: {test_metrics['precision']:.4f}\n")
+        f.write(f"Recall: {test_metrics['recall']:.4f}\n")
+        f.write(f"F1: {test_metrics['f1']:.4f}\n")
+        f.write(f"AUC: {test_metrics['auc']:.4f}\n")
+        f.write(f"MCC: {test_metrics['mcc']:.4f}\n")
+        f.write(f"Fake Detection Rate: {test_metrics['fake_detection_rate']:.4f}\n")
+        f.write(f"Real Detection Rate: {test_metrics['real_detection_rate']:.4f}\n")
+        f.write(f"Inference: {inference_time_ms:.2f} ms/sample ({fps:.1f} FPS)\n")
+        f.write(f"Parameters: {params:.2f}M\n")
+        f.write(f"Confusion Matrix:\n")
+        f.write(f"Real: {test_metrics['true_negatives']} TN, {test_metrics['false_positives']} FP\n")
+        f.write(f"Fake: {test_metrics['false_negatives']} FN, {test_metrics['true_positives']} TP\n")
+
+    print(f"\n✓ All results saved to: {OUTPUT_PATH}")
+    torch.cuda.empty_cache()
+    return model, results
 
 if __name__ == "__main__":
-    main()
+    model, results = train_improved_xception()
+    print("\n" + "=" * 60)
+    print("TRAINING COMPLETED SUCCESSFULLY!")
+    print("=" * 60)

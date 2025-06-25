@@ -1,0 +1,14 @@
+{
+  "model_name": "Xception",
+  "test_loss": 0.020340038496351413,
+  "accuracy": 0.8631160722732003,
+  "f1": 0.9146765729111386,
+  "auc": 0.9509987592664993,
+  "mcc": 0.6104553447183191,
+  "fake_detection_rate": 0.8577273983964612,
+  "real_detection_rate": 0.8949950932286556,
+  "inference_time_ms": 2.6354621593643865,
+  "fps": 379.44009040189644,
+  "parameters_millions": 20.809001,
+  "total_misclassified": 2894
+}

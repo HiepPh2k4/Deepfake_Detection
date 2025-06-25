@@ -1,0 +1,11 @@
+Test Results:
+Loss: 0.0197
+Accuracy: 0.9001
+F1: 0.9398
+AUC: 0.9545
+MCC: 0.6597
+Fake Detection Rate: 0.9113
+Real Detection Rate: 0.8342
+Confusion Matrix:
+Real: 2550 TN, 507 FP
+Fake: 1605 FN, 16480 TP

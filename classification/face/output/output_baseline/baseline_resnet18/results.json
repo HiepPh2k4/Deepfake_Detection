@@ -1,0 +1,14 @@
+{
+  "model_name": "ResNet18",
+  "test_loss": 0.02217263753877028,
+  "accuracy": 0.8849683095260619,
+  "f1": 0.9299982729837085,
+  "auc": 0.9447577042550402,
+  "mcc": 0.6271849966143768,
+  "fake_detection_rate": 0.8932817251866187,
+  "real_detection_rate": 0.835786719005561,
+  "inference_time_ms": 1.1736166397136587,
+  "fps": 852.0669920324085,
+  "parameters_millions": 11.177025,
+  "total_misclassified": 2432
+}
