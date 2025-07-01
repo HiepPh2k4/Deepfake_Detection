@@ -19,7 +19,7 @@ from classification.voice.Implementation.transform import train_transforms, test
 from classification.voice.Implementation.utils import EarlyStopping, calculate_eer
 
 # Paths
-DATA_DIR = "/data_preprocessing/asvsproof_data"
+DATA_DIR = "D:/Deepfake_Detection_project/data_preprocessing/voice_data"
 OUTPUT_BASE_DIR = "D:/Deepfake_Detection_project/classification/voice/output"
 MODEL_DIR = "D:/Deepfake_Detection_project/classification/voice/models"
 

@@ -56,7 +56,6 @@ train_transforms = transforms.Compose([
 
 # Validation/Test transforms
 test_transforms = transforms.Compose([
-    transforms.Grayscale(num_output_channels=3),  # Convert grayscale Mel spectrogram to RGB
     transforms.Resize((299, 299)),
     transforms.ToTensor(),
     transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])

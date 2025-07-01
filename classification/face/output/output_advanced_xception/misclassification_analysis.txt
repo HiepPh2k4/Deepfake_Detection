@@ -1,0 +1,39 @@
+MISCLASSIFICATION ANALYSIS - Advanced Xception
+============================================================
+
+Total misclassified samples: 2291
+Fake misclassified as Real: 1626
+Real misclassified as Fake: 665
+
+TOP 5 FAKE MISCLASSIFIED AS REAL:
+1. /workspace/Deepfake_Detection/data_preprocessing/ff_frames/fake_NeuralTextures_548_632/frame6.jpg
+   Confidence: 0.8687
+
+2. /workspace/Deepfake_Detection/data_preprocessing/ff_frames/fake_DeepFakeDetection_20_21__walking_down_indoor_hall_disgust__ZCB5OMEW/frame11.jpg
+   Confidence: 0.8618
+
+3. /workspace/Deepfake_Detection/data_preprocessing/ff_frames/fake_NeuralTextures_233_995/frame10.jpg
+   Confidence: 0.8574
+
+4. /workspace/Deepfake_Detection/data_preprocessing/ff_frames/fake_NeuralTextures_548_632/frame4.jpg
+   Confidence: 0.8506
+
+5. /workspace/Deepfake_Detection/data_preprocessing/ff_frames/fake_DeepFakeDetection_27_02__walking_down_indoor_hall_disgust__3L1MLH3D/frame12.jpg
+   Confidence: 0.8462
+
+TOP 5 REAL MISCLASSIFIED AS FAKE:
+1. /workspace/Deepfake_Detection/data_preprocessing/ff_frames/real_youtube_068/frame0.jpg
+   Confidence: 0.9507
+
+2. /workspace/Deepfake_Detection/data_preprocessing/ff_frames/real_actors_05__walk_down_hall_angry/frame4.jpg
+   Confidence: 0.9370
+
+3. /workspace/Deepfake_Detection/data_preprocessing/ff_frames/real_youtube_260/frame6.jpg
+   Confidence: 0.9307
+
+4. /workspace/Deepfake_Detection/data_preprocessing/ff_frames/real_youtube_871/frame13.jpg
+   Confidence: 0.9224
+
+5. /workspace/Deepfake_Detection/data_preprocessing/ff_frames/real_actors_10__podium_speech_happy/frame14.jpg
+   Confidence: 0.8921
+

@@ -1,0 +1,313 @@
+G:\Hiep\Deepfake_Detection\.venv\Scripts\python.exe G:\Hiep\Deepfake_Detection\classification\face\Implementation\baseline\baseline_train.py
+Baseline Models Training
+====================
+
+Train: 98,683, Val: 21,152, Test: 21,142
+
+[1/5] MobileNetV3-Large
+
+Training MobileNetV3-Large
+Parameters: 4.20M
+Phase 1: Pretraining...
+  Epoch 1/3
+    Train Loss: 0.0440, Train Acc: 0.7240, Train F1: 0.8274, Train AUC: 0.6666, Val Loss: 0.0428, Val Acc: 0.7221, Val F1: 0.8239, Val AUC: 0.7042
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]  Epoch 2/3
+    Train Loss: 0.0428, Train Acc: 0.7236, Train F1: 0.8251, Train AUC: 0.6992, Val Loss: 0.0423, Val Acc: 0.7129, Val F1: 0.8152, Val AUC: 0.7157
+  Epoch 3/3
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0425, Train Acc: 0.7250, Train F1: 0.8256, Train AUC: 0.7078, Val Loss: 0.0426, Val Acc: 0.7395, Val F1: 0.8374, Val AUC: 0.7141
+Phase 2: Finetuning...
+  Epoch 1/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0335, Train Acc: 0.7820, Train F1: 0.8617, Train AUC: 0.8449, Val Loss: 0.0295, Val Acc: 0.9011, Val F1: 0.9424, Val AUC: 0.9267
+  Epoch 2/15
+    Train Loss: 0.0258, Train Acc: 0.8420, Train F1: 0.9016, Train AUC: 0.9154, Val Loss: 0.0253, Val Acc: 0.9002, Val F1: 0.9413, Val AUC: 0.9381
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]  Epoch 3/15
+    Train Loss: 0.0237, Train Acc: 0.8551, Train F1: 0.9102, Train AUC: 0.9296, Val Loss: 0.0218, Val Acc: 0.8769, Val F1: 0.9245, Val AUC: 0.9425
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]  Epoch 4/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0233, Train Acc: 0.8582, Train F1: 0.9121, Train AUC: 0.9322, Val Loss: 0.0242, Val Acc: 0.8838, Val F1: 0.9300, Val AUC: 0.9333
+  Epoch 5/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0225, Train Acc: 0.8633, Train F1: 0.9155, Train AUC: 0.9367, Val Loss: 0.0251, Val Acc: 0.8957, Val F1: 0.9378, Val AUC: 0.9372
+  Epoch 6/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0225, Train Acc: 0.8623, Train F1: 0.9149, Train AUC: 0.9366, Val Loss: 0.0239, Val Acc: 0.8992, Val F1: 0.9400, Val AUC: 0.9407
+  Epoch 7/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0222, Train Acc: 0.8663, Train F1: 0.9174, Train AUC: 0.9390, Val Loss: 0.0235, Val Acc: 0.8966, Val F1: 0.9379, Val AUC: 0.9457
+  Epoch 8/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0221, Train Acc: 0.8663, Train F1: 0.9175, Train AUC: 0.9393, Val Loss: 0.0352, Val Acc: 0.9002, Val F1: 0.9423, Val AUC: 0.9303
+  Epoch 9/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0220, Train Acc: 0.8678, Train F1: 0.9184, Train AUC: 0.9402, Val Loss: 0.0241, Val Acc: 0.8870, Val F1: 0.9317, Val AUC: 0.9393
+  Epoch 10/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0193, Train Acc: 0.8844, Train F1: 0.9291, Train AUC: 0.9545, Val Loss: 0.0224, Val Acc: 0.8942, Val F1: 0.9360, Val AUC: 0.9478
+  Epoch 11/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0186, Train Acc: 0.8890, Train F1: 0.9321, Train AUC: 0.9578, Val Loss: 0.0226, Val Acc: 0.9010, Val F1: 0.9408, Val AUC: 0.9497
+  Epoch 12/15
+    Train Loss: 0.0181, Train Acc: 0.8916, Train F1: 0.9337, Train AUC: 0.9601, Val Loss: 0.0215, Val Acc: 0.8778, Val F1: 0.9247, Val AUC: 0.9496
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]  Epoch 13/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0177, Train Acc: 0.8946, Train F1: 0.9356, Train AUC: 0.9621, Val Loss: 0.0247, Val Acc: 0.9040, Val F1: 0.9429, Val AUC: 0.9448
+  Epoch 14/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0177, Train Acc: 0.8955, Train F1: 0.9361, Train AUC: 0.9621, Val Loss: 0.0253, Val Acc: 0.9004, Val F1: 0.9405, Val AUC: 0.9429
+  Epoch 15/15
+    Train Loss: 0.0174, Train Acc: 0.8963, Train F1: 0.9367, Train AUC: 0.9633, Val Loss: 0.0251, Val Acc: 0.9010, Val F1: 0.9410, Val AUC: 0.9453
+Inference timing:   0%|          | 0/1322 [00:00<?, ?it/s]Measuring inference time...
+Analyzing misclassifications:   0%|          | 0/1322 [00:00<?, ?it/s]
+Test Results:
+  Accuracy: 0.8792
+  F1-Score: 0.9260
+  AUC: 0.9476
+  MCC: 0.6249
+  Inference: 1.11 ms/sample (897.6 FPS)
+Analyzing misclassifications: 100%|██████████| 1322/1322 [00:24<00:00, 54.51it/s, misclassified=2553]
+  Misclassified: 2553 samples
+  Sample misclassifications:
+    1. True: fake, Pred: real, Conf: 0.772
+    2. True: fake, Pred: real, Conf: 0.882
+    3. True: fake, Pred: real, Conf: 0.601
+    4. True: fake, Pred: real, Conf: 0.884
+    5. True: fake, Pred: real, Conf: 0.799
+
+[2/5] ResNet18
+
+Training ResNet18
+Parameters: 11.18M
+Phase 1: Pretraining...
+  Epoch 1/3
+    Train Loss: 0.0467, Train Acc: 0.6702, Train F1: 0.7881, Train AUC: 0.5885, Val Loss: 0.0461, Val Acc: 0.8072, Val F1: 0.8898, Val AUC: 0.6326
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]  Epoch 2/3
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0456, Train Acc: 0.6898, Train F1: 0.8026, Train AUC: 0.6190, Val Loss: 0.0449, Val Acc: 0.7757, Val F1: 0.8669, Val AUC: 0.6491
+  Epoch 3/3
+    Train Loss: 0.0455, Train Acc: 0.6930, Train F1: 0.8048, Train AUC: 0.6226, Val Loss: 0.0447, Val Acc: 0.7203, Val F1: 0.8241, Val AUC: 0.6511
+Phase 2: Finetuning...
+  Epoch 1/15
+    Train Loss: 0.0385, Train Acc: 0.7457, Train F1: 0.8373, Train AUC: 0.7803, Val Loss: 0.0331, Val Acc: 0.7255, Val F1: 0.8139, Val AUC: 0.8748
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]  Epoch 2/15
+    Train Loss: 0.0330, Train Acc: 0.7888, Train F1: 0.8660, Train AUC: 0.8531, Val Loss: 0.0290, Val Acc: 0.8308, Val F1: 0.8947, Val AUC: 0.8931
+  Epoch 3/15
+    Train Loss: 0.0303, Train Acc: 0.8079, Train F1: 0.8787, Train AUC: 0.8792, Val Loss: 0.0283, Val Acc: 0.8425, Val F1: 0.9024, Val AUC: 0.9026
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]  Epoch 4/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0290, Train Acc: 0.8206, Train F1: 0.8873, Train AUC: 0.8914, Val Loss: 0.0311, Val Acc: 0.8820, Val F1: 0.9309, Val AUC: 0.9096
+  Epoch 5/15
+    Train Loss: 0.0275, Train Acc: 0.8288, Train F1: 0.8927, Train AUC: 0.9035, Val Loss: 0.0276, Val Acc: 0.8639, Val F1: 0.9175, Val AUC: 0.9097
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]  Epoch 6/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0268, Train Acc: 0.8328, Train F1: 0.8953, Train AUC: 0.9089, Val Loss: 0.0304, Val Acc: 0.8636, Val F1: 0.9176, Val AUC: 0.9026
+  Epoch 7/15
+    Train Loss: 0.0262, Train Acc: 0.8370, Train F1: 0.8980, Train AUC: 0.9129, Val Loss: 0.0261, Val Acc: 0.7996, Val F1: 0.8698, Val AUC: 0.9247
+  Epoch 8/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0253, Train Acc: 0.8424, Train F1: 0.9017, Train AUC: 0.9195, Val Loss: 0.0294, Val Acc: 0.8716, Val F1: 0.9228, Val AUC: 0.9174
+  Epoch 9/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0248, Train Acc: 0.8432, Train F1: 0.9021, Train AUC: 0.9225, Val Loss: 0.0297, Val Acc: 0.8782, Val F1: 0.9273, Val AUC: 0.9147
+  Epoch 10/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0243, Train Acc: 0.8477, Train F1: 0.9051, Train AUC: 0.9253, Val Loss: 0.0305, Val Acc: 0.8820, Val F1: 0.9301, Val AUC: 0.9112
+  Epoch 11/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0237, Train Acc: 0.8529, Train F1: 0.9085, Train AUC: 0.9298, Val Loss: 0.0348, Val Acc: 0.8846, Val F1: 0.9326, Val AUC: 0.9045
+  Epoch 12/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0235, Train Acc: 0.8545, Train F1: 0.9096, Train AUC: 0.9313, Val Loss: 0.0294, Val Acc: 0.8650, Val F1: 0.9183, Val AUC: 0.9087
+  Epoch 13/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0230, Train Acc: 0.8553, Train F1: 0.9100, Train AUC: 0.9339, Val Loss: 0.0320, Val Acc: 0.8815, Val F1: 0.9296, Val AUC: 0.9171
+  Epoch 14/15
+    Train Loss: 0.0195, Train Acc: 0.8809, Train F1: 0.9266, Train AUC: 0.9536, Val Loss: 0.0251, Val Acc: 0.8730, Val F1: 0.9224, Val AUC: 0.9317
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]  Epoch 15/15
+    Train Loss: 0.0185, Train Acc: 0.8892, Train F1: 0.9321, Train AUC: 0.9582, Val Loss: 0.0312, Val Acc: 0.8943, Val F1: 0.9374, Val AUC: 0.9284
+Inference timing:   0%|          | 0/1322 [00:00<?, ?it/s]Measuring inference time...
+Analyzing misclassifications:   0%|          | 0/1322 [00:00<?, ?it/s]
+Test Results:
+  Accuracy: 0.8850
+  F1-Score: 0.9300
+  AUC: 0.9448
+  MCC: 0.6272
+  Inference: 1.17 ms/sample (852.1 FPS)
+Analyzing misclassifications: 100%|██████████| 1322/1322 [00:25<00:00, 52.15it/s, misclassified=2432]
+  Misclassified: 2432 samples
+  Sample misclassifications:
+    1. True: fake, Pred: real, Conf: 0.697
+    2. True: fake, Pred: real, Conf: 0.822
+    3. True: fake, Pred: real, Conf: 0.609
+    4. True: fake, Pred: real, Conf: 0.598
+    5. True: fake, Pred: real, Conf: 0.758
+
+[3/5] ShuffleNet V2
+
+Training ShuffleNet V2
+Parameters: 1.25M
+Phase 1: Pretraining...
+  Epoch 1/3
+    Train Loss: 0.0463, Train Acc: 0.8476, Train F1: 0.9171, Train AUC: 0.5878, Val Loss: 0.0459, Val Acc: 0.8551, Val F1: 0.9213, Val AUC: 0.6282
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]  Epoch 2/3
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0458, Train Acc: 0.8272, Train F1: 0.9033, Train AUC: 0.6201, Val Loss: 0.0456, Val Acc: 0.8527, Val F1: 0.9194, Val AUC: 0.6403
+  Epoch 3/3
+    Train Loss: 0.0455, Train Acc: 0.8105, Train F1: 0.8920, Train AUC: 0.6307, Val Loss: 0.0455, Val Acc: 0.8502, Val F1: 0.9176, Val AUC: 0.6442
+Phase 2: Finetuning...
+  Epoch 1/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0381, Train Acc: 0.7474, Train F1: 0.8389, Train AUC: 0.7812, Val Loss: 0.0363, Val Acc: 0.8303, Val F1: 0.8963, Val AUC: 0.8590
+  Epoch 2/15
+    Train Loss: 0.0317, Train Acc: 0.7957, Train F1: 0.8706, Train AUC: 0.8651, Val Loss: 0.0283, Val Acc: 0.8582, Val F1: 0.9139, Val AUC: 0.9043
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]  Epoch 3/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0286, Train Acc: 0.8176, Train F1: 0.8852, Train AUC: 0.8931, Val Loss: 0.0278, Val Acc: 0.8851, Val F1: 0.9319, Val AUC: 0.9186
+  Epoch 4/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0267, Train Acc: 0.8329, Train F1: 0.8954, Train AUC: 0.9089, Val Loss: 0.0358, Val Acc: 0.8866, Val F1: 0.9343, Val AUC: 0.9098
+  Epoch 5/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0254, Train Acc: 0.8400, Train F1: 0.9001, Train AUC: 0.9181, Val Loss: 0.0268, Val Acc: 0.8793, Val F1: 0.9272, Val AUC: 0.9247
+  Epoch 6/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0242, Train Acc: 0.8485, Train F1: 0.9056, Train AUC: 0.9265, Val Loss: 0.0355, Val Acc: 0.8964, Val F1: 0.9396, Val AUC: 0.9197
+  Epoch 7/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0234, Train Acc: 0.8552, Train F1: 0.9100, Train AUC: 0.9313, Val Loss: 0.0302, Val Acc: 0.8662, Val F1: 0.9185, Val AUC: 0.9142
+  Epoch 8/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0226, Train Acc: 0.8589, Train F1: 0.9124, Train AUC: 0.9365, Val Loss: 0.0344, Val Acc: 0.8903, Val F1: 0.9356, Val AUC: 0.9175
+  Epoch 9/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0221, Train Acc: 0.8645, Train F1: 0.9161, Train AUC: 0.9394, Val Loss: 0.0326, Val Acc: 0.8918, Val F1: 0.9363, Val AUC: 0.9214
+  Epoch 10/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0216, Train Acc: 0.8677, Train F1: 0.9183, Train AUC: 0.9420, Val Loss: 0.0366, Val Acc: 0.8776, Val F1: 0.9280, Val AUC: 0.9040
+  Epoch 11/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0211, Train Acc: 0.8703, Train F1: 0.9200, Train AUC: 0.9448, Val Loss: 0.0360, Val Acc: 0.8963, Val F1: 0.9394, Val AUC: 0.9272
+  Epoch 12/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0181, Train Acc: 0.8914, Train F1: 0.9335, Train AUC: 0.9601, Val Loss: 0.0278, Val Acc: 0.8870, Val F1: 0.9324, Val AUC: 0.9318
+  Epoch 13/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0171, Train Acc: 0.8982, Train F1: 0.9379, Train AUC: 0.9646, Val Loss: 0.0402, Val Acc: 0.8907, Val F1: 0.9361, Val AUC: 0.9209
+  Epoch 14/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0162, Train Acc: 0.9031, Train F1: 0.9410, Train AUC: 0.9681, Val Loss: 0.0279, Val Acc: 0.8807, Val F1: 0.9277, Val AUC: 0.9338
+  Epoch 15/15
+    Train Loss: 0.0161, Train Acc: 0.9048, Train F1: 0.9420, Train AUC: 0.9686, Val Loss: 0.0380, Val Acc: 0.9012, Val F1: 0.9424, Val AUC: 0.9278
+Inference timing:   0%|          | 0/1322 [00:00<?, ?it/s]Measuring inference time...
+Analyzing misclassifications:   0%|          | 0/1322 [00:00<?, ?it/s]
+Test Results:
+  Accuracy: 0.8832
+  F1-Score: 0.9298
+  AUC: 0.9299
+  MCC: 0.5942
+  Inference: 1.01 ms/sample (995.0 FPS)
+Analyzing misclassifications: 100%|██████████| 1322/1322 [00:21<00:00, 62.59it/s, misclassified=2469]
+  Misclassified: 2469 samples
+  Sample misclassifications:
+    1. True: fake, Pred: real, Conf: 0.573
+    2. True: fake, Pred: real, Conf: 0.751
+    3. True: fake, Pred: real, Conf: 0.896
+    4. True: fake, Pred: real, Conf: 0.627
+    5. True: fake, Pred: real, Conf: 0.774
+
+[4/5] EfficientNet-B0
+
+Training EfficientNet-B0
+Parameters: 4.01M
+Phase 1: Pretraining...
+  Epoch 1/3
+    Train Loss: 0.0444, Train Acc: 0.7144, Train F1: 0.8201, Train AUC: 0.6536, Val Loss: 0.0443, Val Acc: 0.8199, Val F1: 0.8967, Val AUC: 0.7020
+  Epoch 2/3
+    Train Loss: 0.0434, Train Acc: 0.7185, Train F1: 0.8218, Train AUC: 0.6845, Val Loss: 0.0435, Val Acc: 0.7564, Val F1: 0.8509, Val AUC: 0.6915
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]  Epoch 3/3
+    Train Loss: 0.0431, Train Acc: 0.7199, Train F1: 0.8223, Train AUC: 0.6930, Val Loss: 0.0429, Val Acc: 0.7469, Val F1: 0.8426, Val AUC: 0.7055
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]Phase 2: Finetuning...
+  Epoch 1/15
+    Train Loss: 0.0322, Train Acc: 0.7897, Train F1: 0.8665, Train AUC: 0.8590, Val Loss: 0.0261, Val Acc: 0.8193, Val F1: 0.8848, Val AUC: 0.9167
+  Epoch 2/15
+    Train Loss: 0.0248, Train Acc: 0.8450, Train F1: 0.9034, Train AUC: 0.9222, Val Loss: 0.0244, Val Acc: 0.8601, Val F1: 0.9133, Val AUC: 0.9315
+  Epoch 3/15
+    Train Loss: 0.0229, Train Acc: 0.8587, Train F1: 0.9124, Train AUC: 0.9345, Val Loss: 0.0223, Val Acc: 0.8698, Val F1: 0.9194, Val AUC: 0.9449
+  Epoch 4/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0224, Train Acc: 0.8640, Train F1: 0.9158, Train AUC: 0.9379, Val Loss: 0.0231, Val Acc: 0.9123, Val F1: 0.9481, Val AUC: 0.9491
+  Epoch 5/15
+    Train Loss: 0.0216, Train Acc: 0.8693, Train F1: 0.9193, Train AUC: 0.9425, Val Loss: 0.0203, Val Acc: 0.8962, Val F1: 0.9371, Val AUC: 0.9510
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]  Epoch 6/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0212, Train Acc: 0.8722, Train F1: 0.9212, Train AUC: 0.9449, Val Loss: 0.0232, Val Acc: 0.8420, Val F1: 0.9000, Val AUC: 0.9443
+  Epoch 7/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0207, Train Acc: 0.8759, Train F1: 0.9236, Train AUC: 0.9477, Val Loss: 0.0232, Val Acc: 0.9062, Val F1: 0.9443, Val AUC: 0.9459
+  Epoch 8/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0199, Train Acc: 0.8817, Train F1: 0.9273, Train AUC: 0.9517, Val Loss: 0.0232, Val Acc: 0.9039, Val F1: 0.9427, Val AUC: 0.9459
+  Epoch 9/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0199, Train Acc: 0.8796, Train F1: 0.9260, Train AUC: 0.9517, Val Loss: 0.0204, Val Acc: 0.8921, Val F1: 0.9342, Val AUC: 0.9523
+  Epoch 10/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0194, Train Acc: 0.8827, Train F1: 0.9280, Train AUC: 0.9538, Val Loss: 0.0238, Val Acc: 0.9130, Val F1: 0.9488, Val AUC: 0.9513
+  Epoch 11/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0192, Train Acc: 0.8856, Train F1: 0.9298, Train AUC: 0.9551, Val Loss: 0.0254, Val Acc: 0.8987, Val F1: 0.9396, Val AUC: 0.9401
+  Epoch 12/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0167, Train Acc: 0.9031, Train F1: 0.9410, Train AUC: 0.9667, Val Loss: 0.0207, Val Acc: 0.9090, Val F1: 0.9455, Val AUC: 0.9563
+  Epoch 13/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0157, Train Acc: 0.9082, Train F1: 0.9442, Train AUC: 0.9703, Val Loss: 0.0216, Val Acc: 0.9133, Val F1: 0.9483, Val AUC: 0.9567
+  Epoch 14/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0152, Train Acc: 0.9117, Train F1: 0.9464, Train AUC: 0.9722, Val Loss: 0.0263, Val Acc: 0.9057, Val F1: 0.9439, Val AUC: 0.9467
+  Epoch 15/15
+    Train Loss: 0.0149, Train Acc: 0.9127, Train F1: 0.9470, Train AUC: 0.9732, Val Loss: 0.0269, Val Acc: 0.9133, Val F1: 0.9491, Val AUC: 0.9461
+Inference timing:   0%|          | 0/1322 [00:00<?, ?it/s]Measuring inference time...
+Analyzing misclassifications:   0%|          | 0/1322 [00:00<?, ?it/s]
+Test Results:
+  Accuracy: 0.9001
+  F1-Score: 0.9398
+  AUC: 0.9545
+  MCC: 0.6597
+  Inference: 1.45 ms/sample (690.8 FPS)
+Analyzing misclassifications: 100%|██████████| 1322/1322 [00:30<00:00, 42.65it/s, misclassified=2112]
+  Misclassified: 2112 samples
+  Sample misclassifications:
+    1. True: fake, Pred: real, Conf: 0.548
+    2. True: fake, Pred: real, Conf: 0.573
+    3. True: fake, Pred: real, Conf: 0.515
+    4. True: fake, Pred: real, Conf: 0.814
+    5. True: fake, Pred: real, Conf: 0.913
+
+[5/5] Xception
+
+Training Xception
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]Parameters: 20.81M
+Phase 1: Pretraining...
+  Epoch 1/3
+    Train Loss: 0.0452, Train Acc: 0.7103, Train F1: 0.8188, Train AUC: 0.6264, Val Loss: 0.0465, Val Acc: 0.8324, Val F1: 0.9072, Val AUC: 0.6417
+  Epoch 2/3
+    Train Loss: 0.0445, Train Acc: 0.7073, Train F1: 0.8148, Train AUC: 0.6515, Val Loss: 0.0452, Val Acc: 0.7665, Val F1: 0.8613, Val AUC: 0.6458
+  Epoch 3/3
+    Train Loss: 0.0443, Train Acc: 0.7063, Train F1: 0.8136, Train AUC: 0.6583, Val Loss: 0.0445, Val Acc: 0.7522, Val F1: 0.8501, Val AUC: 0.6595
+Phase 2: Finetuning...
+  Epoch 1/15
+    Train Loss: 0.0342, Train Acc: 0.7796, Train F1: 0.8601, Train AUC: 0.8382, Val Loss: 0.0290, Val Acc: 0.8828, Val F1: 0.9307, Val AUC: 0.9141
+  Epoch 2/15
+    Train Loss: 0.0273, Train Acc: 0.8269, Train F1: 0.8913, Train AUC: 0.9049, Val Loss: 0.0261, Val Acc: 0.8772, Val F1: 0.9257, Val AUC: 0.9209
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]  Epoch 3/15
+    Train Loss: 0.0240, Train Acc: 0.8513, Train F1: 0.9074, Train AUC: 0.9278, Val Loss: 0.0228, Val Acc: 0.9021, Val F1: 0.9416, Val AUC: 0.9444
+  Epoch 4/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0220, Train Acc: 0.8640, Train F1: 0.9158, Train AUC: 0.9400, Val Loss: 0.0248, Val Acc: 0.8943, Val F1: 0.9367, Val AUC: 0.9386
+  Epoch 5/15
+    Train Loss: 0.0208, Train Acc: 0.8740, Train F1: 0.9223, Train AUC: 0.9471, Val Loss: 0.0216, Val Acc: 0.8568, Val F1: 0.9103, Val AUC: 0.9470
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]  Epoch 6/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0199, Train Acc: 0.8795, Train F1: 0.9259, Train AUC: 0.9514, Val Loss: 0.0219, Val Acc: 0.8988, Val F1: 0.9391, Val AUC: 0.9482
+  Epoch 7/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0192, Train Acc: 0.8851, Train F1: 0.9295, Train AUC: 0.9552, Val Loss: 0.0358, Val Acc: 0.9037, Val F1: 0.9445, Val AUC: 0.9320
+  Epoch 8/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0185, Train Acc: 0.8887, Train F1: 0.9318, Train AUC: 0.9585, Val Loss: 0.0297, Val Acc: 0.9080, Val F1: 0.9463, Val AUC: 0.9422
+  Epoch 9/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0179, Train Acc: 0.8925, Train F1: 0.9342, Train AUC: 0.9613, Val Loss: 0.0230, Val Acc: 0.8929, Val F1: 0.9355, Val AUC: 0.9432
+  Epoch 10/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0176, Train Acc: 0.8952, Train F1: 0.9359, Train AUC: 0.9624, Val Loss: 0.0221, Val Acc: 0.8958, Val F1: 0.9369, Val AUC: 0.9497
+  Epoch 11/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0171, Train Acc: 0.8965, Train F1: 0.9368, Train AUC: 0.9644, Val Loss: 0.0273, Val Acc: 0.9051, Val F1: 0.9439, Val AUC: 0.9449
+  Epoch 12/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0142, Train Acc: 0.9167, Train F1: 0.9495, Train AUC: 0.9757, Val Loss: 0.0254, Val Acc: 0.9152, Val F1: 0.9499, Val AUC: 0.9534
+  Epoch 13/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0134, Train Acc: 0.9231, Train F1: 0.9535, Train AUC: 0.9785, Val Loss: 0.0251, Val Acc: 0.9086, Val F1: 0.9457, Val AUC: 0.9501
+  Epoch 14/15
+Training:   0%|          | 0/6168 [00:00<?, ?it/s]    Train Loss: 0.0128, Train Acc: 0.9262, Train F1: 0.9555, Train AUC: 0.9803, Val Loss: 0.0251, Val Acc: 0.9045, Val F1: 0.9431, Val AUC: 0.9497
+  Epoch 15/15
+Training:   0%|          | 20/6168 [00:12<12:03,  8.49it/s, loss=0.0113]
+    Train Loss: 0.0127, Train Acc: 0.9261, Train F1: 0.9554, Train AUC: 0.9806, Val Loss: 0.0224, Val Acc: 0.9112, Val F1: 0.9470, Val AUC: 0.9561
+Inference timing:   0%|          | 0/1322 [00:00<?, ?it/s]Measuring inference time...
+Analyzing misclassifications:   0%|          | 0/1322 [00:00<?, ?it/s]
+Test Results:
+  Accuracy: 0.8631
+  F1-Score: 0.9147
+  AUC: 0.9510
+  MCC: 0.6105
+  Inference: 2.64 ms/sample (379.4 FPS)
+Analyzing misclassifications: 100%|██████████| 1322/1322 [00:56<00:00, 23.46it/s, misclassified=2894]
+  Misclassified: 2894 samples
+  Sample misclassifications:
+    1. True: fake, Pred: real, Conf: 0.684
+    2. True: fake, Pred: real, Conf: 0.854
+    3. True: fake, Pred: real, Conf: 0.548
+    4. True: fake, Pred: real, Conf: 0.669
+    5. True: fake, Pred: real, Conf: 0.633
+
+==================================================
+SUMMARY
+==================================================
+MobileNetV3-Large    Acc: 0.8792 F1: 0.9260 Params: 4.2M FPS: 897.6
+ResNet18             Acc: 0.8850 F1: 0.9300 Params: 11.2M FPS: 852.1
+ShuffleNet V2        Acc: 0.8832 F1: 0.9298 Params: 1.3M FPS: 995.0
+EfficientNet-B0      Acc: 0.9001 F1: 0.9398 Params: 4.0M FPS: 690.8
+Xception             Acc: 0.8631 F1: 0.9147 Params: 20.8M FPS: 379.4
+==================================================
+
+Process finished with exit code 0

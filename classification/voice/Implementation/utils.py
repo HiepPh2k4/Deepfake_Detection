@@ -34,15 +34,3 @@ def calculate_eer(fpr, tpr, thresholds):
     min_diff_idx = np.argmin(diff)
     eer = fpr[min_diff_idx]
     return eer, thresholds[min_diff_idx]
-
-
-def build_model(num_classes, model_type='improved'):
-    """Build model - can switch between original and improved"""
-    if model_type == 'improved':
-        from classification.voice.Implementation.crnn.transformer_model import ImprovedCRNN
-        model = ImprovedCRNN(num_classes, dropout_rate=0.3)
-    else:
-        from classification.voice.Implementation.crnn.transformer_model import CustomCRNN
-        model = CustomCRNN(num_classes)
-
-    return model

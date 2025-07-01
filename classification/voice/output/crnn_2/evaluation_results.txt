@@ -1,0 +1,159 @@
+Test Accuracy: 0.8170
+Test Precision: 0.7634
+Test Recall: 0.9716
+Test F1-Score: 0.8550
+Test AUC: 0.9497
+Test EER: 0.1237
+Number of Misclassified Samples: 313
+Inference Time per Sample: 2.01ms
+Confusion Matrix:
+[[474 286]
+ [ 27 923]]
+
+
+/workspace/venv/bin/python /workspace/sv/classification/voice/Implementation/crnn/train_voice_2.py
+Number of training samples: 2411
+Number of validation samples: 603
+Number of test samples: 1710
+Classes: ['real', 'fake']
+Initializing ImprovedCRNN
+Class distribution: [1205 1206]
+Class weights: tensor([1.0004, 0.9996], device='cuda:0')
+
+IMPROVED_CRNN_2 Model (Mel spectrogram input, 299x299):
+  Total parameters: 4,285,803
+  Trainable parameters: 4,285,803
+  Size: 16.35 MB
+
+Starting training for improved_crnn_2...
+Epoch: 100%|██████████| 38/38 [00:21<00:00,  1.77it/s]
+Epoch 1: Train Loss=0.1556, Train Acc=0.5471, Train F1=0.5835, Train AUC=0.5664
+           Val Loss=0.0821, Val Acc=0.6070, Val F1=0.6510, Val AUC=0.6537
+Best model saved at /workspace/sv/classification/voice/models/improved_crnn_2_best_model.pth
+Epoch: 100%|██████████| 38/38 [00:15<00:00,  2.44it/s]
+Epoch 2: Train Loss=0.1170, Train Acc=0.6367, Train F1=0.6605, Train AUC=0.6840
+           Val Loss=0.0640, Val Acc=0.6584, Val F1=0.7425, Val AUC=0.9044
+Best model saved at /workspace/sv/classification/voice/models/improved_crnn_2_best_model.pth
+Epoch: 100%|██████████| 38/38 [00:15<00:00,  2.40it/s]
+Epoch 3: Train Loss=0.1088, Train Acc=0.6383, Train F1=0.6694, Train AUC=0.7076
+           Val Loss=0.0729, Val Acc=0.6434, Val F1=0.7362, Val AUC=0.9548
+Epoch: 100%|██████████| 38/38 [00:15<00:00,  2.43it/s]
+Epoch 4: Train Loss=0.0935, Train Acc=0.6881, Train F1=0.7074, Train AUC=0.7505
+           Val Loss=0.0728, Val Acc=0.6318, Val F1=0.7299, Val AUC=0.9702
+Epoch: 100%|██████████| 38/38 [00:15<00:00,  2.46it/s]
+Epoch 5: Train Loss=0.0750, Train Acc=0.7134, Train F1=0.7283, Train AUC=0.8046
+           Val Loss=0.0520, Val Acc=0.7529, Val F1=0.7989, Val AUC=0.9699
+Best model saved at /workspace/sv/classification/voice/models/improved_crnn_2_best_model.pth
+Epoch: 100%|██████████| 38/38 [00:15<00:00,  2.43it/s]
+Epoch 6: Train Loss=0.0780, Train Acc=0.7375, Train F1=0.7493, Train AUC=0.8181
+           Val Loss=0.0547, Val Acc=0.7297, Val F1=0.7852, Val AUC=0.9749
+Epoch: 100%|██████████| 38/38 [00:15<00:00,  2.45it/s]
+Epoch 7: Train Loss=0.0723, Train Acc=0.7731, Train F1=0.7839, Train AUC=0.8508
+           Val Loss=0.0629, Val Acc=0.7330, Val F1=0.7884, Val AUC=0.9774
+Epoch: 100%|██████████| 38/38 [00:15<00:00,  2.39it/s]
+Epoch:   0%|          | 0/38 [00:00<?, ?it/s]Epoch 8: Train Loss=0.0644, Train Acc=0.7793, Train F1=0.7907, Train AUC=0.8683
+           Val Loss=0.0586, Val Acc=0.6982, Val F1=0.7673, Val AUC=0.9825
+Epoch: 100%|██████████| 38/38 [00:16<00:00,  2.35it/s]
+Epoch 9: Train Loss=0.0659, Train Acc=0.7835, Train F1=0.7967, Train AUC=0.8652
+           Val Loss=0.0442, Val Acc=0.7662, Val F1=0.8097, Val AUC=0.9875
+Epoch:   0%|          | 0/38 [00:00<?, ?it/s]Best model saved at /workspace/sv/classification/voice/models/improved_crnn_2_best_model.pth
+Epoch: 100%|██████████| 38/38 [00:15<00:00,  2.49it/s]
+Epoch:   0%|          | 0/38 [00:00<?, ?it/s]Epoch 10: Train Loss=0.0560, Train Acc=0.8142, Train F1=0.8232, Train AUC=0.8916
+           Val Loss=0.0483, Val Acc=0.7380, Val F1=0.7916, Val AUC=0.9887
+Epoch: 100%|██████████| 38/38 [00:15<00:00,  2.39it/s]
+Epoch:   0%|          | 0/38 [00:00<?, ?it/s]Epoch 11: Train Loss=0.0571, Train Acc=0.8192, Train F1=0.8259, Train AUC=0.9034
+           Val Loss=0.0459, Val Acc=0.7579, Val F1=0.8043, Val AUC=0.9886
+Epoch: 100%|██████████| 38/38 [00:16<00:00,  2.36it/s]
+Epoch 12: Train Loss=0.0535, Train Acc=0.8204, Train F1=0.8274, Train AUC=0.9041
+           Val Loss=0.0421, Val Acc=0.7761, Val F1=0.8168, Val AUC=0.9932
+Best model saved at /workspace/sv/classification/voice/models/improved_crnn_2_best_model.pth
+Epoch: 100%|██████████| 38/38 [00:15<00:00,  2.53it/s]
+Epoch 13: Train Loss=0.0507, Train Acc=0.8270, Train F1=0.8350, Train AUC=0.9088
+           Val Loss=0.0510, Val Acc=0.7446, Val F1=0.7963, Val AUC=0.9940
+Epoch: 100%|██████████| 38/38 [00:16<00:00,  2.35it/s]
+Epoch 14: Train Loss=0.0492, Train Acc=0.8382, Train F1=0.8463, Train AUC=0.9276
+           Val Loss=0.0335, Val Acc=0.8275, Val F1=0.8514, Val AUC=0.9912
+Epoch:   0%|          | 0/38 [00:00<?, ?it/s]Best model saved at /workspace/sv/classification/voice/models/improved_crnn_2_best_model.pth
+Epoch: 100%|██████████| 38/38 [00:15<00:00,  2.44it/s]
+Epoch 15: Train Loss=0.0425, Train Acc=0.8378, Train F1=0.8435, Train AUC=0.9229
+           Val Loss=0.0388, Val Acc=0.8010, Val F1=0.8329, Val AUC=0.9931
+Epoch: 100%|██████████| 38/38 [00:16<00:00,  2.33it/s]
+Epoch 16: Train Loss=0.0488, Train Acc=0.8710, Train F1=0.8754, Train AUC=0.9400
+           Val Loss=0.0404, Val Acc=0.7944, Val F1=0.8292, Val AUC=0.9937
+Epoch: 100%|██████████| 38/38 [00:15<00:00,  2.48it/s]
+Epoch 17: Train Loss=0.0401, Train Acc=0.8756, Train F1=0.8798, Train AUC=0.9451
+           Val Loss=0.0343, Val Acc=0.8143, Val F1=0.8431, Val AUC=0.9961
+Epoch: 100%|██████████| 38/38 [00:15<00:00,  2.47it/s]
+Epoch 18: Train Loss=0.0411, Train Acc=0.8656, Train F1=0.8697, Train AUC=0.9410
+           Val Loss=0.0221, Val Acc=0.8640, Val F1=0.8798, Val AUC=0.9962
+Best model saved at /workspace/sv/classification/voice/models/improved_crnn_2_best_model.pth
+Epoch: 100%|██████████| 38/38 [00:15<00:00,  2.40it/s]
+Epoch 19: Train Loss=0.0397, Train Acc=0.8781, Train F1=0.8803, Train AUC=0.9467
+           Val Loss=0.0371, Val Acc=0.7977, Val F1=0.8315, Val AUC=0.9975
+Epoch: 100%|██████████| 38/38 [00:15<00:00,  2.43it/s]
+Epoch:   0%|          | 0/38 [00:00<?, ?it/s]Epoch 20: Train Loss=0.0383, Train Acc=0.8859, Train F1=0.8896, Train AUC=0.9547
+           Val Loss=0.0427, Val Acc=0.7894, Val F1=0.8253, Val AUC=0.9957
+Epoch: 100%|██████████| 38/38 [00:15<00:00,  2.39it/s]
+Epoch:   0%|          | 0/38 [00:00<?, ?it/s]Epoch 21: Train Loss=0.0389, Train Acc=0.8793, Train F1=0.8838, Train AUC=0.9543
+           Val Loss=0.0458, Val Acc=0.7828, Val F1=0.8213, Val AUC=0.9954
+Epoch: 100%|██████████| 38/38 [00:15<00:00,  2.40it/s]
+Epoch:   0%|          | 0/38 [00:00<?, ?it/s]Epoch 22: Train Loss=0.0392, Train Acc=0.8938, Train F1=0.8950, Train AUC=0.9583
+           Val Loss=0.0305, Val Acc=0.8308, Val F1=0.8551, Val AUC=0.9977
+Epoch: 100%|██████████| 38/38 [00:16<00:00,  2.33it/s]
+Epoch 23: Train Loss=0.0434, Train Acc=0.8876, Train F1=0.8901, Train AUC=0.9546
+           Val Loss=0.0221, Val Acc=0.8789, Val F1=0.8919, Val AUC=0.9989
+Best model saved at /workspace/sv/classification/voice/models/improved_crnn_2_best_model.pth
+Epoch: 100%|██████████| 38/38 [00:15<00:00,  2.39it/s]
+Epoch 24: Train Loss=0.0385, Train Acc=0.8888, Train F1=0.8911, Train AUC=0.9586
+           Val Loss=0.0177, Val Acc=0.9022, Val F1=0.9105, Val AUC=0.9986
+Epoch:   0%|          | 0/38 [00:00<?, ?it/s]Best model saved at /workspace/sv/classification/voice/models/improved_crnn_2_best_model.pth
+Epoch: 100%|██████████| 38/38 [00:15<00:00,  2.49it/s]
+Epoch 25: Train Loss=0.0332, Train Acc=0.8938, Train F1=0.8961, Train AUC=0.9641
+           Val Loss=0.0268, Val Acc=0.8458, Val F1=0.8662, Val AUC=0.9984
+Epoch: 100%|██████████| 38/38 [00:15<00:00,  2.38it/s]
+Epoch 26: Train Loss=0.0292, Train Acc=0.9013, Train F1=0.9045, Train AUC=0.9661
+           Val Loss=0.0325, Val Acc=0.8226, Val F1=0.8491, Val AUC=0.9984
+Epoch: 100%|██████████| 38/38 [00:15<00:00,  2.42it/s]
+Epoch:   0%|          | 0/38 [00:00<?, ?it/s]Epoch 27: Train Loss=0.0326, Train Acc=0.9017, Train F1=0.9037, Train AUC=0.9671
+           Val Loss=0.0262, Val Acc=0.8507, Val F1=0.8699, Val AUC=0.9986
+Epoch: 100%|██████████| 38/38 [00:16<00:00,  2.34it/s]
+Epoch 28: Train Loss=0.0334, Train Acc=0.9025, Train F1=0.9041, Train AUC=0.9697
+           Val Loss=0.0193, Val Acc=0.8889, Val F1=0.8996, Val AUC=0.9987
+Epoch: 100%|██████████| 38/38 [00:15<00:00,  2.39it/s]
+Epoch 29: Train Loss=0.0317, Train Acc=0.9141, Train F1=0.9148, Train AUC=0.9693
+           Val Loss=0.0209, Val Acc=0.8789, Val F1=0.8915, Val AUC=0.9986
+Epoch: 100%|██████████| 38/38 [00:15<00:00,  2.42it/s]
+Epoch 30: Train Loss=0.0311, Train Acc=0.9083, Train F1=0.9114, Train AUC=0.9718
+           Val Loss=0.0229, Val Acc=0.8756, Val F1=0.8892, Val AUC=0.9989
+Epoch: 100%|██████████| 38/38 [00:15<00:00,  2.41it/s]
+Epoch 31: Train Loss=0.0349, Train Acc=0.9208, Train F1=0.9216, Train AUC=0.9757
+           Val Loss=0.0196, Val Acc=0.8872, Val F1=0.8982, Val AUC=0.9986
+Epoch: 100%|██████████| 38/38 [00:15<00:00,  2.40it/s]
+Epoch 32: Train Loss=0.0295, Train Acc=0.9121, Train F1=0.9141, Train AUC=0.9753
+           Val Loss=0.0200, Val Acc=0.8839, Val F1=0.8958, Val AUC=0.9992
+Epoch: 100%|██████████| 38/38 [00:15<00:00,  2.44it/s]
+Epoch:   0%|          | 0/38 [00:00<?, ?it/s]Epoch 33: Train Loss=0.0298, Train Acc=0.9162, Train F1=0.9174, Train AUC=0.9738
+           Val Loss=0.0250, Val Acc=0.8640, Val F1=0.8801, Val AUC=0.9989
+Epoch: 100%|██████████| 38/38 [00:15<00:00,  2.39it/s]
+Epoch 34: Train Loss=0.0276, Train Acc=0.9083, Train F1=0.9109, Train AUC=0.9749
+           Val Loss=0.0217, Val Acc=0.8740, Val F1=0.8879, Val AUC=0.9990
+Early stopping at epoch 34
+Final model saved at /workspace/sv/classification/voice/models/improved_crnn_2_final_model.pth
+Loaded best model from /workspace/sv/classification/voice/models/improved_crnn_2_best_model.pth for evaluation
+Evaluating improved_crnn_2 on the test set...
+/workspace/sv/classification/voice/Implementation/crnn/train_voice_2.py:276: DeprecationWarning: `trapz` is deprecated. Use `trapezoid` instead, or one of the numerical integration functions in `scipy.integrate`.
+  ap = np.trapz(recall[::-1], precision[::-1])
+Confusion Matrix:
+[[474 286]
+ [ 27 923]]
+Test Accuracy: 0.8170
+Test Precision: 0.7634
+Test Recall: 0.9716
+Test F1-Score: 0.8550
+Test AUC: 0.9497
+Test EER: 0.1237
+Number of Misclassified Samples: 313
+Inference Time per Sample: 2.01ms
+Results saved for improved_crnn_2!
+
+Process finished with exit code 0

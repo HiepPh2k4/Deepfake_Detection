@@ -1,8 +1,8 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
 import os# Configuration
-LABELS_PATH = "G:/Hiep/Deepfake_Detection/data_preprocessing/output_split/labels.csv"
-OUTPUT_DIR = "G:/Hiep/Deepfake_Detection/data_preprocessing/output_split/"
+OUTPUT_DIR = "D:/Deepfake_Detection_project/data_preprocessing/ff_labels"
+LABELS_PATH = "D:/Deepfake_Detection_project/data_preprocessing/ff_labels/labels.csv"
 TRAIN_PATH = os.path.join(OUTPUT_DIR, "train.csv")
 VAL_PATH = os.path.join(OUTPUT_DIR, "val.csv")
 TEST_PATH = os.path.join(OUTPUT_DIR, "test.csv")

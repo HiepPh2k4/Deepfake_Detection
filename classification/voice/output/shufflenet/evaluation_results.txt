@@ -1,11 +1,11 @@
-Test Accuracy: 0.7596
-Test Precision: 0.9736
-Test Recall: 0.5832
-Test F1-Score: 0.7294
-Test AUC: 0.9301
-Test EER: 0.1447
-Number of Misclassified Samples: 411
-Inference Time per Sample: 4.96ms
+Test Accuracy: 0.8649
+Test Precision: 0.8749
+Test Recall: 0.8832
+Test F1-Score: 0.8790
+Test AUC: 0.9331
+Test EER: 0.1316
+Number of Misclassified Samples: 231
+Inference Time per Sample: 1.58ms
 Confusion Matrix:
-[[745  15]
- [396 554]]
+[[640 120]
+ [111 839]]

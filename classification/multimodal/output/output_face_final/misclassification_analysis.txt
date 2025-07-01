@@ -1,0 +1,39 @@
+MISCLASSIFICATION ANALYSIS - Advanced Xception
+============================================================
+
+Total misclassified samples: 8407
+Fake misclassified as Real: 8020
+Real misclassified as Fake: 387
+
+TOP 5 FAKE MISCLASSIFIED AS REAL:
+1. /workspace/Deepfake_Detection/data_preprocessing/video_frame_faces/fake/sample_5965/frame1.jpg
+   Confidence: 0.8608
+
+2. /workspace/Deepfake_Detection/data_preprocessing/video_frame_faces/fake/sample_6279/frame2.jpg
+   Confidence: 0.8486
+
+3. /workspace/Deepfake_Detection/data_preprocessing/video_frame_faces/fake/sample_7515/frame2.jpg
+   Confidence: 0.8486
+
+4. /workspace/Deepfake_Detection/data_preprocessing/video_frame_faces/fake/sample_5899/frame2.jpg
+   Confidence: 0.8472
+
+5. /workspace/Deepfake_Detection/data_preprocessing/video_frame_faces/fake/sample_4406/frame1.jpg
+   Confidence: 0.8384
+
+TOP 5 REAL MISCLASSIFIED AS FAKE:
+1. /workspace/Deepfake_Detection/data_preprocessing/video_frame_faces/real/sample_0077/frame2.jpg
+   Confidence: 0.8882
+
+2. /workspace/Deepfake_Detection/data_preprocessing/video_frame_faces/real/sample_0288/frame0.jpg
+   Confidence: 0.8770
+
+3. /workspace/Deepfake_Detection/data_preprocessing/video_frame_faces/real/sample_0400/frame2.jpg
+   Confidence: 0.8545
+
+4. /workspace/Deepfake_Detection/data_preprocessing/video_frame_faces/real/sample_0441/frame0.jpg
+   Confidence: 0.8398
+
+5. /workspace/Deepfake_Detection/data_preprocessing/video_frame_faces/real/sample_0447/frame0.jpg
+   Confidence: 0.8276
+

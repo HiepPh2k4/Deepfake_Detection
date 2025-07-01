@@ -14,39 +14,56 @@ import os
 from PIL import Image
 from torch.amp import GradScaler, autocast
 
-from transformer_model import Transformer
+from classification.voice.Implementation.crnn.crnn_model import ImprovedCRNN
 from classification.voice.Implementation.transform import train_transforms, test_transforms
 from classification.voice.Implementation.utils import EarlyStopping, calculate_eer
 
+import torch.nn.functional as F
+
+class FocalLoss(nn.Module):
+    def __init__(self, alpha=0.75, gamma=2):
+        super(FocalLoss, self).__init__()
+        self.alpha = alpha
+        self.gamma = gamma
+
+    def forward(self, inputs, targets):
+        log_probs = F.log_softmax(inputs, dim=-1)  # Shape: (batch_size, num_classes)
+        probs = torch.exp(log_probs)  # Shape: (batch_size, num_classes)
+        targets_onehot = F.one_hot(targets, num_classes=2).float()  # Shape: (batch_size, num_classes)
+        focal_weight = self.alpha * (1 - probs) ** self.gamma  # Shape: (batch_size, num_classes)
+        loss = -focal_weight * log_probs * targets_onehot  # Element-wise multiplication
+        return loss.mean()  # Average over all dimensions
+
 # Paths
-DATA_DIR = "/data_preprocessing/asvsproof_data"
-OUTPUT_BASE_DIR = "D:/Deepfake_Detection_project/classification/voice/output"
-MODEL_DIR = "D:/Deepfake_Detection_project/classification/voice/models"
+DATA_DIR = "/workspace/sv/data_preprocessing/asvsproof_data"
+OUTPUT_BASE_DIR = "/workspace/sv/classification/voice/output"
+MODEL_DIR = "/workspace/sv/classification/voice/models"
 
 # Training parameters
-BATCH_SIZE = 24
+BATCH_SIZE = 64
 NUM_EPOCHS = 50
-LEARNING_RATE = 0.0001
+LEARNING_RATE = 0.00005
 WEIGHT_DECAY = 1e-4
-DROPOUT_RATE = 0.4
+DROPOUT_RATE = 0.5
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-NUM_WORKERS = 0
+NUM_WORKERS = 8
 
 # Early stopping and scheduler
-EARLY_STOPPING_PATIENCE = 5
-MIN_DELTA = 0.001
+EARLY_STOPPING_PATIENCE = 10
+MIN_DELTA = 0.0005
 SCHEDULER_PATIENCE = 3
 SCHEDULER_FACTOR = 0.5
 
-
 class VoiceTrainer:
     def __init__(self):
-        self.model_name = "transformer"
+        self.model_name = "crnn_2"
         self.output_dir = ensure_dir(os.path.join(OUTPUT_BASE_DIR, self.model_name))
         self.model_dir = ensure_dir(MODEL_DIR)
         self._load_data()
-        self.model = Transformer(num_classes=len(self.train_dataset.classes), dropout_rate=DROPOUT_RATE)
+        self.model = ImprovedCRNN(num_classes=len(self.train_dataset.classes), dropout_rate=DROPOUT_RATE)
         self.model.to(DEVICE)
+        if not hasattr(self.model, 'forward'):
+            raise AttributeError("Model is missing the 'forward' method")
         self._setup_training()
         stats = get_model_stats(self.model)
         print(f"\n{self.model_name.upper()} Model (Mel spectrogram input, 299x299):")
@@ -69,18 +86,14 @@ class VoiceTrainer:
             os.path.join(DATA_DIR, "test"),
             transform=test_transforms
         )
-        # Remap labels: ImageFolder assigns 0 to 'fake' and 1 to 'real' due to alphabetical order
-        # We want 0=real, 1=fake
         self.class_to_idx = {'real': 0, 'fake': 1}
         original_class_to_idx = self.train_dataset.class_to_idx
         self.label_map = {original_class_to_idx['fake']: 1, original_class_to_idx['real']: 0}
 
-        # Apply label remapping to datasets
         self.train_dataset.samples = [(path, self.label_map[label]) for path, label in self.train_dataset.samples]
         self.val_dataset.samples = [(path, self.label_map[label]) for path, label in self.val_dataset.samples]
         self.test_dataset.samples = [(path, self.label_map[label]) for path, label in self.test_dataset.samples]
 
-        # Update classes to reflect new order
         self.train_dataset.classes = ['real', 'fake']
         self.val_dataset.classes = ['real', 'fake']
         self.test_dataset.classes = ['real', 'fake']
@@ -110,7 +123,7 @@ class VoiceTrainer:
         self.class_weights = torch.FloatTensor(class_weights).to(DEVICE)
         print(f"Class distribution: {class_counts}")
         print(f"Class weights: {self.class_weights}")
-        self.criterion = nn.CrossEntropyLoss(weight=self.class_weights)
+        self.criterion = FocalLoss(alpha=0.8, gamma=2)
         self.optimizer = optim.AdamW(self.model.parameters(), lr=LEARNING_RATE, weight_decay=WEIGHT_DECAY)
         self.scheduler = optim.lr_scheduler.ReduceLROnPlateau(
             self.optimizer, mode='min', patience=SCHEDULER_PATIENCE, factor=SCHEDULER_FACTOR
@@ -126,33 +139,26 @@ class VoiceTrainer:
         alpha = 0.2  # Mixup hyperparameter
         for images, labels in tqdm(self.train_loader, desc=f"Epoch"):
             images, labels = images.to(DEVICE), labels.to(DEVICE)
-            # Convert images to single channel for transformer model
             images = images.mean(dim=1, keepdim=True)  # (batch_size, 3, H, W) -> (batch_size, 1, H, W)
-            # Apply Mixup with 50% probability
-            if np.random.rand() < 0.5:
-                lam = np.random.beta(alpha, alpha)
-                batch_size = images.size(0)
-                idx = torch.randperm(batch_size).to(DEVICE)
-                mixed_images = lam * images + (1 - lam) * images[idx]
-                labels_a, labels_b = labels, labels[idx]
-                self.optimizer.zero_grad(set_to_none=True)
-                with autocast('cuda'):
-                    outputs = self.model(mixed_images)  # (batch_size, seq_len, num_classes)
-                    outputs = outputs.mean(dim=1)  # Average over sequence for classification
-                    loss = lam * self.criterion(outputs, labels_a) + (1 - lam) * self.criterion(outputs, labels_b)
-            else:
-                self.optimizer.zero_grad(set_to_none=True)
-                with autocast('cuda'):
-                    outputs = self.model(images)  # (batch_size, seq_len, num_classes)
-                    outputs = outputs.mean(dim=1)  # Average over sequence for classification
+            self.optimizer.zero_grad(set_to_none=True)
+            with autocast('cuda'):
+                outputs = self.model(images)  # (batch_size, num_classes)
+                if np.random.rand() < 0.5:  # Mixup
+                    lam = np.random.beta(alpha, alpha)
+                    batch_size = images.size(0)
+                    idx = torch.randperm(batch_size).to(DEVICE)
+                    mixed_images = lam * images + (1 - lam) * images[idx]
+                    outputs_mixed = self.model(mixed_images)  # (batch_size, num_classes)
+                    loss = lam * self.criterion(outputs_mixed, labels) + (1 - lam) * self.criterion(outputs_mixed, labels[idx])
+                else:
                     loss = self.criterion(outputs, labels)
+                preds = torch.softmax(outputs, dim=-1)[:, 1].cpu().detach().numpy()
             self.scaler.scale(loss).backward()
             self.scaler.unscale_(self.optimizer)
             torch.nn.utils.clip_grad_norm_(self.model.parameters(), max_norm=1.0)
             self.scaler.step(self.optimizer)
             self.scaler.update()
             total_loss += loss.item()
-            preds = torch.softmax(outputs, dim=1)[:, 1].cpu().detach().numpy()
             all_preds.extend(preds)
             all_labels.extend(labels.cpu().numpy())
         return total_loss, all_preds, all_labels
@@ -169,13 +175,13 @@ class VoiceTrainer:
         for epoch in range(NUM_EPOCHS):
             train_loss, train_preds, train_labels = self._train_epoch()
             train_loss /= len(self.train_loader)
-            train_pred_labels = [1 if p > 0.5 else 0 for p in train_preds]
+            train_pred_labels = [1 if p > 0.45 else 0 for p in train_preds]
             train_acc = accuracy_score(train_labels, train_pred_labels)
             train_f1 = f1_score(train_labels, train_pred_labels, zero_division=0)
             train_auc = roc_auc_score(train_labels, train_preds)
             val_loss, val_preds, val_labels = self._validate()
             val_loss /= len(self.val_loader)
-            val_pred_labels = [1 if p > 0.5 else 0 for p in val_preds]
+            val_pred_labels = [1 if p > 0.45 else 0 for p in val_preds]
             val_acc = accuracy_score(val_labels, val_pred_labels)
             val_f1 = f1_score(val_labels, val_pred_labels, zero_division=0)
             val_auc = roc_auc_score(val_labels, val_preds)
@@ -220,11 +226,10 @@ class VoiceTrainer:
                 images, labels = images.to(DEVICE), labels.to(DEVICE)
                 images = images.mean(dim=1, keepdim=True)  # Convert to single channel
                 with autocast('cuda'):
-                    outputs = self.model(images)  # (batch_size, seq_len, num_classes)
-                    outputs = outputs.mean(dim=1)  # Average over sequence
+                    outputs = self.model(images)  # (batch_size, num_classes)
                     loss = self.criterion(outputs, labels)
                 total_loss += loss.item()
-                preds = torch.softmax(outputs, dim=1)[:, 1].cpu().numpy()
+                preds = torch.softmax(outputs, dim=-1)[:, 1].cpu().numpy()
                 all_preds.extend(preds)
                 all_labels.extend(labels.cpu().numpy())
         return total_loss, all_preds, all_labels
@@ -242,16 +247,15 @@ class VoiceTrainer:
                 images, labels = images.to(DEVICE), labels.to(DEVICE)
                 images = images.mean(dim=1, keepdim=True)  # Convert to single channel
                 with autocast('cuda'):
-                    outputs = self.model(images)  # (batch_size, seq_len, num_classes)
-                    outputs = outputs.mean(dim=1)  # Average over sequence
-                batch_preds = torch.softmax(outputs, dim=1)[:, 1].cpu().numpy()
+                    outputs = self.model(images)  # (batch_size, num_classes)
+                batch_preds = torch.softmax(outputs, dim=-1)[:, 1].cpu().numpy()
                 batch_labels = labels.cpu().numpy()
                 batch_indices = range(batch_idx * BATCH_SIZE, min((batch_idx + 1) * BATCH_SIZE, len(self.test_dataset)))
                 for pred, true_label, path_idx in zip(batch_preds, batch_labels, batch_indices):
                     test_preds.append(pred)
                     test_labels.append(true_label)
                     test_paths.append(test_dataset_paths[path_idx])
-                    pred_label = 1 if pred > 0.5 else 0
+                    pred_label = 1 if pred > 0.45 else 0
                     if pred_label != true_label:
                         misclassified_samples.append({
                             'path': test_dataset_paths[path_idx],
@@ -261,7 +265,7 @@ class VoiceTrainer:
                         })
         inference_time = time.time() - start_time
         inference_per_sample = inference_time / len(self.test_dataset)
-        test_pred_labels = [1 if p > 0.5 else 0 for p in test_preds]
+        test_pred_labels = [1 if p > 0.45 else 0 for p in test_preds]
         test_acc = accuracy_score(test_labels, test_pred_labels)
         test_precision = precision_score(test_labels, test_pred_labels, zero_division=0)
         test_recall = recall_score(test_labels, test_pred_labels, zero_division=0)
@@ -368,7 +372,6 @@ class VoiceTrainer:
         plt.close()
         print(f"Results saved for {self.model_name}!")
 
-
 def get_model_stats(model):
     """Calculate model statistics"""
     total_params = sum(p.numel() for p in model.parameters())
@@ -380,15 +383,13 @@ def get_model_stats(model):
         'size_mb': model_size_mb
     }
 
-
 def ensure_dir(path):
     """Create directory if it does not exist"""
     os.makedirs(path, exist_ok=True)
     return path
 
-
 def train_voice():
-    """Train the SmallTransformerASR model"""
+    """Train the ImprovedCRNN model"""
     trainer = VoiceTrainer()
     train_losses, val_losses, train_accs, val_accs, train_f1s, val_f1s, train_aucs, val_aucs = trainer.train()
     test_acc, test_precision, test_recall, test_f1, test_auc, eer, cm, misclassified_samples, fpr, tpr, precision, recall, ap, test_paths, inference_per_sample = trainer.evaluate()
@@ -408,7 +409,6 @@ def train_voice():
         'misclassified_samples': len(misclassified_samples),
         'inference_per_sample_ms': inference_per_sample * 1000
     }
-
 
 if __name__ == "__main__":
     train_voice()

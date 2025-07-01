@@ -1,0 +1,14 @@
+{
+  "model_name": "Advanced Xception",
+  "test_loss": 0.023462255936847917,
+  "accuracy": 0.8916374988175196,
+  "f1": 0.9349314095827771,
+  "auc": 0.9405997412176662,
+  "mcc": 0.6208052289151975,
+  "fake_detection_rate": 0.910091235830799,
+  "real_detection_rate": 0.7824664703958129,
+  "inference_time_ms": 0.9430723467271022,
+  "fps": 1060.3640361955931,
+  "parameters_millions": 20.969372,
+  "total_misclassified": 2291
+}

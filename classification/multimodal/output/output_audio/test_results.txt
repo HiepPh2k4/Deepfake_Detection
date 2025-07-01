@@ -1,0 +1,17 @@
+Voice Test Results:
+==================================================
+accuracy: 0.8338
+f1: 0.9062
+auc: 0.7622
+mcc: 0.2168
+fake_detection_rate: 0.8619
+real_detection_rate: 0.4525
+confusion_matrix: [[243, 294], [1009, 6296]]
+true_negatives: 243
+false_positives: 294
+false_negatives: 1009
+true_positives: 6296
+Inference time: 1.66 ms/sample
+FPS: 602.54
+Total samples: 7842
+Misclassified samples: 1303

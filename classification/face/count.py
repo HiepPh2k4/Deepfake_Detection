@@ -78,6 +78,6 @@ except Exception as e:
 # print("-----------------------------------------------------------------------")
 #
 # import os
-# fake_count = len(os.listdir("D:/Deepfake_Detection_project/data_preprocessing/fakeavceleb_frames/train/fake"))
-# real_count = len(os.listdir("D:/Deepfake_Detection_project/data_preprocessing/fakeavceleb_frames/train/real"))
+# fake_count = len(os.listdir("D:/Deepfake_Detection_project/data_preprocessing/fakeavceleb_audio/train/fake"))
+# real_count = len(os.listdir("D:/Deepfake_Detection_project/data_preprocessing/fakeavceleb_audio/train/real"))
 # print(f"Fake: {fake_count}, Real: {real_count}")

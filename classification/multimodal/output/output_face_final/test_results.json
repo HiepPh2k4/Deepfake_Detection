@@ -1,0 +1,26 @@
+{
+  "test_loss": 0.6034934892936843,
+  "accuracy": 0.6425443258641949,
+  "f1": 0.7676918400618973,
+  "auc": 0.7766077393371784,
+  "mcc": 0.20323910825519867,
+  "fake_detection_rate": 0.6339738031125919,
+  "real_detection_rate": 0.7593283582089553,
+  "confusion_matrix": [
+    [
+      1221,
+      387
+    ],
+    [
+      8020,
+      13891
+    ]
+  ],
+  "true_negatives": 1221,
+  "false_positives": 387,
+  "false_negatives": 8020,
+  "true_positives": 13891,
+  "inference_time_ms": 1.029052024360234,
+  "fps": 971.768167524576,
+  "misclassified_count": 8407
+}
